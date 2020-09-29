@@ -1,0 +1,59 @@
+{% extends 'account/dashboard_base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+	
+      <div class="error-page">
+
+        <div class="error-content">
+         	<div class="container" style="text-align:center;">
+         	
+        		<h2 class="headline "> <i class="fa fa-mobile text-dark"></i></h2>
+        		
+			  <h3 class="margin-top-0">CHANGE YOUR EMAIL ADDRESS</h3>
+
+			  <h5>
+				Enter the new email address below, you will verify your account with this email.
+			  </h5>
+        
+        <div class="row justify-content-center">
+        <form action="" method="POST" class="form-element">
+          {% csrf_token %}
+          <div class="form-group has-feedback">
+       
+            {% render_field form.email  type="email" class="form-control" name="email" autofocus="autofocus" placeholder="Enter Email Address" required="required"  %}
+            <span style="color: red; list-style:none;  ">{{form.email.errors}}</span> 
+            
+            <span class="ion ion-log-in form-control-feedback "></span>
+          </div>
+          
+    
+         
+          <div class="row">
+            
+            <!-- /.col -->
+            <div class=" text-center ml-4">
+              
+              <button type="submit" class="btn btn-success margin-top-10 ml-3">Save</button>
+            </div>
+            <!-- /.col -->
+            
+            <!-- /.col -->
+          </div>
+        </form>
+    
+</div>
+
+          </div>
+        </div>
+        <!-- /.error-content -->
+        
+ 
+      </div>
+      <!-- /.error-page -->
+     
+  
+
+{% endblock %}

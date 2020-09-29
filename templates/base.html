@@ -1,0 +1,514 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<!--  
+  -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'account/images/favicon22.ico' %}" />
+    <title>27Crypto Trading - Trading And Investment</title>
+    <!-- Bootstrap core CSS -->
+	<link href="{% static 'cryptotrading/assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	{{ form.media.css }}
+    <!-- Google Font  -->
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i|Roboto:400,400i,500,500i,700,700i" rel="stylesheet"> 
+    <!-- icofont icon -->
+    <link rel="stylesheet" href="{% static 'cryptotrading/assets/css/icofont.css' %}">	
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href=" {% static 'cryptotrading/assets/css/fontawesome-all.min.css' %}">	
+    <!-- animate CSS -->
+    <link rel="stylesheet" href=" {% static 'cryptotrading/assets/css/animate.css' %}">
+	<!--- meanmenu Css-->
+    <link rel="stylesheet" href=" {% static 'cryptotrading/assets/css/meanmenu.min.css' %}"  media="all" />	
+    <!--- owl carousel Css-->
+    <link rel="stylesheet" href=" {% static 'cryptotrading/assets/owlcarousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'cryptotrading/assets/owlcarousel/css/owl.theme.default.min.css' %}">
+    <!-- venobox -->
+    <link rel="stylesheet" href="{% static 'cryptotrading/assets/venobox/css/venobox.css' %}" />	
+    <!-- Style CSS --> 
+	<!--<link rel="stylesheet" href="assets/css/style.css">-->
+	<link rel="stylesheet" href="{% static 'cryptotrading/assets/css/style.css' %}">
+    <!-- Responsive  CSS -->
+	<link rel="stylesheet" href="{% static 'cryptotrading/assets/css/responsive.css' %}">
+	<!-- Login and Signup form  CSS -->
+	<link rel="stylesheet" href="{% static 'cryptotrading/assets/css/form.css' %}">
+
+
+	<!--google search engine code-->
+	<meta name="google-site-verification" content="ItrC1E-CYJl2URP-NhqYtWzrpny1eCsey4TsgfbocQU" />
+
+	
+	
+</head>
+
+<body style="background-color: #111;">
+
+	<!-- START PRELOADER -->
+	<div id="page-preloader" style="background-color: #111;">
+		<div class="theme-loader">27Crypto Trading</div>
+	</div>
+	<!-- END PRELOADER --> 
+
+
+	<!--messages-->
+	<div class="messages" style="text-align: center;">
+		{% if messages %}
+		{% for message in messages %}
+		<p class="alert alert-{{ message.tags }}">
+		  {{message}}
+		</p>
+		{% endfor %}
+		{% endif %}
+		</div>
+	<!--end messages-->
+
+	
+	<!-- START HEADER SECTION -->
+	<header class="main-header header-1 mb-5 mmm " >
+		<!-- START TOP AREA -->
+		<div class="top-area" style="background-color:#111;">
+						
+			<div class="auto-container" >
+				<div class="row" style="background-color: #111;">
+					
+					<!-- end col -->
+					<div class="col-lg-6 col-md-12 col-sm-12 col-12" style="background-color: #111;">
+
+								
+						<div class="info-menu">
+							<ul style="display: inline-block;">
+								{% if request.user.is_admin %}
+								<li><a href="{% url 'logout' %}"><i class="icofont icofont-login"></i> Logout </a></li>
+								{% else %}
+								<li><a href="{% url 'login' %}"><i class="icofont icofont-login"></i> Login </a></li>
+								<li><a href="{% url 'register' %}"><i class="icofont icofont-user-alt-5"></i> Register </a></li>
+								<li><a href="{% url 'contact_page' %}"><i class="icofont icofont-live-support"></i> Contact Us </a></li>
+{% endif %}
+								
+							</ul>
+							<ul style="float: right;">
+								<li><a href=""><i class="icofont icofont-social-facebook"></i></a></li>
+								<li><a href=""><i class="icofont icofont-social-twitter"></i></a></li>
+								<li><a href=""><i class="icofont icofont-social-instagram"></i></a></li>
+								<li><a href=""><i class="icofont icofont-social-google-plus"></i></a></li>
+								
+								
+							</ul>
+						</div>
+					</div> 
+					<!-- end col -->
+				</div>
+			</div>
+		</div>
+
+		
+			
+
+
+		<!-- END TOP AREA -->
+
+				
+
+
+
+		<!-- START LOGO AREA -->
+		
+		<!-- END LOGO AREA -->
+<!--crypto currency live price start here-->
+<div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #111; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #111;padding:1px;padding: 0px; margin: 0px; width: 100%;">
+	<div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div></div>
+	
+		<!--crypto currency live price ends here-->
+
+		
+		
+		
+
+		
+		<!-- START NAVIGATION AREA -->
+		<div class="sticky-menu " >
+			<div class="mainmenu-area" >
+
+				
+				<style>
+
+					@media only screen and (max-width: 768px) {
+						/* For mobile phones: */
+						.visible {
+						  position:absolute;
+						  z-index: 100;
+						  height: 45px;
+						}
+						
+						
+					  }
+					  
+				</style>
+
+				<div class="auto-container " >
+					<div class="row  " >
+						
+							<a href="{% url 'home_page' %} ">
+							   <img class="img-fluid large mt-1  visible" src="{% static 'cryptotrading/assets/img/banner22.png' %}" alt="27Crypto Trading">
+							</a>
+						
+						
+
+						<div class="col-lg-9 d-none d-lg-block d-md-none menu-dark"  style="">							
+							
+
+							<nav class="navbar navbar-expand-lg justify-content-left">
+
+
+								
+
+								<ul class="navbar-nav" style="float: right;" >
+									
+								   <li><a href="{% url 'home_page' %}" class="active nav-link">Home</a></li>
+								   <li><a href="{% url 'about_page' %}" class="nav-link">About</a></li>
+									<li><a href="{% url 'contact_page' %}" class="nav-link">Contact Us</a></li>
+
+									
+									
+									<li><a href="{% url 'cal_page' %}" class="nav-link">Account level and prices </a></li>
+									
+									{% if request.user.is_admin %}
+									<li><a href="{% url 'logout' %}" class="nav-link">Logout </a></li>
+									{% else %}
+									<li class="dropdown"><a class="nav-link" href="#"><i class="icofont icofont-user-alt-5"></i> Accounts</a>
+										<ul class="dropdown-menu">
+											<li><a href="{% url 'login' %}">Login</a></li>
+											<li><a href="{% url 'register' %}">Register</a></li>
+											
+										</ul>
+									</li>
+									{% endif %}
+									
+							
+									
+								</ul>
+							</nav>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		<!-- END NAVIGATION AREA -->	
+	</header>
+    <!-- END HEADER SECTION -->
+    
+        <!--block content-->
+ {% block content %}
+
+
+
+ {% endblock %}
+
+    <!-- START FOOTER -->
+    <footer>
+        <!--Footer top -->
+        <div class="footer-top overlay section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/bg6.jpg' %}">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-md-5 mb-5 footer-widget">
+                        <div class="footer-logo col-12 p-0">
+                            <a href="{% url 'home_page' %}">
+								<div class="footer-logo-icon">
+                                 <!--<i class="fab fa-gg-circle"></i> -->
+                                </div>
+								<div class="footer-logo-text">
+                                    <h3>27Crypto Trading</h3>
+                                    <p>Trading And Investment</p>
+                                </div>
+							</a>
+                        </div>
+                        <div class="about mb-2">
+                            <p>27Cryptotrading is a legally operating company. We were one of the first to invest in cryptocurrencies. 27Cryptotrading a leading blockchain investment company. Our mission is to act as a catalyst for universal adoption and blockchain innovation. We focus only on trading and investing in blockchain technologies. Our team has experience in both traditional financing and emerging blockchain technology in other for you to hold and secure Cryptro coins.</p>
+						
+							<h6 class="text-white">27CRYPTOTRADING LTD</h6>
+						</div>
+                        
+					</div>
+					
+					
+                    <!-- End Widget -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-md-5 mb-5 footer-widget">
+                        <div class="footer-section-title col-12 no-padding">
+                            <h3>Links</h3>
+                        </div>
+                        <!-- END SECTION TITLE -->
+						<div class="col-12 footer-widget-inner">
+							<ul class="quick-link-list">
+								<li><a href="{% url 'home_page' %}"><i class="fa fa-chevron-circle-right"></i> Home Page</a></li>
+								<li><a href="{% url 'about_page' %}"><i class="fa fa-chevron-circle-right"></i> About Us</a></li>
+								<li><a href="{% url 'cal_page' %}"><i class="fa fa-chevron-circle-right"></i> Currency Calculator</a></li>
+								
+							</ul>
+
+								</div>	
+                    </div>
+                    <!-- End Widget -->
+					
+
+
+					<!--company certification name-->
+ <!-- End Widget -->
+ <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-md-5 mb-5 footer-widget">
+	<div class="footer-section-title col-12 no-padding">
+		<h3>Company Certification</h3>
+	</div>
+	<!-- END SECTION TITLE -->
+	<div class="col-12 footer-widget-inner">
+		<img class="img-fluid" src="{% static 'cryptotrading/assets/img/bg/comp-image1.jpg' %}" alt="Crypto Trading">
+					
+
+			</div>	
+</div>
+<!-- End Widget -->
+					<!--end company certification name-->
+					
+                        <!-- END SECTION TITLE -->
+						
+                    <!-- End Widget -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-0 footer-widget">
+                        <div class="footer-section-title col-12 no-padding">
+                            <h3>Stay With Us</h3>
+                        </div>
+                        <!-- END SECTION TITLE -->
+						<div class="col-12 footer-widget-inner">
+							{% for info in info %}
+							<div class="single-fcontact mb-2">
+								<div class="single-fcontact-icon">
+									<i class="fa fa-envelope-open"></i>
+								</div>
+								<div class="single-fcontact-des">
+									<h6>27Crypto Trading:</h6>
+									<p>Email us  {{info.email}}</p>
+								</div>
+							</div>
+							<div class="single-fcontact mb-2">
+								<div class="single-fcontact-icon">
+									<i class="icofont icofont-mobile-phone"></i>
+								</div>
+								<div class="single-fcontact-des">
+									<h6>Phone Number:</h6>
+									<p>{{info.phone}}</p>
+								</div>
+							</div>
+							{% endfor %}
+							<div class="single-fcontact">
+								<div class="single-fcontact-icon">
+									<i class="icofont icofont-eye-alt"></i>
+								</div>
+								<div class="single-fcontact-des">
+									<h6>Door Open:</h6>
+									<p>Mon - Sun : 24/7</p>
+								</div>
+							</div>
+
+							
+							
+
+							<div class="single-fcontact mt-2">
+								<div class="single-fcontact-icon">
+									<i class="fa fa-map-marker"></i>
+								</div>
+								<div class="single-fcontact-des">
+									<h6>Location: </h6>
+									<p>740 Bobcat Drive St, Washington, Maryland , US</p>
+								</div>
+							</div>
+
+
+
+							<div class="single-fcontact mt-2">
+								<div class="single-fcontact-icon">
+									<i class="fa fa-building"></i>
+								</div>
+								<div class="single-fcontact-des">
+									<h6>Company Number: </h6>
+									<p>#55116887</p>
+								</div>
+							</div>
+						</div>
+						
+
+						
+                    </div>
+					<!-- End Widget -->
+					
+                </div>
+            </div>
+        </div>
+		
+		<!--Footer Bottom -->
+		
+        <div class="copyright">
+			<div class="row col-lg-12 col-md-12 col-sm-12 col-12" style="text-align: center;">
+				
+			<style>.p-2 {padding: 0.5rem !important}
+				.inline{
+					display: inline;
+				}
+			</style>
+
+			<marquee behavior="scroll" direction="left">
+				
+			  
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/1.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/2.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/3.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/7.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/11.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/8.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/13.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/14.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/15.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/16.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			
+		</marquee>
+		
+		</div>
+			<div class="auto-container">
+				
+                <div class="row">
+					
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 copyright-text text-center text-lg-right text-md-right">
+
+						<p><a href=""> &copy;
+							{% now 'Y' %}
+							27Cryptotrading All Rights Reserved</a></p>
+						
+						
+				
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+    </footer>
+    <!-- END FOOTER -->
+	
+	<!-- Latest jQuery -->
+	<script src="{% static 'cryptotrading/assets/js/jquery-2.2.4.min.js' %}"></script>
+	{{ form.media.js }}
+    <!-- popper js -->
+    <script src="{% static 'cryptotrading/assets/bootstrap/js/popper.min.js' %}"></script>
+    <!-- Latest compiled and minified Bootstrap -->
+    <script src="{% static 'cryptotrading/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- meanmenu min js  -->
+	<script src="{% static 'cryptotrading/assets/js/jquery.meanmenu.min.js' %}"></script>
+	
+	
+	<!-- Sticky JS -->
+    <script src="{% static 'cryptotrading/assets/js/jquery.sticky.js' %}"></script>
+    <!-- owl-carousel min js  -->
+    <script src="{% static 'cryptotrading/assets/owlcarousel/js/owl.carousel.min.js' %}"></script>	
+    <!-- jquery appear js  -->
+    <script src="{% static 'cryptotrading/assets/js/jquery.appear.js' %}"></script>
+    <!-- countTo js -->
+    <script src="{% static 'cryptotrading/assets/js/jquery.inview.min.js' %}"></script>
+    <!-- venobox js -->
+    <script src="{% static 'cryptotrading/assets/venobox/js/venobox.min.js' %}"></script>
+    <script src="{% static 'cryptotrading/assets/js/masonry.pkgd.min.js' %}"></script>
+    <!-- scroll to top js -->
+    <script src="{% static 'cryptotrading/assets/js/scrolltopcontrol.js' %}"></script>
+    <!-- WOW - Reveal Animations When You Scroll -->
+    <script src="{% static 'cryptotrading/assets/js/wow.min.js' %}"></script>
+    <!-- scripts js -->
+    <script src="{% static 'cryptotrading/assets/js/scripts.js' %}"></script>
+	<!-- chart js -->
+    <script src="{% static 'cryptotrading/assets/js/canvasjs.min.js' %}"></script>
+	<script src="{% static 'cryptotrading/assets/js/canvasjs.activeone.js' %}"></script>
+
+	<script type="text/javascript">
+		$(function(){
+		  setTimeout(function(){
+			$('.alert').slideUp(1500);
+		  }, 4000);
+		});
+	  </script>
+
+
+
+	  <script type="text/javascript" >
+		$(document).ready(function() {
+  $("#toggle").click(function() {
+    var elem = $("#toggle").text();
+    if (elem == "Read More") {
+      //Stuff to do when btn is in the read more state
+      $("#toggle").text("Read Less");
+      $("#text").slideDown();
+    } else {
+      //Stuff to do when btn is in the read less state
+      $("#toggle").text("Read More");
+      $("#text").slideUp();
+    }
+  });
+});
+
+
+$(document).ready(function() {
+	$("#toggle1").click(function() {
+	  var elem = $("#toggle1").text();
+	  if (elem == "Read More") {
+		//Stuff to do when btn is in the read more state
+		$("#toggle1").text("Read Less");
+		$("#text1").slideDown();
+	  } else {
+		//Stuff to do when btn is in the read less state
+		$("#toggle1").text("Read More");
+		$("#text1").slideUp();
+	  }
+	});
+  });
+
+
+  $(document).ready(function() {
+	$("#toggle2").click(function() {
+	  var elem = $("#toggle2").text();
+	  if (elem == "Read More") {
+		//Stuff to do when btn is in the read more state
+		$("#toggle2").text("Read Less");
+		$("#text2").slideDown();
+	  } else {
+		//Stuff to do when btn is in the read less state
+		$("#toggle2").text("Read More");
+		$("#text2").slideUp();
+	  }
+	});
+  });
+
+  $(document).ready(function() {
+	$("#toggle3").click(function() {
+	  var elem = $("#toggle3").text();
+	  if (elem == "Read More") {
+		//Stuff to do when btn is in the read more state
+		$("#toggle3").text("Read Less");
+		$("#text3").slideDown();
+	  } else {
+		//Stuff to do when btn is in the read less state
+		$("#toggle3").text("Read More");
+		$("#text3").slideUp();
+	  }
+	});
+  });
+	  </script>
+
+</body>
+
+<!--Tidio chart script here-->
+<script src="//code.tidio.co/5ikpc2mhh57krvqwkjtjqbywkbqih9ur.js" async></script>
+</html>

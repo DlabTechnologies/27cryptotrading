@@ -1,0 +1,1314 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load humanize %}
+
+
+{% block content %}
+	<!-- START SLIDER SECTION -->
+	<section class="slider-section">
+		
+			
+			<!--background video-->
+
+			<style>
+
+				.row-hero {
+					height: 20rem;
+					width: 100%;
+					position: relative;
+					overflow: hidden;
+					display: flex;
+					justify-content: center;
+					align-items: flex-end;
+				}
+					@media(min-width: 480px) {
+						.row-hero {
+							height: 25rem;
+						}
+					}
+					@media(min-width: 720px) {
+						.row-hero {
+							height: 35rem;
+						}
+					}
+				
+				.video {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					height: auto;
+					width: auto;
+					z-index: -1;
+					transform: translateX(-50%) translateY(-50%);
+					min-width: 100%;
+					min-height: 100%;
+				}
+				
+				.video-quote {
+					z-index: 1;
+					width: 100%;
+					color: #fff;
+					
+				}
+				
+				
+			</style>
+
+
+			<div class="row-hero">
+				
+
+				
+			<video class="video" poster="" autoplay playsinline muted loop src="https://f.hubspotusercontent20.net/hubfs/6845477/AmplifyTrading_June2020/videos/file.mp4" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted class="bgVideovideo" width="1920" height="1080" autoplay="">
+			
+			</video>
+
+				<div class="video-quote " >
+				
+					<section class="slider-section mt-5 "  >
+						<div class="home-slides owl-carousel owl-theme mt-5">
+							<div class="home-single-slide mt-5" >
+								
+								<div class="home-single-slide-inner mt-5">
+									<div class="container mt-5">
+										<div class="row mt-5">
+											<div class="col-lg-12 col-md-12 col-12 mr-auto mt-5 text-left">
+												<div class="home-single-slide-dec mt-5">
+													
+												<style>
+
+					
+													
+													.carousel-item.active,
+													.carousel-item-next,
+													.carousel-item-prev{
+														display:block;
+													}
+												</style>
+
+
+												<div class="container mt-5" style="height: 310px">
+													<div id="carouselContent" class="carousel slide" data-ride="carousel">
+														<div class="carousel-inner" role="listbox">
+															<div class="carousel-item active text-center p-4 mt-5">
+												<h2><p class="text-capitalize mt-5" style="color: #f7921a;">27Cryptotrading</p></h2>
+													
+												<p class="text-lowercase">A firm for Cryptocurrency Investment Solution.
+												</p>
+												<div class="home-single-slide-button">
+													<a href="{% url 'login' %}" class="btn-style btn-filled">Get Started</a>
+													
+												</div>
+															</div>
+															<div class="carousel-item text-center p-4 mt-5">
+																
+												<h2><p class="text-capitalize mt-5" style="color: #f7921a;">We Trade CryptoCurrency</p></h2>
+													
+												<p class="text-lowercase">We do the trading for you In return you earn guaranteed high profit.
+												</p>
+												<div class="home-single-slide-button">
+													<a href="{% url 'login' %}" class="btn-style btn-filled">Get Started</a>
+													
+												</div>
+															</div>
+
+
+
+
+															<div class="carousel-item text-center p-4 mt-5">
+																
+																<h2><p class="text-capitalize mt-5" style="color: #f7921a;">We help you grow and </p></h2>
+																<h2><p class="text-capitalize" style="color: #f7921a;">expand your business</p></h2>
+																<p class="text-lowercase">We offer the best services to our clients and always try to achieve our client's trust and satisfaction.
+																</p>
+																<div class="home-single-slide-button">
+																	<a href="{% url 'login' %}" class="btn-style btn-filled">Get Started</a>
+																	
+																</div>
+																			</div>
+
+
+
+															
+														</div>
+														
+														
+													</div>
+												</div>
+
+
+
+												
+												
+													
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							
+						</div>
+					</section>
+			  </div>
+			  
+			</div>
+			
+
+
+		
+	</section>
+	<!-- END SLIDER SECTION  -->
+	
+	<!-- START ABOUT SECTION -->
+    <section id="about"  style="border-top: 5px solid white;" class="section-padding bg-white section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/bg2.jpg' %}">
+        <div class="container" >
+			<div class="row">
+				<div class="col-12 text-center">
+					<div class="section-title ">
+						
+						<h3> <span class="text-white"> 27Crypto Trading</span> <span>Features</span></h3>
+					</div>
+				</div>
+			</div>
+			<!-- end section title -->
+			<div class="row text-center">
+				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+					<div class="single-about text-white " >
+						<div class="single-about-img">
+							<div class="single-about-img-inner">
+								<a href=""><img src="{% static 'cryptotrading/assets/img/bg/bg1.jpg' %}" class="img-fluid" alt=""></a>
+							</div>
+						</div>
+						<div class="single-about-caption" >
+							<div class="single-about-icon">
+								<i class="fab fa-btc"></i>
+							</div>
+							<div class="single-about-title ">
+								<h5>Social & Personal</h5>
+							</div>
+							<div class="single-about-dec ">
+								<p class="text-dark">27Cryptotrading offers stable profit, our profit is not determined by the market cap price. Stable profit is a good sign for business entity usually trading on crypto currency. 27Cryptotrading offers fast withdrawal, you can request for your withdrawal 24/7 every day without any further delay..</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end single about -->
+				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+					<div class="single-about text-white ">
+						<div class="single-about-img">
+							<div class="single-about-img-inner">
+								<a href=""><img src="{% static 'cryptotrading/assets/img/bg/bg4.jpg' %}" class="img-fluid" alt=""></a>
+							</div>
+						</div>
+						<div class="single-about-caption">
+							<div class="single-about-icon">
+								<i class="fa fa-dollar-sign"></i>
+							</div>
+							<div class="single-about-title">
+								<h5>Stable profit & Fast withdrawal</h5>
+							</div>
+							<div class="single-about-dec">
+								<p class="text-dark">27Cryptotrading takes great pride in its social trading features, enabling its clients to benefit from the collective wisdom of its vast network of traders. Our popular Investor program utilise the full potential of our next-generation social trading platform. With numerous successful traders using our platform to share their strategies, 27Cryptotrading clients have everything they need to pursue their financial goals.</p>
+						
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end single about -->
+				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+					<div class="single-about text-white " >
+						<div class="single-about-img">
+							<div class="single-about-img-inner">
+								<a href=""><img src="{% static 'cryptotrading/assets/img/bg/bg5.jpg' %}" class="img-fluid" alt=""></a>
+							</div>
+						</div>
+						<div class="single-about-caption">
+							<div class="single-about-icon">
+								<i class="fa fa-euro-sign"></i>
+							</div>
+							<div class="single-about-title">
+								<h5>Stock Commodities</h5>
+							</div>
+							<div class="single-about-dec">
+								<p class="text-dark">We offer 10 of the most popular spot forex pairs as limited-risk binary options and spreads. You can trade them 23 hours a day, 6 days a week.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end single about -->
+				
+				<!-- end single about -->
+				
+				<!-- end single about -->
+				
+				<!-- end single about -->
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END ABOUT SECTION -->
+	
+	<!-- START PROMO SECTION -->
+    <section id="promo"  style="border-top: 5px solid white;" class="section-padding section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/bgr33.jpg' %}" >
+        <div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+					<div class="row">
+						<div class="col-12 text-left">
+							<div class="section-title-2">
+								<h3 class="text-white">Frequently <span>questions</span></h3>
+							</div>
+						</div>
+					</div>
+					<!-- end section title -->
+					
+
+
+
+
+                    <!--Accordion Box-->
+				   
+					<style>
+
+						@import url('https://fonts.googleapis.com/css?family=Raleway');
+#text, #text1, #text2, #text3{
+display:none;
+}
+
+
+
+button{
+  user-select:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  cursor:pointer;
+  border:none;
+  padding:8px;
+  font-size:20px;
+  background:#f7921a;
+  color:white;
+  font-family:cursive;
+  box-sizing:border-box;
+}
+
+
+					</style>
+
+
+<div class="container "><h3 class=" text-uppercase text-white">We Are Expert 27Cryptotrading </h3>
+	<p class="text-white">27Cryptotrading consist of financial market professionals assembled specifically in other to provide the best posible trading conditions to its investors worldwide.</p> 
+
+<div>
+  
+ <span id="text">
+	<p class="text-white">Our specialist have been involved in the development of technical specifications for designing an up-to-data platform that is suitable for both beginners and experienced traders.</p>
+	<br>
+  
+  </span>
+</div>
+
+<button id="toggle" class="btn-sm">Read More</button>
+</div>
+
+
+
+<br><br>
+<div class="container"><h3 class=" text-uppercase text-white">What is Bitcoin Trading and Investment?</h3>
+	<p class="text-white">In simple terms, bitcoin trading is the buying and selling of bitcoin. Bitcoin trading adds a new dimension to currency trading with its dynamic force and the volatility</p>
+
+<div>
+  
+ <span id="text1" class="text-white">
+	it experiences as it settles into the global market. The volatility (ups and downs) surrounding bitcoin trading creates the possibility to benefit from high yields.
+	<br>
+  
+  </span>
+</div>
+
+<button id="toggle1" class="btn-sm">Read More</button>
+</div>
+
+<br><br>
+<div class="container"><h3 class=" text-uppercase text-white">Our data center</h3>
+	<p class="text-white">	Our data center guarantees trouble-free operations of your equipment control and monitoring for optimal external temperature, humidity, dust protection.</p>
+	<div>
+  
+ <span id="text2" class="text-white">
+	27Cryptotrading center is protected from electric voltage jumps and broken internet connections. backuping of power supply systems provides
+ hours-long stable functioning of equipment in case if some force-majeure circumstances occurs (instability of electric power network, industral network disconnection etc.)
+	
+	<br>
+  
+  </span>
+</div>
+
+<button id="toggle2" class="btn-sm">Read More</button>
+</div>
+
+
+
+<br><br>
+<div class="container "><h3 class=" text-uppercase text-white" >Our Promise</h3>
+	<p class="text-white">This is our promise to maintain our outstanding commitment to quality and excellenc,particularly in the realm of investor's satisfaction.</p>
+<div>
+  
+ <span id="text3" class="text-white">
+	 our first priority is the security of our clients funds.
+	<br>
+  
+  </span>
+</div>
+
+<button id="toggle3" class="btn-sm">Read More</button>
+</div>
+
+<br><br>
+
+
+
+
+                        
+
+                        
+                    <!--End Accordion Box-->	
+				</div>
+				<!-- end col -->
+				<div class="col-lg-6 col-md-6 col-12">
+					<div class="row">
+						<div class="col-12 text-left">
+							<div class="section-title-2">
+								<h3 class="text-white">About<span> Us</span></h3>
+							</div>
+						</div>
+					</div>
+					<!-- end section title -->
+					<div class="image-style-1 mb-4">
+						<div class="image-style-wrapper">
+							<div class="image-one"></div>
+							<div class="image-two">
+								<img src="{% static 'cryptotrading/assets/img/bg/promobg1.jpg' %}" class="img-fluid" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="promo-content">
+						<h4 class="text-white text-uppercase">Our Mission</h4>
+						<p class="text-white">Our mission is to develope traders(investors) equipped to perform in the new era of global market/digital currency, Our company is involved in financial activities related to bitcoin trading and mining.  </p>
+						
+						
+						
+					</div>	
+				</div>
+				<!-- end col -->				
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END PROMO SECTION -->
+	
+	<!-- START CHOOSE US SECTION -->
+    <section id="chhoseus" class="section-padding bg-white">
+        <div class="container">
+			<div class="row">
+				<div class="col-12 text-center">
+					<div class="section-title ">
+						<h5>27Cryptotrading Legality</h5>
+						<h3>Why Choose <span>27Crypto Trading?</span></h3>
+					</div>
+				</div>
+			</div>
+			<!-- end section title -->
+			<div class="row">
+				<div class="col-lg-8 col-md-8 col-12 mb-lg-0 mb-md-0 mb-5">
+					<div class="row" >	 
+						<div class="col-lg-6 col-md-6 col-12 mb-5" >
+							<div class="single-wcus"   >
+								<div class="single-wcus-icon">
+									<i class="icofont icofont-bill"></i>
+								</div>
+								<div class="single-wcus-text">
+									<h5>Stable Profit</h5>
+									<p>27Cryptotrading offers stable profit, our profit is not determined by the market cap price. Stable profit is a good sign for business entity usually trading on cryptocurrency.</p>
+								</div>
+							</div>
+						</div>
+						<!-- end single chooseus -->	 
+						<div class="col-lg-6 col-md-6 col-12 mb-5" >
+							<div class="single-wcus">
+								<div class="single-wcus-icon">
+									<i class="icofont icofont-coins"></i>
+								</div>
+								<div class="single-wcus-text">
+									<h5>Fast Withdrawal</h5>
+									<p>27Cryptotrading offers fast withdrawal, you can request for your withdrawal 24/7 every day without any further delay.</p>
+								</div>
+							</div>
+						</div>
+						<!-- end single chooseus -->	 
+						
+						<!-- end single chooseus -->	 
+						<div class="col-lg-6 col-md-6 col-12" >
+							<div class="single-wcus">
+								<div class="single-wcus-icon">
+									<i class="icofont icofont-ui-travel"></i>
+								</div>
+								<div class="single-wcus-text">
+									<h5>Security</h5>
+									<p>27Cryptotrading is a secure and well organized Trading and Investment platform.</p>
+								</div>
+							</div>
+						</div>
+						<!-- end single chooseus -->
+					</div>
+				</div>
+				<!-- end col -->	 
+				<div class="col-lg-4 col-md-4 col-12" >
+					<div class="single-wcus-promo" >
+						<div class="single-wcus-promo-inner">
+							<h3>Invest with us.</h3>
+							<p>Invest with us and make more profits.</p>
+							
+						</div>
+					</div>
+				</div>
+				<!-- end col -->	
+			</div>		
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END CHOOSE US SECTION -->	
+	
+
+
+	
+		  
+				
+			
+		
+				
+			
+			 
+	<!-- START COUNTER SECTION -->
+    <section id="counter" class="section-padding overlay counter-section section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/bg1.jpg' %}">
+        <div class="container-fluid">
+			<div class="row-fluid">	 
+				<div class="col-lg-12 col-md-12 col-12">	 
+					<div class="row text-center counter-wrapper">	 
+						<div class="col-lg-6 col-md-6 col-12 counter-wrapper-inner">
+							<div class="single-counter">
+								<h3 class="timer">6</h3><span><h3>+</h3></span>
+								<p>Running Years</p>
+							</div>							
+						</div>
+						<!-- end col -->	 
+						<div class="col-lg-6 col-md-6 col-12 counter-wrapper-inner">
+							<div class="single-counter" >
+								<h3 class="timer ml-3">17894</h3><span><h3>+</h3></span>
+								<p> Total Investors</p>
+							</div>							
+						</div>
+						<!-- end col -->	 
+						<div class="col-lg-6 col-md-6 col-12 counter-wrapper-inner">
+							<div class="single-counter cut" style="overflow-x: scroll;">
+								<span><h3 style="display: inline;" class="mr-2">$</h3></span><h3 style="display: inline;" class="timer ml-2 mr-2">12466579</h3><span><h3>+</h3></span>
+								<p> Total Invested</p>
+							</div>							
+						</div>
+
+
+						<style>
+							
+							
+							/* Hide scrollbar for Chrome, Safari and Opera */
+							.cut::-webkit-scrollbar {
+								display: none;
+							}
+							
+							/* Hide scrollbar for IE, Edge and Firefox */
+							.cut {
+							  -ms-overflow-style: none;  /* IE and Edge */
+							  scrollbar-width: none;  /* Firefox */
+							}
+							</style>
+						<!-- end col -->	 
+						<div class="col-lg-6 col-md-6 col-12 counter-wrapper-inner">
+							<div class="single-counter cut" style="overflow-x: scroll;">
+
+								<span><h3 style="display: inline;" class="mr-2 ml-2">$</h3></span><h3 style="display: inline;" class="timer ml-2 ">436550265</h3><span><h3>+</h3></span>
+								
+								
+								<p>Total Withdrawn</p>
+							</div>							
+						</div>
+						<!-- end col -->
+					</div>
+				</div>
+				<!-- end col -->	
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END PROMO SECTION -->	
+	
+	<!-- START SERVICE SECTION -->
+    
+			<!-- end section title -->	 
+			
+				<!-- end single service -->
+				
+				<!-- end single service -->
+
+				<!-- end single service -->
+				
+				<!-- end single service -->
+			</div>
+				
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END SERVICE SECTION -->
+	
+	<!-- START TEAM SECTION -->
+    
+			<!-- end section title -->	 
+			
+					<!-- end col -->
+					
+					<!-- end col -->
+					
+					<!-- end col -->
+					
+					<!-- end col -->
+					
+					<!-- end col -->	
+				</div>
+			</div>
+			<!-- end row -->
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END TEAM SECTION -->
+	
+	<!-- START PRICETABLE SECTION -->
+    <section id="pricetable" class="section-padding bg-white" >
+        <div class="container-fluid" >
+			<div class="row-fluid cut"  style="overflow-x: scroll"> 
+				
+				
+				<div class="col-12 text-center">
+					<div class="section-title">
+						
+						<h3>Trade <span>Crypto Currency</span></h3>
+					</div>
+				</div>		
+						
+				
+				
+	
+	
+  <!-- TradingView Widget END -->
+  
+  
+  
+   <!-- TradingView Widget BEGIN -->
+
+ <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Market Data</span></a> by TradingView</div>
+ <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+ {
+ "width": "100%",
+ "height": "550",
+ "symbolsGroups": [
+   {
+	 "name": "Indices",
+	 "originalName": "Indices",
+	 "symbols": [
+	   {
+		 "name": "FOREXCOM:SPXUSD",
+		 "displayName": "S&P 500"
+	   },
+	   {
+		 "name": "FOREXCOM:NSXUSD",
+		 "displayName": "Nasdaq 100"
+	   },
+	   {
+		 "name": "FOREXCOM:DJI",
+		 "displayName": "Dow 30"
+	   },
+	   {
+		 "name": "INDEX:NKY",
+		 "displayName": "Nikkei 225"
+	   },
+	   {
+		 "name": "INDEX:DEU30",
+		 "displayName": "DAX Index"
+	   },
+	   {
+		 "name": "FOREXCOM:UKXGBP",
+		 "displayName": "FTSE 100"
+	   }
+	 ]
+   },
+   {
+	 "name": "Commodities",
+	 "originalName": "Commodities",
+	 "symbols": [
+	   {
+		 "name": "CME_MINI:ES1!",
+		 "displayName": "E-Mini S&P"
+	   },
+	   {
+		 "name": "CME:6E1!",
+		 "displayName": "Euro"
+	   },
+	   {
+		 "name": "COMEX:GC1!",
+		 "displayName": "Gold"
+	   },
+	   {
+		 "name": "NYMEX:CL1!",
+		 "displayName": "Crude Oil"
+	   },
+	   {
+		 "name": "NYMEX:NG1!",
+		 "displayName": "Natural Gas"
+	   },
+	   {
+		 "name": "CBOT:ZC1!",
+		 "displayName": "Corn"
+	   }
+	 ]
+   },
+   {
+	 "name": "Bonds",
+	 "originalName": "Bonds",
+	 "symbols": [
+	   {
+		 "name": "CME:GE1!",
+		 "displayName": "Eurodollar"
+	   },
+	   {
+		 "name": "CBOT:ZB1!",
+		 "displayName": "T-Bond"
+	   },
+	   {
+		 "name": "CBOT:UB1!",
+		 "displayName": "Ultra T-Bond"
+	   },
+	   {
+		 "name": "EUREX:FGBL1!",
+		 "displayName": "Euro Bund"
+	   },
+	   {
+		 "name": "EUREX:FBTP1!",
+		 "displayName": "Euro BTP"
+	   },
+	   {
+		 "name": "EUREX:FGBM1!",
+		 "displayName": "Euro BOBL"
+	   }
+	 ]
+   },
+   {
+	 "name": "Forex",
+	 "originalName": "Forex",
+	 "symbols": [
+	   {
+		 "name": "FX:EURUSD"
+	   },
+	   {
+		 "name": "FX:GBPUSD"
+	   },
+	   {
+		 "name": "FX:USDJPY"
+	   },
+	   {
+		 "name": "FX:USDCHF"
+	   },
+	   {
+		 "name": "FX:AUDUSD"
+	   },
+	   {
+		 "name": "FX:USDCAD"
+	   }
+	 ]
+   }
+ ],
+ "colorTheme": "dark",
+ "isTransparent": false,
+ "locale": "en",
+ "largeChartUrl": "https://24globaloptions.com"
+}
+ </script>
+
+			
+			<!-- end section title -->
+			
+				<!-- end col -->
+				
+				<!-- end col -->				
+			</div></div>
+			
+        
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END PRICETABLE SECTION -->
+	
+	<!-- START HOW WORK SECTION -->
+    <section id="hworks" class="section-padding bg-gray section-back-image overlay" data-background="{% static 'cryptotrading/assets/img/bg/bg3.jpg' %}">
+        <div class="container">
+			<div class="row">
+				<div class="col-12 text-center">
+					<div class="section-title">
+						
+						<h3 class="text-white">Work <span>Process</span></h3>
+					</div>
+				</div>
+			</div>
+			<!-- end section title -->
+			<div class="row text-center">
+				<div class="col-lg-4 col-md-4 col-12 mb-lg-0 mb-md-0 mb-5">
+					<div class="single-wprocess">
+						<div class="single-wprocess-icon">
+							<i class="fa fa-futbol"></i>
+						</div>
+						<div class="single-wprocess-text">
+							<h5>STOCK COMMODITIES</h5>
+							<p>We offer 10 of the most popular spot forex pairs as limited-risk binary options and spreads. You can trade them 23 hours a day, 6 days a week.</p>
+						</div>
+					</div>
+				</div>
+				<!-- end col -->
+				
+				<div class="col-lg-4 col-md-4 col-12 mb-lg-0 mb-md-0 mb-5">
+					<div class="single-wprocess">
+						<div class="single-wprocess-icon">
+							<i class="fa fa-users"></i>
+						</div>
+						<div class="single-wprocess-text">
+							<h5>Our Team</h5>
+							<p>We are well organized, we work together to achieve a common goal.</p>
+						</div>
+					</div>
+				</div>
+				<!-- end col -->
+				<div class="col-lg-4 col-md-4 col-12">
+					<div class="single-wprocess">
+						<div class="single-wprocess-icon">
+							<i class="fa fa-handshake"></i>
+						</div>
+						<div class="single-wprocess-text">
+							<h5>STOCK INDICES</h5>
+							<p>You can trade US and global stock market indices without using ETFs or index futures and with lower fees than most stock or futures brokers charge.</p>
+						</div>
+					</div>
+				</div>
+				<!-- end col -->	
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END HOW WORK SECTION -->
+	
+	<!-- START PROMO 2 SECTION -->
+    <section id="promot" class="section-padding bg-light" >
+        <div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-12 pr-lg-5 pr-md-5 pr-sm-0 pr-0 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+					<div class="row">
+						<div class="col-12 text-left">
+							<div class="section-title-2">
+								<h3>What is Bitcoin <span>Video</span></h3>
+							</div>
+						</div>
+					</div>
+					<!-- end section title -->
+					<div class="youtube-promo-video-wrap">
+						<div class="youtube-promo-video-img">
+							<img class="img-fluid" src="{% static 'cryptotrading/assets/img/bg/bg8.jpg' %}" alt="">
+						</div>
+						<div class="youtube-promo-video">
+							<a href="https://youtu.be/Um63OQz3bjo" data-title="Bitfonix PROMO VIDEO" data-vbtype="youtube" class="venobox info vbox-item" data-gall="gallu">
+								<i class="icofont icofont-ui-play"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- end col -->
+				<div class="col-lg-6 col-md-6 col-12">
+					<div class="row">
+						<div class="col-12 text-left">
+							<div class="section-title-2">
+								<h3>Get In Touch <span>With Us</span></h3>
+							</div>
+						</div>
+					</div>
+					<!-- end section title -->
+					<div class="home-p-form-wrapper">
+						<div class="home-p-form">
+							
+          
+       
+            
+							<form action="" method="POST">
+								{% csrf_token %}
+								<div class="row">
+									<div class="form-group col-lg-6 mb-3">
+										{% render_field form.name  class="form-control" id="afirst-name" placeholder="Your Name*" required="required" type="text"  %}
+            						<span style="color: red; list-style:none;  ">{{form.name.errors}}</span>
+										
+									</div>
+									<div class="form-group col-lg-6 mb-3">
+										{% render_field form.email  class="form-control" name="email" id="aemail" placeholder="Email id*" required="required" type="email" %}
+            						<span style="color: red; list-style:none;  ">{{form.email.errors}}</span>
+										
+									
+									</div>
+									<div class="form-group col-lg-6 mb-3">
+										{% render_field form.phone name="phone" class="form-control" id="aphone" placeholder="Phone Number*" required="required" type="text" %}
+            						<span style="color: red; list-style:none;  ">{{form.phone.errors}}</span>
+										
+										
+									</div>
+									<div class="form-group col-lg-6 mb-3">
+										{% render_field form.subject name="subject" class="form-control" id="asubject" placeholder="Subject" required="required" type="text" %}
+            						<span style="color: red; list-style:none;  ">{{form.subject.errors}}</span>
+										
+									
+									</div>									
+									<div class="form-group col-lg-12 mb-3">
+										{% render_field form.message  rows="6" name="message" class="form-control" id="adescription" placeholder="Your Message Here..." required="required" type="textarea" %}
+            						<span style="color: red; list-style:none;  ">{{form.message.errors}}</span>
+										
+										
+									</div>
+									<div class="form-group col-lg-5 mb-lg-0 mb-md-0 mb-2 pr-0">
+										<button type="submit" title="Click here to submit your message!" class="btn-style btn-filled btn-filled-2">Send Message <i class="fa fa-paper-plane"></i></button>
+									</div>
+									<div class="form-group col-lg-7">
+										<p><strong>Note:</strong> We promise that we don't do spam & your mail id is confidential. </p>
+									</div>
+								</div>
+							</form>								
+						</div>
+					</div>
+				</div>
+				<!-- end col -->				
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END PROMO 2 SECTION -->
+	
+	<!-- START PRICE SECTION -->
+    <section id="price" class="section-padding bg-gray">
+        <div class="container">
+			<div class="row">
+				<div class="col-12 text-center">
+					<div class="section-title">
+					
+						<h3>Recent <span>Payouts</span></h3>
+
+						<!--Recent payouts tables tart-->
+						<div class="row">
+							<div class = "payout">
+								<div class="table-responsive">
+									<table class="bitland-table table table-striped table-hover">
+										<thead>
+											<tr>
+												<th scope="col">Name</th>
+												<th scope="col">Country</th>
+												<th scope="col">Amount Invested</th>
+												<th scope="col">Payout Amount</th>
+												<th scope="col">Payout Time</th>
+												<th scope="col">Account Type</th>
+											</tr>
+										</thead>
+										<tbody>
+											
+											{% for payout in recent_payout %}
+											<tr>
+												<td>{{payout.name}}</td>
+												<td>{{payout.country}}</td>
+												<td>$ {{payout.amount_invested}}</td>
+												<td>$ {{payout.payout_amount}}</td>
+												<td>{{payout.payout_date|naturaltime}}</td>
+												<td>{{payout.account_type}}</td>
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						  
+						  <!--recent payouts table ends-->
+					</div>
+				</div>
+			</div>
+			<!-- end section title -->
+			
+				<!-- end col -->
+				
+				<!-- end col -->
+				
+				<!-- end col -->
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END PRICE SECTION -->
+	
+	<!-- START TESTIMONIAL SECTION -->
+    
+    <!-- END TESTIMONIAL SECTION -->
+
+	<!-- START BLOG SECTION -->
+    
+			
+				
+				
+				<!-- end single blog -->
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+	<!-- END BLOG SECTION -->
+	
+
+<!-- START TEAM SECTION -->
+<section id="team" class="section-padding bg-gray" >
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="section-title">
+					
+					<h3>Customer <span>Feedback</span></h3>
+				</div>
+			</div>
+		</div>
+		<!-- end section title -->	 
+		<div class="row text-center">
+			<div class="team-slider owl-carousel owl-theme">
+				<div class="single-team-wrapper">
+					<div class="single-team">
+						<div class="single-team-img">
+							<img class="img-fluid" src="{% static 'cryptotrading/assets/img/team/1.png' %}" alt="">
+							<div class="single-team-social">
+								<ul>
+								   <li><a class="sicon1" href=""><i class="icofont icofont-social-facebook"></i></a></li>
+								   <li><a class="sicon2" href=""><i class="icofont icofont-social-twitter"></i></a></li>
+								   <li><a class="sicon3" href=""><i class="icofont icofont-social-youtube-play"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="single-team-meta">
+							<h4>Jone Doe</h4>
+							<span>First Time Investor</span>
+							<p>Bitcoin doubled in 7 days. You should not expect anything more. Excellent customer service! 
+							</div>	
+					</div>							
+				</div>
+				<!-- end col -->
+				<div class="single-team-wrapper">
+					<div class="single-team">
+						<div class="single-team-img">
+							<img class="img-fluid" src="{% static 'cryptotrading/assets/img/team/2.png' %}" alt="">
+							<div class="single-team-social">
+								<ul>
+								   <li><a class="sicon1" href=""><i class="icofont icofont-social-facebook"></i></a></li>
+								   <li><a class="sicon2" href=""><i class="icofont icofont-social-twitter"></i></a></li>
+								   <li><a class="sicon3" href=""><i class="icofont icofont-social-youtube-play"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="single-team-meta">
+							<h4>Mark Henry</h4>
+							<span>Senior Executive At Realpolitik</span>
+							<p>I love to have extra money. If I have time I invest by myself, but sometimes you want to have time for your family or friends, especially when you are on holidays. It’s sooo great to come back rested, tanned etc and with extra money at your accounts. Good work, guys! 
+							</div>	
+					</div>							
+				</div>
+				<!-- end col -->
+				<div class="single-team-wrapper">
+					<div class="single-team">
+						<div class="single-team-img">
+							<img class="img-fluid" src="{% static 'cryptotrading/assets/img/team/3.png' %}" alt="">
+							<div class="single-team-social">
+								<ul>
+								   <li><a class="sicon1" href=""><i class="icofont icofont-social-facebook"></i></a></li>
+								   <li><a class="sicon2" href=""><i class="icofont icofont-social-twitter"></i></a></li>
+								   <li><a class="sicon3" href=""><i class="icofont icofont-social-youtube-play"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="single-team-meta">
+							<h4>Bishen Ketty</h4>
+							<span>Sr. Accountant At Cubix</span>
+							<p>
+								This is a realistic program for anyone looking for site to invest. Paid to me regularly, keep up good work. 
+							</p>
+						</div>	
+					</div>							
+				</div>
+				<!-- end col -->
+				<div class="single-team-wrapper">
+					<div class="single-team">
+						<div class="single-team-img">
+							<img class="img-fluid" src="{% static 'cryptotrading/assets/img/team/4.png' %}" alt="">
+							<div class="single-team-social">
+								<ul>
+								   <li><a class="sicon1" href=""><i class="icofont icofont-social-facebook"></i></a></li>
+								   <li><a class="sicon2" href=""><i class="icofont icofont-social-twitter"></i></a></li>
+								   <li><a class="sicon3" href=""><i class="icofont icofont-social-youtube-play"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="single-team-meta">
+							<h4>Kwasan Rowy</h4>
+							<span>Marketer</span>
+							<p>
+								Good and quick profit. I used this website many times and I can recommend it. 
+							</p>
+						</div>	
+					</div>							
+				</div>
+				<!-- end col -->
+				<div class="single-team-wrapper">
+					<div class="single-team">
+						<div class="single-team-img">
+							<img class="img-fluid" src="{% static 'cryptotrading/assets/img/team/5.png' %}" alt="">
+							<div class="single-team-social">
+								<ul>
+								   <li><a class="sicon1" href=""><i class="icofont icofont-social-facebook"></i></a></li>
+								   <li><a class="sicon2" href=""><i class="icofont icofont-social-twitter"></i></a></li>
+								   <li><a class="sicon3" href=""><i class="icofont icofont-social-youtube-play"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="single-team-meta">
+							<h4>Usman Kahja</h4>
+							<span>Real Estate Agent</span>
+							<p>
+							 27Cryptotrading is the best trading platform. </p>
+						</div>	
+					</div>							
+				</div>
+				<!-- end col -->	
+			</div>
+		</div>
+		<!-- end row -->
+	</div>
+	<!--- END CONTAINER -->
+</section>
+<!-- END TEAM SECTION -->
+
+
+
+
+
+
+
+
+
+
+	<!-- START CLIENT SECTION -->
+	
+	<!--user ratings start -->
+	<!-- START TESTIMONIAL SECTION -->
+    
+        <div class="container-fluid "  >
+			
+			<!-- end section title -->
+			<div class="testimonial-wrapper bg-gray-2 section-padding " >
+				<div class="row-fluid">
+					<div class="col-lg-12 mx-lg-auto mx-md-auto mx-0 text-center">
+						<div class="testimonial-slider owl-carousel owl-theme">
+
+							<div class="single-testimonial">
+								<div class="single-testimonial-image">
+									<img class="img-fluid rounded-circle" src="{% static 'cryptotrading/assets/img/bg/user1.jpg' %}" alt="">
+								</div>
+								<div class="single-testimonial-content">
+									<p>I have made more profits while investing .Thanks to 27Cryptotrading for their help i am so grateful </p>
+								</div>
+
+								<style>
+									
+									.fa {
+									  font-size: 25px;
+									}
+									
+									.checked {
+									  color: orange;
+									}
+									
+									</style>
+
+								<div class="single-testimonial-meta">
+									<p>-  Juliemae Estillore </p>
+									<span class="heading">User Rating</span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									
+									
+
+
+								</div>
+							</div>
+                            <!-- end single testimonial -->
+							<div class="single-testimonial">
+								<div class="single-testimonial-image">
+									<img class="img-fluid rounded-circle" src="{% static 'cryptotrading/assets/img/bg/user2.jpg' %}" alt="">
+								</div>
+								<div class="single-testimonial-content">
+									<p>I love 27Cryptrading for their quality services. you have help me alot and i will recommend 27Cryptotrading to everyone out there </p>
+								</div>
+								<div class="single-testimonial-meta">
+									<p>-  Chua Ginobetan Rein </p>
+									<span class="heading">User Rating</span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								</div>
+							</div>
+
+
+							 <!-- end single testimonial -->
+							 <div class="single-testimonial">
+								<div class="single-testimonial-image">
+									<img class="img-fluid rounded-circle" src="{% static 'cryptotrading/assets/img/bg/user3.jpg' %}" alt="">
+								</div>
+								<div class="single-testimonial-content">
+									<p>The Legit and best trading platform ever </p>
+								</div>
+								<div class="single-testimonial-meta">
+									<p>-  Chii Patches </p>
+									<span class="heading">User Rating</span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+								</div>
+							</div>
+							
+							<!-- end single testimonial -->
+							<div class="single-testimonial">
+								<div class="single-testimonial-image">
+									<img class="img-fluid rounded-circle" src="{% static 'cryptotrading/assets/img/bg/user4.jpg' %}" alt="">
+								</div>
+								<div class="single-testimonial-content">
+									<p>You guys are the best.I love your good and quality services keep it up </p>
+								</div>
+								<div class="single-testimonial-meta">
+									<p>-  Grei L Estillore </p>
+									<span class="heading">User Rating</span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+								</div>
+							</div>
+							<!-- end single testimonial -->
+
+							<div class="single-testimonial">
+								<div class="single-testimonial-image">
+									<img class="img-fluid rounded-circle" src="{% static 'cryptotrading/assets/img/bg/user5.jpg' %}" alt="">
+								</div>
+								<div class="single-testimonial-content">
+									<p>Thanks to 27Cryptotrading for the huge amount of profit i have earn. i will recommend 27Cryptotrading to my fellow investors . </p>
+								</div>
+								<div class="single-testimonial-meta">
+									<p>-  Randolph John Barbon Lustica </p>
+									<span class="heading">User Rating</span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+								</div>
+							</div>
+							<!-- end single testimonial -->
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<!--user ratings end-->
+	
+	<!-- END CLIENT SECTION -->
+	
+	
+
+	<!-- START CALLTOACTION SECTION -->
+	<!-- START CALLTOACTION SECTION -->
+	
+    <!-- END CALLTOACTION SECTION -->
+
+
+
+
+	
+	<!-- START CALLTOACTION SECTION -->
+	<section id="calltoaction" class="calltoaction-padding section-padding bg-theme">
+		<div class="auto-container bg-theme">
+			<div class="row bg-theme">
+				<div class="col-lg-8 col-md-8 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4 bg-theme">
+					<div class="calltoaction-two-wrap bg-theme">
+						<h4>Need More Service?</h4>
+						<p>Need any help? contact us</p>
+					</div>
+				</div>
+				<!-- end col -->
+				<div class=" bg-theme col-lg-4 col-md-4 col-sm-12 col-12 mt-lg-4 mt-md-4 text-lg-right text-md-right text-sm-left text-left">
+					<a href="{% url 'contact_page' %}" class="btn-style btn-border btn-border-3">Contact Us</a>
+				</div>
+				<!-- end col -->
+			</div>
+			<!-- end row-->
+		</div>
+	</section>
+    <!-- END CALLTOACTION SECTION -->
+	
+
+
+	<!-- START SLIDER SECTION -->
+	
+			
+				<section class="slider-section section-back-image-2" style="margin-top:0px; text-align:center;" data-background="{% static 'cryptotrading/assets/img/bg/ban5555.png' %}"  >
+					
+							
+							
+												
+										
+												<img class="img-fluid" src="{% static 'cryptotrading/assets/img/bg/ban55.png' %}" alt="">
+											
+
+
+
+											
+											
+												
+
+
+						
+				</section>
+		  
+
+
+
+<!-- END SLIDER SECTION  -->
+    {% endblock %}

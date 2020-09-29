@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- END HEADER SECTION -->
+	
+	<!-- START PAGE BANNER AND BREADCRUMBS -->
+	<section id="page-banner">
+		<div class="single-page-title-area overlay" data-background="{% static 'cryptotrading/assets/img/bg/bg55.jpg' %}">
+			<div class="auto-container">
+				<div class="row">
+					<div class="col-12 text-center">
+						<div >
+							<h2 class="text-white">27Crypto Trading Accounts Types</h2>
+							
+						</div>
+					</div>
+				</div>
+				<!-- end row-->
+			</div>
+		</div>
+		<div class="single-page-title-area-bottom">
+			<div class="auto-container">
+				<div class="row">
+					<div class="col-12 text-center">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
+							<li class="breadcrumb-item active">Accounts Types</li>
+						</ol>
+					</div>
+				</div>
+				<!-- end row-->
+			</div>
+		</div>
+	</section>
+	<!-- END PAGE BANNER AND BREADCRUMBS -->
+	
+	<!-- START PROMO SECTION -->
+    <section id="promo" class="section-padding bg-white">
+        <div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-12 mb-lg-0 mb-md-4 mb-4">
+					<div class="row">
+						<div class="col-12 text-left">
+							<div class="section-title-2">
+								<h3>Bitcoin <span>Calculater</span></h3>
+							</div>
+						</div>
+					</div>
+					<!-- end section title -->
+					<div class="cal-convertor">
+						<script>
+							baseUrl = "https://widgets.cryptocompare.com/";
+							var scripts = document.getElementsByTagName("script");
+							var embedder = scripts[ scripts.length - 1 ];
+							var cccTheme = {"General":{"borderColor":"#f7921a","headerText":""},"Form":{"labelFrom":"Put amount:","labelTo":"Get amount:"}};
+							(function (){
+							var appName = encodeURIComponent(window.location.hostname);
+							if(appName==""){appName="local";}
+							var s = document.createElement("script");
+							s.type = "text/javascript";
+							s.async = true;
+							var theUrl = baseUrl+'serve/v1/coin/converter?fsym=BTC&tsyms=USD,EUR,CNY,GBP';
+							s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+							embedder.parentNode.appendChild(s);
+							})();
+						</script>
+					</div>
+					
+				</div>
+				<!-- end col -->
+				<div class="col-lg-6 col-md-12 col-12">
+					<img src="{% static 'cryptotrading/assets/img/bg/bg11.jpg' %}" class="img-fluid" alt="">
+				</div>
+				<!-- end col -->				
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END PROMO SECTION -->
+	
+	<!-- START PRICE SECTION -->
+    <section id="price" class="section-padding bg-gray">
+        <div class="container">
+			<div class="row">
+				<div class="col-12 text-center">
+					<div class="section-title">
+						<h5>27Crypto Trading packages</h5>
+						<h3>Accounts <span> Types Prices</span></h3>
+					</div>
+				</div>
+			</div>
+			<!-- end section title -->
+			<div class="row">
+				{% for level in level %}
+				<div class="col-lg-4 col-md-4 col-12 mb-lg-0 mb-md-0 mb-5">
+					<div class="single-pricing">
+						<div class="single-pricing-head text-center">
+							<span class="price"><span class="price-digit">Silver</span></span>
+							
+                
+						</div>
+						<div class="single-pricing-body">
+							<div class="single-pricing-list">
+								<ul>
+									<li><i class="icofont icofont-check-alt"></i> Min Amout : ${{level.silver_min}} </li>
+									<li><i class="icofont icofont-check-alt"></i> Max Amout: ${{level.silver_max}} </li>
+									<li><i class="icofont icofont-check-alt"></i> Duration: {{level.silver_duration}}</li>
+									<li><i class="icofont icofont-check-alt"></i> Profit: {{level.silver_profit}}</li>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="single-pricing-button">
+							
+						</div>	
+					</div>
+				</div>
+				<!-- end col -->
+				<div class="col-lg-4 col-md-4 col-12 mb-lg-0 mb-md-0 mb-5">
+					<div class="single-pricing">
+						<div class="single-pricing-head text-center">
+							<span class="price"><span class="price-digit">Gold</span></span>
+							
+						</div>
+						<div class="single-pricing-body">
+							<div class="single-pricing-list">
+								<ul>
+									<li><i class="icofont icofont-check-alt"></i> Min Amout : ${{level.gold_min}} </li>
+									<li><i class="icofont icofont-check-alt"></i> Max Amout: ${{level.gold_max}}</li>
+									<li><i class="icofont icofont-check-alt"></i> Duration: {{level.gold_duration}}</li>
+									<li><i class="icofont icofont-check-alt"></i> Profit: {{level.gold_profit}}</li>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="single-pricing-button">
+					
+						</div>	
+					</div>
+				</div>
+				<!-- end col -->
+				<div class="col-lg-4 col-md-4 col-12">
+					<div class="single-pricing">
+						<div class="single-pricing-head text-center">
+							<span class="price"><span class="price-digit">Platinum</span></span>
+							
+						</div>
+						<div class="single-pricing-body">
+							<div class="single-pricing-list">
+								<ul>
+									<li><i class="icofont icofont-check-alt"></i> Min Amout : ${{level.platinum_min}}</li>
+									<li><i class="icofont icofont-check-alt"></i> Max Amout: ${{level.platinum_max}}</li>
+									<li><i class="icofont icofont-check-alt"></i> Duration: {{level.platinum_duration}}</li>
+									<li><i class="icofont icofont-check-alt"></i> Profit: {{level.platinum_profit}}</li>
+									
+								</ul>
+							</div>
+						</div>
+						{% endfor %}
+						<div class="single-pricing-button">
+							
+						</div>	
+					</div>
+				</div>
+				<!-- end col -->
+			</div>
+        </div>
+        <!--- END CONTAINER -->
+    </section>
+    <!-- END PRICE SECTION -->
+	
+	<!-- START PRICETABLE SECTION -->
+    
+    <!-- END PRICETABLE SECTION -->
+	
+	
+	
+	<!-- START CALLTOACTION SECTION -->
+	<section id="calltoaction" class="calltoaction-padding section-padding bg-theme">
+		<div class="auto-container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+					<div class="calltoaction-two-wrap">
+						<h4>Need More Service?</h4>
+						<p>Need any help? contact us</p>
+					</div>
+				</div>
+				<!-- end col -->
+				<div class="col-lg-4 col-md-4 col-sm-12 col-12 mt-lg-4 mt-md-4 text-lg-right text-md-right text-sm-left text-left">
+					<a href="{% url 'contact_page' %}" class="btn-style btn-border btn-border-3">Contact Us</a>
+				</div>
+				<!-- end col -->
+			</div>
+			<!-- end row-->
+		</div>
+	</section>
+    <!-- END CALLTOACTION SECTION -->
+	
+    <!-- START FOOTER -->
+    {% endblock %}

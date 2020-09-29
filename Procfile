@@ -1,0 +1,1 @@
+web: gunicorn cryptotrading.wsgi —-log-file -

@@ -1,0 +1,31 @@
+{% extends 'account/dashboard_base.html' %}
+{% load static %}
+
+{% block content %}
+	
+      <div class="error-page">
+
+        <div class="error-content">
+         	<div class="container" style="text-align:center;">
+         	
+        		<h2 class="headline text-success"> <i class="fa fa-check"></i></h2>
+        		
+			  <h3 class="margin-top-0">WITDRAWAL REQUEST SUCCESSFULL!</h3>
+
+			  <h5>
+				Hi {{request.user.first_name}} <br>Your request to witdraw your fund to you specified wallet address has been submited successfully. 
+        <br>You will receive your profits within the 0-2 working business processing days.
+        <br>
+			  </h5>
+			  
+          </div>
+        </div>
+        <!-- /.error-content -->
+        
+ 
+      </div>
+      <!-- /.error-page -->
+     
+  
+
+{% endblock %}

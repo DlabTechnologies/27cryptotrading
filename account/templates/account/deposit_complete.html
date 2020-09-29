@@ -1,0 +1,31 @@
+{% extends 'account/dashboard_base.html' %}
+{% load static %}
+
+{% block content %}
+	
+      <div class="error-page">
+
+        <div class="error-content">
+         	<div class="container" style="text-align:center;">
+         	
+        		<h2 class="headline text-success"> <i class="fa fa-check"></i></h2>
+        		
+			  <h3 class="margin-top-0">DEPOSIT REQUEST SUCCESSFULL!</h3>
+
+			  <h5>
+				Hi {{request.user.first_name}} <br>Your request to fund your account has been submited successfully. 
+        <br>We are currently reviewing your request,
+        <br>when confirmed your wallet will be funded instantly.
+			  </h5>
+			  
+          </div>
+        </div>
+        <!-- /.error-content -->
+        
+ 
+      </div>
+      <!-- /.error-page -->
+     
+  
+
+{% endblock %}

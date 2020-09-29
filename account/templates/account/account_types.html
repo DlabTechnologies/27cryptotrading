@@ -1,0 +1,110 @@
+{% extends 'account/dashboard_base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+    <section class="content-header">
+      <h1>
+        Account Level Prices
+      </h1>
+      
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+		
+		<div class="row">
+
+      {% for level in level %}
+
+              <div class="col-lg-4">
+                <div class="box text-center p-50 box-inverse bg-info bg-hexagons-dark pull-up">
+                  <div class="box-body">
+                    <h5 class="text-uppercase">Silver</h5>
+                    <br>
+                    
+                    <p><strong>Minimum amount : </strong> ${{level.silver_min}} </p>
+                    <p><strong>Maximum amount : </strong> ${{level.silver_max}}</p>
+                    <p><strong>Duration : </strong> {{level.silver_duration}}</p>
+                    <p><strong>Profit : </strong> {{level.silver_profit}}</p>
+
+                    <br><br>
+                    {% if request.user.silver %}
+                    <a class="btn btn-bold btn-block  btn-light" href="">Current plan</a>
+                    {% else %}
+                    <a class="btn btn-bold btn-block  btn-light" href="{% url 'deposit' %}">Upgrade</a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="box text-center p-50 box-inverse bg-warning bg-hexagons-dark pull-up">
+                  <div class="box-body">
+                    <h5 class="text-uppercase">Gold</h5>
+                    <br>
+                    
+
+                    <p><strong>Minimum amount : </strong> ${{level.gold_min}}</p>
+                    <p><strong>Maximum amount : </strong> ${{level.gold_max}}</p>
+                    <p><strong>Duration : </strong> {{level.gold_duration}}</p>
+                    <p><strong>Profit : </strong> {{level.gold_profit}}</p>
+
+                    <br><br>
+                    {% if request.user.gold %}
+                    <a class="btn btn-bold btn-block  btn-light" href="">Current plan</a>
+                    {% else %}
+                    <a class="btn btn-bold btn-block  btn-light" href="{% url 'deposit' %}">Upgrade</a>
+                    {% endif %}
+                  
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="box text-center p-50 box-inverse bg-danger bg-hexagons-dark pull-up">
+                  <div class="box-body">
+                    <h5 class="text-uppercase">Platinum</h5>
+                    <br>
+                    
+
+                   <p><strong>Minimum amount : </strong> ${{level.platinum_min}}</p>
+                    <p><strong>Maximum amount : </strong> ${{level.platinum_max}}</p>
+                    <p><strong>Duration : </strong> {{level.platinum_duration}}</p>
+                    <p><strong>Profit : </strong> {{level.platinum_profit}}</p>
+
+                    <br><br>
+
+                    {% if request.user.platinum %}
+                    <a class="btn btn-bold btn-block  btn-light" href="">Current plan</a>
+                    {% else %}
+                    <a class="btn btn-bold btn-block  btn-light" href="{% url 'deposit' %}">Upgrade</a>
+                    {% endif %}
+                    </div>
+                </div>
+              </div>
+
+
+            </div>
+			
+		{% endfor %}
+			
+		
+		
+		
+		
+			
+		
+		
+		
+				
+		
+			
+
+
+    </section>
+    <!-- /.content -->
+  
+  {% endblock %}

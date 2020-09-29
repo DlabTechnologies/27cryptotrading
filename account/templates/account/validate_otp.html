@@ -1,0 +1,67 @@
+{% extends 'account/dashboard_base.html' %}
+{% load static %}
+
+
+{% block content %}
+	
+      <div class="error-page">
+
+        <div class="error-content">
+         	<div class="container" style="text-align:center;">
+         	
+        		<h2 class="headline "> <i class="fa fa-mobile text-dark"></i></h2>
+        		
+			  <h3 class="margin-top-0">OTP VERIFICATION</h3>
+
+			  <h5>
+				Enter the one time password(OTP) sent to your registered email address to complete your account registration.
+			  </h5>
+        
+        <div class="row justify-content-center">
+        <form action="" method="POST" class="form-element">
+          {% csrf_token %}
+          <div class="form-group has-feedback ">
+            <input  type="int" maxlength="6" pattern="\d{6}" class="form-control" name="otp_code" autofocus="autofocus" placeholder="Enter OTP code" required="required" onkeypress="validate(event)">
+            
+      
+          </div>
+           <script type="text/javascript">
+          function validate(ev) {
+    if (!ev) {
+        ev = window.event;
+    }
+
+    if (!ev.ctrlKey && ev.key.length === 1 && (isNaN(+ev.key) || ev.key === " ")) {
+        return ev.preventDefault();
+    }
+}
+</script>
+    
+         
+          <div class="row">
+            
+            <!-- /.col -->
+            <div class=" text-center ml-4">
+              <a href="{% url 'send_otp' %}" type="submit" class="btn btn-danger margin-top-10 mr-3">Resend code</a>
+              <a href="{% url 'change_email_address' %}" type="submit" class="btn btn-primary margin-top-10 mr-3">Change email address</a>
+              <button type="submit" class="btn btn-success margin-top-10 ml-3">Verify</button>
+            </div>
+            <!-- /.col -->
+            
+            <!-- /.col -->
+          </div>
+        </form>
+    
+</div>
+
+          </div>
+        </div>
+        <!-- /.error-content -->
+        
+ 
+      </div>
+      <!-- /.error-page -->
+     
+  
+
+{% endblock %}
