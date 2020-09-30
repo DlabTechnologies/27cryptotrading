@@ -120,7 +120,7 @@ def SendEmail(request):
             
                         
                         recipient_list = [to,]    
-                        send_mail( subject, message, 'Cryptotrading27 noreply@cryptotrading27.com', recipient_list )    
+                        send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list )    
                         messages.success(request, 'Message successfully sent to {}'.format(to))
                         return redirect('send_email')
             

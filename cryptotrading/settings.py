@@ -34,7 +34,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['cryptotrading27.herokuapp.com','cryptotrading27.com','www.cryptotrading27.com']
+ALLOWED_HOSTS = ['cryptotrading27.herokuapp.com','27cryptotrading.com','www.27cryptotrading.com']
 
 
 
@@ -165,7 +165,8 @@ USE_TZ = True
 
 #ssl redirect
 
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -189,7 +190,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Cryptotrading27 noreply@cryptotrading27.com'
+DEFAULT_FROM_EMAIL = '27Cryptotrading noreply@27cryptotrading.com'
 
 #amazon s3 bucket
 #set S3 as the place to store your files.
@@ -223,5 +224,3 @@ AWS_S3_FILE_OVERWRITE = False
 #AWS_S3_REGION_NAME = "us-east-2"
 
 #AWS_S3_SIGNATURE_VERSION = "s3v4"
-
-#AWS_DEFAULT_ACL = None
