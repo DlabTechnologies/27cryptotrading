@@ -34,13 +34,13 @@ def Signup_view(request):
                 form.save()
             
                 to = form.cleaned_data.get('email')
-                subject = '27Cryptotrading Account'
+                subject = 'Cryptotrading27 Account'
                 first_name = form.cleaned_data.get('first_name')
-                message = 'Hi {} a verification code will be sent to your registered email address shortly use the code to activate your 27cryptotrading account'.format(first_name)
+                message = 'Hi {} a verification code will be sent to your registered email address shortly use the code to activate your Cryptotrading27 account'.format(first_name)
             
                
                 recipient_list = [to,]    
-                send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list ) 
+                send_mail( subject, message, 'Cryptotrading27 noreply@cryptotrading27.com', recipient_list ) 
 
                 email  = form.cleaned_data.get('email')
                 password = form.cleaned_data.get('password2')
@@ -286,13 +286,13 @@ def send_otp(request):
 
     
     to = user_email
-    subject = '27Cryptotrading Account Activation Code(OTP)'
+    subject = 'Cryptotrading27 Account Activation Code(OTP)'
     first_name = user_first_name
     message = 'Hi {0}  {1} is your activation code'.format(first_name, main_otp )
             
     
     recipient_list = [to,]    
-    send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list ) 
+    send_mail( subject, message, 'Cryptotrading27 noreply@cryptotrading27.com', recipient_list ) 
     return render(request, 'account/send_otp.html')
 
 
@@ -313,7 +313,7 @@ def send_upgrade_email(request):
        
     
     recipient_list = [to,]    
-    send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list ) 
+    send_mail( subject, message, 'Cryptotrading27 noreply@cryptotrading27.com', recipient_list ) 
  
     
     

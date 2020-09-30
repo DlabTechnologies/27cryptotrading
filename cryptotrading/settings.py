@@ -165,8 +165,7 @@ USE_TZ = True
 
 #ssl redirect
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -190,7 +189,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = '27Cryptotrading noreply@27cryptotrading.com'
+DEFAULT_FROM_EMAIL = 'Cryptotrading27 noreply@cryptotrading27.com'
 
 #amazon s3 bucket
 #set S3 as the place to store your files.
