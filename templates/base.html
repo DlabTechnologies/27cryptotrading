@@ -505,6 +505,21 @@ $(document).ready(function() {
 	  }
 	});
   });
+
+  $(document).ready(function() {
+	$("#toggle4").click(function() {
+	  var elem = $("#toggle4").text();
+	  if (elem == "Read More") {
+		//Stuff to do when btn is in the read more state
+		$("#toggle4").text("Read Less");
+		$("#text4").slideDown();
+	  } else {
+		//Stuff to do when btn is in the read less state
+		$("#toggle4").text("Read More");
+		$("#text4").slideUp();
+	  }
+	});
+  });
 	  </script>
 
 </body>
