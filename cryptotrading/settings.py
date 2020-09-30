@@ -34,7 +34,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['cryptotrading27.herokuapp.com','27cryptotrading.com','www.27cryptotrading.com']
+ALLOWED_HOSTS = ['cryptotrading27.herokuapp.com','cryptotrading27.com','www.cryptotrading27.com']
 
 
 
