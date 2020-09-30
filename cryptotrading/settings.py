@@ -34,7 +34,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['27cryptotrading.herokuapp.com','27cryptotrading.com','www.27cryptotrading.com']
+ALLOWED_HOSTS = ['cryptotrading27.herokuapp.com','27cryptotrading.com','www.27cryptotrading.com']
 
 
 
@@ -221,6 +221,6 @@ AWS_S3_FILE_OVERWRITE = False
 
 
 
-AWS_S3_REGION_NAME = "us-east-2"
+#AWS_S3_REGION_NAME = "us-east-2"
 
-AWS_S3_SIGNATURE_VERSION = "s3v4"
+#AWS_S3_SIGNATURE_VERSION = "s3v4"
