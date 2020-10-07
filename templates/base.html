@@ -520,6 +520,21 @@ $(document).ready(function() {
 	  }
 	});
   });
+
+  $(document).ready(function() {
+	$("#toggle5").click(function() {
+	  var elem = $("#toggle4").text();
+	  if (elem == "Read More") {
+		//Stuff to do when btn is in the read more state
+		$("#toggle5").text("Read Less");
+		$("#text4").slideDown();
+	  } else {
+		//Stuff to do when btn is in the read less state
+		$("#toggle5").text("Read More");
+		$("#text5").slideUp();
+	  }
+	});
+  });
 	  </script>
 
 </body>
