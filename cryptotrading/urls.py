@@ -20,7 +20,7 @@ urlpatterns = [
     path('about/', views.about_page, name='about_page'),
     path('cal', views.cal_page, name='cal_page'),
     path('contact', views.contact_page, name='contact_page'),
-    path('send_email', views.SendEmail, name='send_email'),
+   # path('send_email', views.SendEmail, name='send_email'),
 
     re_path(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 

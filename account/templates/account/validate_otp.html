@@ -18,27 +18,77 @@
 			  </h5>
         
         <div class="row justify-content-center">
-        <form action="" method="POST" class="form-element">
-          {% csrf_token %}
-          <div class="form-group has-feedback ">
-            <input  type="int" maxlength="6" pattern="\d{6}" class="form-control" name="otp_code" autofocus="autofocus" placeholder="Enter OTP code" required="required" onkeypress="validate(event)">
-            
-      
-          </div>
-           <script type="text/javascript">
-          function validate(ev) {
-    if (!ev) {
-        ev = window.event;
-    }
-
-    if (!ev.ctrlKey && ev.key.length === 1 && (isNaN(+ev.key) || ev.key === " ")) {
-        return ev.preventDefault();
-    }
-}
-</script>
-    
          
-          <div class="row">
+          <style>
+
+            .digit-group {
+              input  {
+                width: 30px;
+                height: 50px;
+                
+                border: none;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 200;
+                color: white;
+                margin: 0 2px;
+              }
+            
+              .splitter {
+                padding: 0 5px;
+                color: black;
+                font-size: 24px;
+              }
+            }
+            
+            .small{
+              width: 30px;
+                height: 50px;
+                
+                border: 1px solid black;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 200;
+                color: black;
+                margin: 0 2px;
+                
+            }
+            .prompt {
+              margin-bottom: 20px;
+              font-size: 20px;
+              color: white;
+            }
+          </style>
+         <br><br><br><br><br>
+          <div class="row" style="display: block;">
+        <form action="" method="POST" class="digit-group form-element mr-4" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+          {% csrf_token %}
+          
+          <div class="form-group has-feedback ">
+          <input type="text" class="small" id="digit-1" name="digit-1" data-next="digit-2" />
+          <input type="text" class="small" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+          <input type="text"  class="small"id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+          <span class="splitter">&ndash;</span>
+          <input type="text" class="small" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+          <input type="text" class="small" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
+          <input type="text"  class="small" id="digit-6" name="digit-6" data-previous="digit-5" />
+
+          </div>
+        
+      
+
+      
+          
+      
+         
+        
+    
+         <br>
+          <div class="row ml-4" style="display: block;">
             
             <!-- /.col -->
             <div class=" text-center ml-4">
@@ -47,10 +97,12 @@
               <button type="submit" class="btn btn-success margin-top-10 ml-3">Verify</button>
             </div>
             <!-- /.col -->
-            
+         
+
             <!-- /.col -->
           </div>
         </form>
+        </div>
     
 </div>
 

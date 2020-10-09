@@ -138,26 +138,27 @@ def user_dashboard(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
     if request.user.is_admin:
-        return redirect('send_email')
+        return redirect('home_page')
     
     
-    wallet_bal = request.user.wallet_balance
-    trade_profit = request.user.trade_profit
-
-    total_bal = float(wallet_bal) + float(trade_profit)
+    
+        
+    
+   
     
 
 
-    context = {
-        'total_bal': total_bal
-    }
+   
 
-    return render(request, 'account/dashboard.html', context)
+    return render(request, 'account/dashboard.html')
 
 @login_required(login_url='login')
 def withdraw_not_eligable(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
+    
+    if request.user.is_admin:
+        return redirect('home_page')
 
     return render(request, 'account/withdraw_not_eligable.html')
 
@@ -167,6 +168,9 @@ def withdraw_complete_error(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
 
+    if request.user.is_admin:
+        return redirect('home_page')
+
     return render(request, 'account/withdraw_complete_error.html')
 
 
@@ -175,6 +179,9 @@ def withdraw(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
 
+
+    if request.user.is_admin:
+        return redirect('home_page')
     
     
 
@@ -199,6 +206,9 @@ def withdraw(request):
 def deposit(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
         
     address = ManagerWalletAddress.objects.all()
     
@@ -234,6 +244,10 @@ def deposit(request):
 def deposit_complete(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
+    
+
+    if request.user.is_admin:
+        return redirect('home_page')
 
     return render(request, 'account/deposit_complete.html')
 
@@ -243,6 +257,9 @@ def deposit_complete(request):
 def transaction_history(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
 
     email = request.user.email
     user_deposit =  UserDepositRequest.objects.filter(email=email).order_by('-id')
@@ -264,6 +281,9 @@ def account_types(request):
         return redirect('send_otp')
 
 
+    if request.user.is_admin:
+        return redirect('home_page')
+
     level = Account_level.objects.all()
 
     context={
@@ -274,6 +294,16 @@ def account_types(request):
 
 @login_required(login_url='login')
 def send_otp(request):
+    if request.user.is_admin:
+        user = request.user
+        if user.email_not_verified == True:
+            user.email_not_verified = False
+            user.save()
+            
+    if request.user.is_admin:
+        return redirect('home_page')
+
+
     otp_generated = random.randint(100000,999999)
     otp_clean = str(otp_generated)
 
@@ -353,7 +383,18 @@ def validate_phone_otp(request):
     
     if request.POST:
         
-        user_otp = request.POST['otp_code']
+      
+
+        otp_o1 = request.POST['digit-1']
+        otp_o2 = request.POST['digit-2']
+        otp_o3 = request.POST['digit-3']
+        otp_o4 = request.POST['digit-4']
+        otp_o5 = request.POST['digit-5']
+        otp_o6 = request.POST['digit-6']
+
+        otp_all = otp_o1 + otp_o2 + otp_o3 + otp_o4 + otp_o5 + otp_o6
+        user_otp = otp_all
+        
         if user_otp == main_otp:
             
             user = request.user

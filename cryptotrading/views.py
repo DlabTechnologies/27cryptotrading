@@ -11,8 +11,14 @@ from django.contrib.auth.decorators import login_required
 
 
 def home_page(request):
+
         if request.user.is_authenticated:
-                return redirect('user_dashboard')
+                if not request.user.is_admin:
+                        return redirect('user_dashboard')
+        
+
+                
+    
 
         info = ManagerContactInfo.objects.all()
 
@@ -47,9 +53,11 @@ def home_page(request):
 
 
 def about_page(request):
-        if request.user.is_authenticated:
-                return redirect('user_dashboard')
 
+        if request.user.is_authenticated:
+                if not request.user.is_admin:
+                        return redirect('user_dashboard')
+        
         info = ManagerContactInfo.objects.all()
 
         context={
@@ -59,8 +67,10 @@ def about_page(request):
 
 
 def cal_page(request):
+        
         if request.user.is_authenticated:
-                return redirect('user_dashboard')
+                if not request.user.is_admin:
+                        return redirect('user_dashboard')
 
         info = ManagerContactInfo.objects.all()
 
@@ -74,10 +84,12 @@ def cal_page(request):
 
 
 def contact_page(request):
-        if request.user.is_authenticated:
-                return redirect('user_dashboard')
         
+        if request.user.is_authenticated:
+                if not request.user.is_admin:
+                        return redirect('user_dashboard')
         info = ManagerContactInfo.objects.all()
+
 
         form = UserContactForm()
         if request.method == 'POST':
@@ -107,26 +119,26 @@ def contact_page(request):
         }
         return render(request, 'contact.html', context)
 
-@login_required(login_url='login')
-def SendEmail(request):
+#@login_required(login_url='login')
+#def SendEmail(request):
         
-        form = SendEmailForm()
-        if request.method == 'POST':
-                form = SendEmailForm(request.POST)
-                if form.is_valid():
-                        to = form.cleaned_data.get('to')
-                        subject = form.cleaned_data.get('subject')
-                        message = form.cleaned_data.get('message')
+       # form = SendEmailForm()
+       # if request.method == 'POST':
+         #       form = SendEmailForm(request.POST)
+           #     if form.is_valid():
+                   #     to = form.cleaned_data.get('to')
+            #            subject = form.cleaned_data.get('subject')
+                  #      message = form.cleaned_data.get('message')
             
                         
-                        recipient_list = [to,]    
-                        send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list )    
-                        messages.success(request, 'Message successfully sent to {}'.format(to))
-                        return redirect('send_email')
+                    #    recipient_list = [to,]    
+                     #   send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list )    
+                    #    messages.success(request, 'Message successfully sent to {}'.format(to))
+                     #   return redirect('send_email')
             
-        else:
-                form = SendEmailForm()
-        context ={
-                'form': form
-        }
-        return render (request, 'send_user_email.html', context)
+      #  else:
+       #         form = SendEmailForm()
+       # context ={
+        #        'form': form
+       # }
+       # return render (request, 'send_user_email.html', context)

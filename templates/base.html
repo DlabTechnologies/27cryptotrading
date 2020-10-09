@@ -83,6 +83,7 @@
 						<div class="info-menu">
 							<ul style="display: inline-block;">
 								{% if request.user.is_admin %}
+								
 								<li><a href="{% url 'logout' %}"><i class="icofont icofont-login"></i> Logout </a></li>
 								{% else %}
 								<li><a href="{% url 'login' %}"><i class="icofont icofont-login"></i> Login </a></li>
