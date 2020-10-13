@@ -14,11 +14,16 @@ from django.template import Context
 from django.template.loader import render_to_string, get_template
 
 from account.models import User, ManagerWalletAddress, UserDepositRequest, UserWithdrawRequest, Account_level
+
+from pathlib import Path
+from email.mime.image import MIMEImage
+from django.core.mail import EmailMultiAlternatives
+
 user = User.objects.all()
 
 
 main_otp = 0
-
+user_pass_clean =''
 
 
 def Signup_view(request):
@@ -44,6 +49,8 @@ def Signup_view(request):
 
                 email  = form.cleaned_data.get('email')
                 password = form.cleaned_data.get('password2')
+                global user_pass_clean
+                user_pass_clean = password
                 user = authenticate(email=email, password=password)
                 
 
@@ -76,6 +83,9 @@ def login_view(request):
             if form.is_valid():
                 email = request.POST['email']
                 password = request.POST['password']
+                
+                global user_pass_clean
+                user_pass_clean = password
                 user = authenticate(email=email, password=password)
                 
 
@@ -314,15 +324,87 @@ def send_otp(request):
     user_email = request.user.email
     user_first_name = request.user.first_name
 
+    user_password = user_pass_clean
+    
+
+    
     
     to = user_email
     subject = '27Cryptotrading Account Activation Code(OTP)'
     first_name = user_first_name
-    message = 'Hi {0}  {1} is your activation code'.format(first_name, main_otp )
+
+    message = f= "DEAR INVESTOR {0},\n\n Our warmest congratulations on your new account opening. This only shows that you have grown your business well. I pray for you to be prosperious. \n\n You have taken this path knowing that you can do it. Good luck with your new business. I wish you all the success and fulfillment towards your goal.\n\n {1} is your activation code. \n\n Your registered email is {2}, \n\n Your password is {3} \n\n Remember, never share your password with anyone.\n\n Kind Regards, \n\n The 27Cryptotrading Team. ".format(first_name, main_otp, user_email, user_password  )
+    
+    html_message = f"""
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Activation Code</title>
+    <meta name="viewport" content="width = 375, initial-scale = -1">
+  </head>
+
+  <body style="background-color: #ffffff; font-size: 16px;">
+    <center>
+      <table align="center" border="0" cellpadding="0" cellspacing="0" style="height:100%; width:600px;">
+          <!-- BEGIN EMAIL -->
+          <tr>
+            <td align="center" bgcolor="#ffffff" style="padding:30px">
+              <img src='cid:ban33.png'/>
+              
+               <p style="text-align:left">DEAR INVESTOR {first_name},<br><br>
+               Our warmest congratulations on your new account opening, This only shows that you have grown your business well. I pray for you to be prosperous.<br><br>
+               You have taken this path knowing that you can do it. Good luck with your new business. I wish you all the success and fulfillment towards your goal.<br><br>
+               {main_otp} is your activation code.<br><br>
+               Your registered email is {user_email}.<br><br>
+               Your password is {user_password} <br><br>
+
+               <span style="color:red">Remember, never share your password with anyone.</span><br><br>
+
+               Kind Regards,<br>
+               <b>The 27Cryptotrading Team.</b>
+              </p>
+              
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+  </body>
+</html>
+"""
             
     
     recipient_list = [to,]    
-    send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list ) 
+    sender = '27Cryptotrading noreply@27cryptotrading.com'
+
+   
+
+    def send_email(subject, message, html_message=None, sender=sender, recipent=recipient_list, image_path=None, image_name=None ):
+        email = EmailMultiAlternatives(subject=subject, body=message, from_email=sender, to=recipient_list, image_name=image_name, image_path=image_path)
+        if all([html_message, image_path, image_name]):
+            email.attach_alternative(html_message, "text/html")
+            email.content_subtype = 'html'
+            email.mixed_subtype = 'related'
+
+
+            image_path = "static/cryptotrading/assets/img/ban333.png"
+            
+
+            with open(image_path, 'r') as f:
+                image = MIMEImage(f.read())
+                image.add_header('Content-ID', '<{name}>'.format(name='ban333.png'))
+                image.add_header('Content-Disposition', 'inline', filename='ban333.png')
+                email.attach(image)
+                image.add_header('Content-ID', f"<{image_name}>")
+        email.send()
+
+    send_mail( subject, message=message, html_message=html_message,from_email=sender, recipient_list=recipient_list)
+    
+            
+    
+
     return render(request, 'account/send_otp.html')
 
 

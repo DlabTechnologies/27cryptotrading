@@ -38,7 +38,10 @@
 	<!-- Login and Signup form  CSS -->
 	<link rel="stylesheet" href="{% static 'cryptotrading/assets/css/form.css' %}">
 
-
+	<!-- Fake notification CSS -->
+	<link rel="stylesheet" href="{% static 'cryptotrading/assets/css/fake-notification-min.css' %}">
+	<link rel="stylesheet" href="{% static 'cryptotrading/assets/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--google search engine code-->
 	<meta name="google-site-verification" content="ItrC1E-CYJl2URP-NhqYtWzrpny1eCsey4TsgfbocQU" />
 
@@ -67,6 +70,28 @@
 		</div>
 	<!--end messages-->
 
+
+
+	<!-- ========== Paste this one after the <body tag )  ========== -->
+		<div id="notification-1" class="notification">			
+			<div class="notification-block">
+				<div class="notification-img">
+					<!-- Your image or icon -->
+					<i class="fa fa-btc" style="font-size:48px;color:white;"></i>
+					<!-- / Your image or icon -->
+				</div>
+				<div class="notification-text-block">
+					<div class="notification-title">
+						<!-- Notification Title -->
+						Earning
+						<!-- / Notification Title -->
+					</div>
+					<div class="notification-text"></div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- ========== END COPYING HERE ========== -->
 	
 	<!-- START HEADER SECTION -->
 	<header class="main-header header-1 mb-5 mmm " >
@@ -433,6 +458,51 @@
 	<!-- chart js -->
     <script src="{% static 'cryptotrading/assets/js/canvasjs.min.js' %}"></script>
 	<script src="{% static 'cryptotrading/assets/js/canvasjs.activeone.js' %}"></script>
+
+	
+
+	<script src="{% static 'cryptotrading/assets/js/fake-notification.min.js' %}"></script>
+
+
+<!-- Fake Notifications invoke -->
+<script>
+	$(window).load(function() {
+		$('#notification-1').Notification({
+			// Notification varibles
+			Varible1: ["Dirk", "Johnny", "Watkin ", "Alejandro",  "Vina",  "Tony",   "Ahmed","Jackson",  "Noah", "Aiden",  "Darren", "Isabella", "Aria", "John", "Greyson", "Peter", "Mohammed", "William",
+			"Lucas", "Amelia", "Mason", "Mathew", "Richard", "Chris", "Mia", "Oliver"],
+			Varible2: ["USA","UAE","ITALY", "FLORIDA",  "MEXICO",  "INDIA",  "CHINA",  "CAMBODIA",  "UNITED KINGDOM",  "GERMANY", "AUSTRALIA",  "BANGLADESH", "SWEDEN", "PAKISTAN", "MALDIVES", "SEYCHELLES", 
+			"BOLIVIA",
+			 "SOUTH AFRICA", "ZAMBIA", "ZIMBABWE", "LEBANESE", "SAUDI ARABIA", "CHILE", "PEUTO RICO"],
+			
+			Amount: [100, 2500,555,666,444,333,333],					
+			Content: '[Varible1] from [Varible2] has just Earned<b>$[Amount]</b>.',
+			// Timer
+			Show: ['stable', 5, 10],
+			Close: 5,
+			Time: [0, 23],
+			// Notification style 
+			LocationTop: [true, '40%'],
+			LocationBottom:[false, '10%'],
+			LocationRight: [false, '10%'],						
+			LocationLeft:[true, '10px'],
+			Background: '#000000',
+			BorderRadius: 5,
+			BorderWidth: 5,
+			BorderColor: '#000000',
+			TextColor: 'white',
+			IconColor: '#ffffff',
+			// Notification Animated   
+			AnimationEffectOpen: 'slideInUp',
+			AnimationEffectClose: 'slideOutDown',
+			// Number of notifications
+			Number: 40,
+			// Notification link
+			Link: [false, 'https://27cryptotrading.com/', '_blank']
+			
+		});			
+	});				
+</script>
 
 	<script type="text/javascript">
 		$(function(){
