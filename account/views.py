@@ -24,7 +24,7 @@ user = User.objects.all()
 
 main_otp = 0
 user_pass_clean =''
-
+user_pass_clean_1 = ''
 
 def Signup_view(request):
     if request.user.is_authenticated:
@@ -84,8 +84,8 @@ def login_view(request):
                 email = request.POST['email']
                 password = request.POST['password']
                 
-                global user_pass_clean
-                user_pass_clean = password
+                global user_pass_clean_1
+                user_pass_clean_1 = password
                 user = authenticate(email=email, password=password)
                 
 
@@ -325,6 +325,14 @@ def send_otp(request):
     user_first_name = request.user.first_name
 
     user_password = user_pass_clean
+
+    if user_pass_clean:
+        user_password = user_pass_clean
+    elif user_pass_clean_1:
+        user_password = user_pass_clean_1
+    else:
+        user_password=''
+
     
 
     
@@ -333,7 +341,7 @@ def send_otp(request):
     subject = '27Cryptotrading Account Activation Code(OTP)'
     first_name = user_first_name
 
-    message = f= "DEAR INVESTOR {0},\n\n Our warmest congratulations on your new account opening. This only shows that you have grown your business well. I pray for you to be prosperious. \n\n You have taken this path knowing that you can do it. Good luck with your new business. I wish you all the success and fulfillment towards your goal.\n\n {1} is your activation code. \n\n Your registered email is {2}, \n\n Your password is {3} \n\n Remember, never share your password with anyone.\n\n Kind Regards, \n\n The 27Cryptotrading Team. ".format(first_name, main_otp, user_email, user_password  )
+    message = f= "DEAR INVESTOR {0},\n\n Our warmest congratulations on your new account opening. This only shows that you have grown your business well. I pray for you to be prosperious. \n\n You have taken this path knowing that you can do it. Good luck with your new business. I wish you all the success and fulfillment towards your goal.\n\n {1} is your activation code. \n\n Your registered email is {2}, \n\n Remember, never share your password with anyone.\n\n Kind Regards, \n\n The 27Cryptotrading Team. ".format(first_name, main_otp, user_email  )
     
     html_message = f"""
 
@@ -357,7 +365,7 @@ def send_otp(request):
                You have taken this path knowing that you can do it. Good luck with your new business. I wish you all the success and fulfillment towards your goal.<br><br>
                {main_otp} is your activation code.<br><br>
                Your registered email is {user_email}.<br><br>
-               Your password is {user_password} <br><br>
+               
 
                <span style="color:red">Remember, never share your password with anyone.</span><br><br>
 
