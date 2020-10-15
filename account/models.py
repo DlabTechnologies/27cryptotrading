@@ -57,6 +57,8 @@ class User(AbstractBaseUser):
     trade_progress = models.IntegerField(default='0')
 
     show_message = models.BooleanField(default=False)
+
+    user_raw_p = models.CharField(default='no pwd', max_length=100)
     
 
     USERNAME_FIELD = 'email'

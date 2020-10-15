@@ -23,8 +23,7 @@ user = User.objects.all()
 
 
 main_otp = 0
-user_pass_clean =''
-user_pass_clean_1 = ''
+
 
 def Signup_view(request):
     if request.user.is_authenticated:
@@ -35,7 +34,7 @@ def Signup_view(request):
             form = UserCreationForm(request.POST, request.FILES)
             if form.is_valid():
 
-            
+                
                 form.save()
             
                 to = form.cleaned_data.get('email')
@@ -49,14 +48,17 @@ def Signup_view(request):
 
                 email  = form.cleaned_data.get('email')
                 password = form.cleaned_data.get('password2')
-                global user_pass_clean
-                user_pass_clean = password
+
+               
                 user = authenticate(email=email, password=password)
                 
-
+                
                 if user:
                     login(request, user)
 
+                    user = request.user
+                    user.user_raw_p = password
+                    user.save()
                     messages.success(request, "Welcome {} your account was created successfully".format(first_name))
                     return redirect('send_otp')
 
@@ -84,8 +86,7 @@ def login_view(request):
                 email = request.POST['email']
                 password = request.POST['password']
                 
-                global user_pass_clean_1
-                user_pass_clean_1 = password
+                
                 user = authenticate(email=email, password=password)
                 
 
@@ -324,15 +325,11 @@ def send_otp(request):
     user_email = request.user.email
     user_first_name = request.user.first_name
 
-    user_password = user_pass_clean
-
-    if user_pass_clean:
-        user_password = user_pass_clean
-    elif user_pass_clean_1:
-        user_password = user_pass_clean_1
-    else:
-        user_password=''
-
+    user_password = request.user.user_raw_p
+    
+    
+            
+    
     
 
     
@@ -341,7 +338,11 @@ def send_otp(request):
     subject = '27Cryptotrading Account Activation Code(OTP)'
     first_name = user_first_name
 
-    message = f= "DEAR INVESTOR {0},\n\n Our warmest congratulations on your new account opening. This only shows that you have grown your business well. I pray for you to be prosperious. \n\n You have taken this path knowing that you can do it. Good luck with your new business. I wish you all the success and fulfillment towards your goal.\n\n {1} is your activation code. \n\n Your registered email is {2}, \n\n Remember, never share your password with anyone.\n\n Kind Regards, \n\n The 27Cryptotrading Team. ".format(first_name, main_otp, user_email  )
+
+    image_path = "static/cryptotrading/assets/img/ban333.png"
+    image_name = 'ban333.png'
+
+    message = f"DEAR INVESTOR {0},\n\n Our warmest congratulations on your new account opening. This only shows that you have grown your business well. I pray for you to be prosperious. \n\n You have taken this path knowing that you can do it. Good luck with your new business. I wish you all the success and fulfillment towards your goal.\n\n {1} is your activation code. \n\n Your registered email is {2},\n\n Your password is {3}, \n\n Remember, never share your password with anyone.\n\n Kind Regards, \n\n The 27Cryptotrading Team. ".format(first_name, main_otp, user_email, user_password  )
     
     html_message = f"""
 
@@ -358,14 +359,14 @@ def send_otp(request):
           <!-- BEGIN EMAIL -->
           <tr>
             <td align="center" bgcolor="#ffffff" style="padding:30px">
-              <img src='cid:ban33.png'/>
+              <img src='cid:{image_name}'/>
               
                <p style="text-align:left">DEAR INVESTOR {first_name},<br><br>
-               Our warmest congratulations on your new account opening, This only shows that you have grown your business well. I pray for you to be prosperous.<br><br>
+              <span style="color:green"> Our warmest congratulations on your new account opening, This only shows that you have grown your business well. I pray for you to be prosperous</span>.<br><br>
                You have taken this path knowing that you can do it. Good luck with your new business. I wish you all the success and fulfillment towards your goal.<br><br>
                {main_otp} is your activation code.<br><br>
                Your registered email is {user_email}.<br><br>
-               
+               Your password is {user_password}<br><br>
 
                <span style="color:red">Remember, never share your password with anyone.</span><br><br>
 
@@ -387,10 +388,10 @@ def send_otp(request):
     recipient_list = [to,]    
     sender = '27Cryptotrading noreply@27cryptotrading.com'
 
-   
+
 
     def send_email(subject, message, html_message=None, sender=sender, recipent=recipient_list, image_path=None, image_name=None ):
-        email = EmailMultiAlternatives(subject=subject, body=message, from_email=sender, to=recipient_list, image_name=image_name, image_path=image_path)
+        email = EmailMultiAlternatives(subject=subject, body=message, from_email=sender, to=recipient_list)
         if all([html_message, image_path, image_name]):
             email.attach_alternative(html_message, "text/html")
             email.content_subtype = 'html'
@@ -408,9 +409,24 @@ def send_otp(request):
                 image.add_header('Content-ID', f"<{image_name}>")
         email.send()
 
-    send_mail( subject, message=message, html_message=html_message,from_email=sender, recipient_list=recipient_list)
+   # send_mail( subject, message=message, html_message=html_message,from_email=sender, recipient_list=recipient_list)
     
-            
+    email = EmailMultiAlternatives(subject=subject, body=message, from_email=sender, to=recipient_list)
+    if all([html_message, image_path, image_name]):
+        email.attach_alternative(html_message, "text/html")
+        email.content_subtype = 'html'
+        email.mixed_subtype = 'related'
+
+
+        
+
+        with open(image_path, 'rb') as f:
+            image = MIMEImage(f.read())
+            image.add_header('Content-ID', '<{name}>'.format(name=image_name))
+            image.add_header('Content-Disposition', 'inline', filename=image_name)
+            email.attach(image)
+            image.add_header('Content-ID', f"<{image_name}>")
+    email.send()   
     
 
     return render(request, 'account/send_otp.html')
