@@ -128,7 +128,7 @@ def personal_info(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Hi {} Your Account has been  successfully updated!".format(request.user.first_name))
-            return redirect('send_otp')
+            
 
     else:
         form = UserProfileEdithForm(initial = {
