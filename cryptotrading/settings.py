@@ -160,7 +160,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 #ssl redirect
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
