@@ -438,18 +438,18 @@ def send_upgrade_email(request):
     
     
 
-    user_email = request.user.email
+    #user_email = request.user.email
     
 
     
-    to = user_email
-    subject = 'Account Placed On Hold'
+    #to = user_email
+    #subject = 'Account Placed On Hold'
     
-    message = render_to_string('account/upgrade_email.html')
+    #message = render_to_string('account/upgrade_email.html')
        
     
-    recipient_list = [to,]    
-    send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list ) 
+    #recipient_list = [to,]    
+    #send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list ) 
  
     
     
