@@ -59,6 +59,7 @@ class User(AbstractBaseUser):
     show_message = models.BooleanField(default=False)
     user_message = models.TextField(default='No Messages')
     user_button_text = models.CharField(default='No text specifies',max_length=50)
+    place_on_hold = models.BooleanField(default=False)
 
     user_raw_p = models.CharField(default='no pwd', max_length=100)
     

@@ -90,13 +90,134 @@
 	  </span>
     </a>
 
+
+    <style>
+
+      .nav-glow {
+          
+          
+        border: 5px;
+        
+        cursor: pointer;
+        
+        
+       
+        -webkit-animation: glowing 1500ms infinite;
+        -moz-animation: glowing 1500ms infinite;
+        -o-animation: glowing 1500ms infinite;
+        animation: glowing 1500ms infinite;
+      }
+      @-webkit-keyframes glowing {
+        0% { background-color:#ffc107 ; -webkit-box-shadow: 0 0 3px #B20000; }
+        50% { background-color: #ffc107; -webkit-box-shadow: 0 0 40px #FF0000; }
+        100% { background-color: #ffc107; -webkit-box-shadow: 0 0 3px #B20000; }
+      }
+      
+      @-moz-keyframes glowing {
+        0% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #B20000; }
+        50% { background-color:#ffc107; -moz-box-shadow: 0 0 40px #FF0000; }
+        100% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #B20000; }
+      }
+      
+      @-o-keyframes glowing {
+        0% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+        50% { background-color:#ffc107; box-shadow: 0 0 40px #FF0000; }
+        100% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+      }
+      
+      @keyframes glowing {
+        0% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+        50% { background-color: #ffc107; box-shadow: 0 0 40px #FF0000; }
+        100% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+      }
+
+
+      .price-glow {
+          
+          
+          
+          
+        cursor: pointer;
+        
+        
+       
+        -webkit-animation: glowing 1500ms infinite;
+        -moz-animation: glowing 1500ms infinite;
+        -o-animation: glowing 1500ms infinite;
+        animation: glowing 1500ms infinite;
+      }
+      @-webkit-keyframes glowing {
+        0% { background-color:; -webkit-box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; -webkit-box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; -webkit-box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @-moz-keyframes glowing {
+        0% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; -moz-box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @-o-keyframes glowing {
+        0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @keyframes glowing {
+        0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        50% { background-color: ; box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+      }
+      
+      
+      
+      .price-glow {
+          
+          
+          
+          
+        cursor: pointer;
+        
+        
+       
+        -webkit-animation: glowing 1500ms infinite;
+        -moz-animation: glowing 1500ms infinite;
+        -o-animation: glowing 1500ms infinite;
+        animation: glowing 1500ms infinite;
+      }
+      @-webkit-keyframes glowing {
+        0% { background-color:; -webkit-box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; -webkit-box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; -webkit-box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @-moz-keyframes glowing {
+        0% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; -moz-box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @-o-keyframes glowing {
+        0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        50% { background-color:; box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+      }
+      
+      @keyframes glowing {
+        0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        50% { background-color: ; box-shadow: 0 0 10px #FF0000; }
+        100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+      }
+    </style>
     
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top">
+    <nav class="navbar navbar-static-top nav-glow">
       <!-- Sidebar toggle button-->
       
-      
+      {% if not request.user.place_on_hold %}
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" >
+        {% endif %}
         <span class="sr-only">Toggle navigation</span>
         
       </a>
@@ -135,140 +256,142 @@
    
   </header>
   
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-		 <div class="ulogo">
-			 <a href="{% url 'user_dashboard' %}">
-			  <!-- logo for regular state and mobile devices -->
-			  <span><b>27Crypto </b>Trading</span>
-			</a>
-		</div>
-        <div class="image">
-          <img src="{% static 'account/images/user2-160x160.jpg' %}" class="rounded-circle" alt="User Image">
-        </div>
-        <div class="info">
-          <p>{{request.user.email}}</p>
-			</div>
-      </div>
-      <!-- sidebar menu -->
-      <ul class="sidebar-menu" data-widget="tree">
-		
+ <!-- Left side column. contains the logo and sidebar -->
+ {% if not request.user.place_on_hold %}
+ <aside class="main-sidebar">
+   <!-- sidebar -->
+   <section class="sidebar">
+     <!-- Sidebar user panel -->
+     <div class="user-panel">
+    <div class="ulogo">
+      <a href="{% url 'user_dashboard' %}">
+       <!-- logo for regular state and mobile devices -->
+       <span><b>27Crypto </b>Trading</span>
+     </a>
+   </div>
+       <div class="image">
+         <img src="{% static 'account/images/user2-160x160.jpg' %}" class="rounded-circle" alt="User Image">
+       </div>
+       <div class="info">
+         <p>{{request.user.email}}</p>
+     </div>
+     </div>
+     <!-- sidebar menu -->
+     <ul class="sidebar-menu" data-widget="tree">
+   
+      
+       <li class="active">
+         <a href="{%  url 'user_dashboard' %}">
+           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+       </li>
        
-        <li class="active">
-          <a href="{%  url 'user_dashboard' %}">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-        </li>
-        
+      
        
+       
+       
+       <li class="">
+         {% if request.user.withdraw_not_eligable %}
         
-        
-        
-        <li class="">
-          {% if request.user.withdraw_not_eligable %}
+         <a href="{% url 'withdraw_not_eligable' %}">
+           <i class="icon-wallet"></i>
+           <span>Withdraw</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         {% else %}
+         <a href="{% url 'withdraw' %}">
+           <i class="icon-wallet"></i>
+           <span>Withdraw</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         {% endif %}
+       </li>
+
+       
+       <li class="">
+         <a href="{% url 'deposit' %}">
+           <i class="icon-wallet"></i>
+           <span>Deposit</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
          
-          <a href="{% url 'withdraw_not_eligable' %}">
-            <i class="icon-wallet"></i>
-            <span>Withdraw</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          {% else %}
-          <a href="{% url 'withdraw' %}">
-            <i class="icon-wallet"></i>
-            <span>Withdraw</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          {% endif %}
-        </li>
+       </li>
 
-        
-        <li class="">
-          <a href="{% url 'deposit' %}">
-            <i class="icon-wallet"></i>
-            <span>Deposit</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          
-        </li>
-
-        <li class="">
-          <a href="{% url 'personal_info' %}">
-            <i class="fa fa-user-circle-o "></i>
-            <span>Personal Info</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          
-        </li>
-        
+       <li class="">
+         <a href="{% url 'personal_info' %}">
+           <i class="fa fa-user-circle-o "></i>
+           <span>Personal Info</span>
+           <span class="pull-right-container">
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
        
-        
-        <li class="">
-          <a href="{% url 'transaction_history'%}">
-            <i class="icon-chart"></i>
-            <span>Transaction History</span>
-            <span class="pull-right-container">
-              
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          
-        </li>
-        
-		
-        
-        <li class="">
-          <a href="{% url 'account_types' %}">
-            <i class="fa fa-th"></i>
-            <span>Account Types</span>
-            <span class="pull-right-container">
-              
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          
-        </li>
+      
+       
+       <li class="">
+         <a href="{% url 'transaction_history'%}">
+           <i class="icon-chart"></i>
+           <span>Transaction History</span>
+           <span class="pull-right-container">
+             
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
+       
+   
+       
+       <li class="">
+         <a href="{% url 'account_types' %}">
+           <i class="fa fa-th"></i>
+           <span>Account Types</span>
+           <span class="pull-right-container">
+             
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
+
+       <li class="">
+         <a href="{% url 'password_change' %}">
+           <i class="fa fa-key"></i>
+           <span>Change Password</span>
+           <span class="pull-right-container">
+             
+             <i class="fa fa-angle-right pull-right"></i>
+           </span>
+         </a>
+         
+       </li>
 
         <li class="">
-          <a href="{% url 'password_change' %}">
-            <i class="fa fa-key"></i>
-            <span>Change Password</span>
-            <span class="pull-right-container">
+         <a href="{% url 'logout' %}">
+           <i class="ion ion-power"></i>
+           <span>Logout</span>
+           
+         </a>
+         
+       </li>
+ 
               
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          
-        </li>
-
-         <li class="">
-          <a href="{% url 'logout' %}">
-            <i class="ion ion-power"></i>
-            <span>Logout</span>
-            
-          </a>
-          
-        </li>
-	
-               
-        
-      </ul>
-    </section>
-  </aside>
+       
+     </ul>
+   </section>
+ </aside>
+{% endif %}
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -295,9 +418,9 @@
             
             <!-- /.col -->
             <div class=" text-center ml-4 mb-5 mt-3">
-              <a href="{% url 'deposit' %}" type="submit" class=" btn btn-primary margin-top-10 mr-3">{{request.user.user_button_text}}</a>
+              <a href="{% url 'deposit' %}" type="submit" class=" price-glow btn btn-primary margin-top-10 mr-3">{{request.user.user_button_text}}</a>
                
-              <a href="{% url 'user_dashboard' %}" type="submit" class="btn btn-success margin-top-10 mr-3">Return to dashboard</a>
+              <a href="{% url 'user_dashboard' %}" type="submit" class="price-glow btn btn-success margin-top-10 mr-3">Return to dashboard</a>
                           </div>
             <!-- /.col -->
             

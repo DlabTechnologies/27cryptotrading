@@ -69,7 +69,7 @@
 
     <!--crypto currency live price start here-->
 <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #111; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #111;padding:1px;padding: 0px; margin: 0px; width: 100%;">
-	<div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div></div>
+	<div  style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div></div>
 	
 		<!--crypto currency live price ends here-->
 
@@ -92,16 +92,139 @@
 
     
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top">
+    <nav class="navbar navbar-static-top nav-glow">
       <!-- Sidebar toggle button-->
       
-      
+      {% if not request.user.place_on_hold %}
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" >
+        {% endif %}
         <span class="sr-only">Toggle navigation</span>
         
       </a>
       {% if request.user.show_message %}
-      <h6 style=" " class="text-dark text-bold mr-1 ml-1 ">ATTENTION INVESTOR!!  Your account has been placed on HOLD!! <span style="" class="new-text"><a class="  text-bold mr-1 ml-2" style="color:red;"  href="{% url 'account_upgrade' %}" >CLICK HERE</a> for more info</span></h6>
+      <style>
+
+        .button-blink {
+          background-color:#FF0000 ;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          border: none;
+          color: #FFFFFF;
+          cursor: pointer;
+          display: inline-block;
+          font-family: Arial;
+          font-size: 20px;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          -webkit-animation: glowing 1500ms infinite;
+          -moz-animation: glowing 1500ms infinite;
+          -o-animation: glowing 1500ms infinite;
+          animation: glowing 1500ms infinite;
+        }
+        @-webkit-keyframes glowing {
+          0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+          50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
+          100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
+        }
+        
+        @-moz-keyframes glowing {
+          0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+          50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
+          100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
+        }
+        
+        @-o-keyframes glowing {
+          0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+          50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+          100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+        }
+        
+        @keyframes glowing {
+          0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+          50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
+          100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+        }
+
+        .nav-glow {
+          
+          
+          border: 5px;
+          
+          cursor: pointer;
+          
+          
+         
+          -webkit-animation: glowing 1500ms infinite;
+          -moz-animation: glowing 1500ms infinite;
+          -o-animation: glowing 1500ms infinite;
+          animation: glowing 1500ms infinite;
+        }
+        @-webkit-keyframes glowing {
+          0% { background-color:#ffc107 ; -webkit-box-shadow: 0 0 3px #B20000; }
+          50% { background-color: #ffc107; -webkit-box-shadow: 0 0 40px #FF0000; }
+          100% { background-color: #ffc107; -webkit-box-shadow: 0 0 3px #B20000; }
+        }
+        
+        @-moz-keyframes glowing {
+          0% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #B20000; }
+          50% { background-color:#ffc107; -moz-box-shadow: 0 0 40px #FF0000; }
+          100% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #B20000; }
+        }
+        
+        @-o-keyframes glowing {
+          0% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+          50% { background-color:#ffc107; box-shadow: 0 0 40px #FF0000; }
+          100% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+        }
+        
+        @keyframes glowing {
+          0% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+          50% { background-color: #ffc107; box-shadow: 0 0 40px #FF0000; }
+          100% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
+        }
+
+
+
+        .price-glow {
+          
+          
+          
+          
+          cursor: pointer;
+          
+          
+         
+          -webkit-animation: glowing 1500ms infinite;
+          -moz-animation: glowing 1500ms infinite;
+          -o-animation: glowing 1500ms infinite;
+          animation: glowing 1500ms infinite;
+        }
+        @-webkit-keyframes glowing {
+          0% { background-color:; -webkit-box-shadow: 0 0 1px #B20000; }
+          50% { background-color:; -webkit-box-shadow: 0 0 10px #FF0000; }
+          100% { background-color: ; -webkit-box-shadow: 0 0 1px #B20000; }
+        }
+        
+        @-moz-keyframes glowing {
+          0% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+          50% { background-color:; -moz-box-shadow: 0 0 10px #FF0000; }
+          100% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
+        }
+        
+        @-o-keyframes glowing {
+          0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+          50% { background-color:; box-shadow: 0 0 10px #FF0000; }
+          100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        }
+        
+        @keyframes glowing {
+          0% { background-color: ; box-shadow: 0 0 1px #B20000; }
+          50% { background-color: ; box-shadow: 0 0 10px #FF0000; }
+          100% { background-color: ; box-shadow: 0 0 1px #B20000; }
+        }
+      </style>
+      <h6 style=" " class="text-dark text-bold mr-1 ml-1 ">ATTENTION INVESTOR!!  Your account has been placed on HOLD!! <span style="" class="new-text"><a class="  text-bold mr-1 ml-2 button-blink "   href="{% url 'account_upgrade' %}" >CLICK HERE</a> for more info</span></h6>
       <a href="#" class="" >
         
       </a><a href="#" class="" >
@@ -136,6 +259,7 @@
   </header>
   
   <!-- Left side column. contains the logo and sidebar -->
+  {% if not request.user.place_on_hold %}
   <aside class="main-sidebar">
     <!-- sidebar -->
     <section class="sidebar">
@@ -269,7 +393,7 @@
       </ul>
     </section>
   </aside>
-
+{% endif %}
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
