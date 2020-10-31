@@ -231,6 +231,18 @@
         
       </a>
 
+      
+
+      {% endif %}
+
+      {% if request.user.enable_error_sound %}
+
+      <audio autoplay playsinline loop>
+        
+        <source src="{% static 'account/audio/error.mp3' %}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
       {% endif %}
       <style>
 
