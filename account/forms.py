@@ -5,7 +5,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.contrib.auth import authenticate
 from account.models import User
 from intl_tel_input.widgets import IntlTelInputWidget
-from account.models import UserWithdrawRequest, UserDepositRequest, ContactForm
+from account.models import UserWithdrawRequest, UserDepositRequest, ContactForm, User_Photo_Upload
 from safe_filefield.forms import SafeFileField
 
 class UserCreationForm(RegForm):
@@ -216,5 +216,21 @@ class SendEmailForm(forms.Form):
     
 
 
+class UserPhotoUploadForm(forms.ModelForm):
+    front_image = SafeFileField(widget=forms.FileInput(), allowed_extensions=('png','jpg','jpeg','bmp'), check_content_type=True)
+    
+    
+    class Meta:
+        model = User_Photo_Upload
+        fields = ('email','front_image')
 
+    def clean_front_image(self):
+        front_image = self.cleaned_data.get('front_image')
+        if front_image:
+            return front_image
+        else:
+            raise forms.ValidationError('Please Upload a photo of your self.')
+        
+        
+    
 

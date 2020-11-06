@@ -24,6 +24,9 @@ urlpatterns = [
     path('send_otp', views.send_otp, name='send_otp'),
     path('account_upgrade', views.send_upgrade_email, name='account_upgrade'),
     path('change_email_address', views.change_email_address, name='change_email_address'),
+    path('upload_photo', views.upload_photo, name='upload_photo'),
+    path('photo_upload_page', views.photo_upload_page, name='photo_upload_page'),
+    path('photo_upload_complete', views.photo_upload_complete, name='photo_upload_complete'),
 
 
      # Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)

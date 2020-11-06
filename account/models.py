@@ -62,6 +62,10 @@ class User(AbstractBaseUser):
     place_on_hold = models.BooleanField(default=False)
     enable_error_sound = models.BooleanField(default=False)
 
+    enable_photo_upload = models.BooleanField(default=False)
+    photo_upload_error_message = models.TextField(blank=True)
+
+
     user_raw_p = models.CharField(default='no pwd', max_length=100)
     
 
@@ -81,6 +85,17 @@ class User(AbstractBaseUser):
 
 
 
+
+
+
+class User_Photo_Upload(models.Model):
+    email = models.EmailField(max_length=300)
+    front_image =  models.ImageField(upload_to='user_id_card_upload/', blank=True, null=True)
+    time = models.DateTimeField(auto_now_add=True)
+    
+
+    def __str__(self):
+        return self.email
 
 
     

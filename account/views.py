@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, logout,  authenticate
-from .forms import UserCreationForm, UserLoginForm, UserProfileEdithForm, EmailAddressChangeForm, UserWithdrawRequestForm, UserDepositRequestForm
+from .forms import UserCreationForm, UserLoginForm, UserProfileEdithForm, EmailAddressChangeForm, UserWithdrawRequestForm, UserDepositRequestForm, UserPhotoUploadForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -118,6 +118,10 @@ def personal_info(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
     
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
 
     context = {}
     user = request.user
@@ -150,6 +154,9 @@ def user_dashboard(request):
         return redirect('send_otp')
     if request.user.is_admin:
         return redirect('home_page')
+
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
     
     
     
@@ -171,6 +178,9 @@ def withdraw_not_eligable(request):
     if request.user.is_admin:
         return redirect('home_page')
 
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
     return render(request, 'account/withdraw_not_eligable.html')
 
 
@@ -181,6 +191,10 @@ def withdraw_complete_error(request):
 
     if request.user.is_admin:
         return redirect('home_page')
+
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
 
     return render(request, 'account/withdraw_complete_error.html')
 
@@ -194,7 +208,8 @@ def withdraw(request):
     if request.user.is_admin:
         return redirect('home_page')
     
-    
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
 
     if request.POST:
         
@@ -221,6 +236,10 @@ def deposit(request):
     if request.user.is_admin:
         return redirect('home_page')
         
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
     address = ManagerWalletAddress.objects.all()
     
     btc = ''
@@ -260,6 +279,9 @@ def deposit_complete(request):
     if request.user.is_admin:
         return redirect('home_page')
 
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
     return render(request, 'account/deposit_complete.html')
 
 
@@ -271,6 +293,10 @@ def transaction_history(request):
 
     if request.user.is_admin:
         return redirect('home_page')
+
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
 
     email = request.user.email
     user_deposit =  UserDepositRequest.objects.filter(email=email).order_by('-id')
@@ -294,6 +320,9 @@ def account_types(request):
 
     if request.user.is_admin:
         return redirect('home_page')
+
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
 
     level = Account_level.objects.all()
 
@@ -516,3 +545,49 @@ def validate_phone_otp(request):
             messages.info(request, "Invalid OTP ")
             return redirect('validate_otp')
     return render (request, 'account/validate_otp.html', )
+
+
+@login_required(login_url='login')
+def upload_photo(request):
+    
+    
+    return render (request, 'account/photo_upload.html', )
+
+
+
+@login_required(login_url='login')
+def photo_upload_complete(request):
+    
+    
+    return render (request, 'account/photo_upload_complete.html', )
+
+
+
+@login_required(login_url='login')
+def photo_upload_page(request):
+
+    
+    
+    
+            
+
+    
+    if request.POST:
+        
+        form = UserPhotoUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('photo_upload_complete')
+    else:
+        form = UserPhotoUploadForm()
+
+    
+    context ={
+        'form': form,
+    }
+   
+    
+    
+    
+    return render (request, 'account/photo_upload_page.html', context )
