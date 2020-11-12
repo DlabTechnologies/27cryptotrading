@@ -72,6 +72,28 @@
 
 
 
+	<div id="myModal" class="modal fade mt-5 mx-auto " data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog mx-auto">
+			<div class="modal-content mx-auto">
+				
+					
+					
+			
+				<div class="modal-body text-center mx-auto mt-3 mb-5">
+					<h2 class="mt-3 mb-3">Welcome to 27Cryptotrading</h2>
+					<p class="text-bold">Please tell us who you are...</p>
+					<br>
+					
+						<button type="buttton" class="btn  mr-3 " style="background-color: #f7921a;" data-dismiss="modal">Adviser</button>
+						<button type="buttton" class="btn  mr-3 " style="background-color: #f7921a;" data-dismiss="modal">Investor</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
 	<!-- ========== Paste this one after the <body tag )  ========== -->
 		<div id="notification-1" class="notification">			
 			<div class="notification-block">
@@ -119,10 +141,10 @@
 								
 							</ul>
 							<ul style="float: right;">
-								<li><a href=""><i class="icofont icofont-social-facebook"></i></a></li>
-								<li><a href=""><i class="icofont icofont-social-twitter"></i></a></li>
-								<li><a href=""><i class="icofont icofont-social-instagram"></i></a></li>
-								<li><a href=""><i class="icofont icofont-social-google-plus"></i></a></li>
+								<li><a href="#"><i class="icofont icofont-social-facebook"></i></a></li>
+								<li><a href="#"><i class="icofont icofont-social-twitter"></i></a></li>
+								<li><a href="#"><i class="icofont icofont-social-instagram"></i></a></li>
+								<li><a href="#"><i class="icofont icofont-social-google-plus"></i></a></li>
 								
 								
 							</ul>
@@ -445,6 +467,16 @@
 	
 
 	<script src="{% static 'cryptotrading/assets/js/fake-notification.min.js' %}"></script>
+
+
+
+<!--popup script-->
+<script>
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script>
+
 
 
 <!-- Fake Notifications invoke -->
