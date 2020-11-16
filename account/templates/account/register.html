@@ -27,6 +27,8 @@
 	<!-- Crypto_Admin skins -->
 	<link rel="stylesheet" href="{% static 'account/css/skins/_all-skins.css' %}">	
 
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -96,6 +98,20 @@
        
         
       
+      
+      <div class="col-12 text-center">
+        <div class="g-recaptcha" data-sitekey="6LeEveMZAAAAACUjIMuUdfjgE0l2-PLbCI6D0cXF"></div>
+      </div>
+
+      <div class="messages mt-5 mr-5" style="text-align: center;">
+        {% if messages %}
+        {% for message in messages %}
+        <p class=" text-bold text-danger alert alert-{{ message.tags }}" style="background-color: white; border:1px solid white ">
+          {{message}}
+        </p>
+        {% endfor %}
+        {% endif %}
+        </div>
 
         
        <div class="row">

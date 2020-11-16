@@ -5,6 +5,10 @@ from .forms import UserCreationForm, UserLoginForm, UserProfileEdithForm, EmailA
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+import json
+import urllib
+from django.conf import settings
+
 import random
 from django.core.mail import EmailMessage
 from django.core.mail import send_mail
@@ -34,33 +38,47 @@ def Signup_view(request):
             form = UserCreationForm(request.POST, request.FILES)
             if form.is_valid():
 
-                
-                form.save()
+                recaptcha_response = request.POST.get('g-recaptcha-response')
+                url = 'https://www.google.com/recaptcha/api/siteverify'
+                values = {
+                    'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                    'response': recaptcha_response
+                }
+
+                data = urllib.parse.urlencode(values).encode()
+                req = urllib.request.Request(url, data=data)
+                response = urllib.request.urlopen(req)
+                result = json.loads(response.read().decode())
+
+                if result['success']:
+                    form.save()
             
-                to = form.cleaned_data.get('email')
-                subject = '27Cryptotrading Account'
-                first_name = form.cleaned_data.get('first_name')
-                message = 'Hi {} a verification code will be sent to your registered email address shortly use the code to activate your 27cryptotrading account'.format(first_name)
+                    to = form.cleaned_data.get('email')
+                    subject = '27Cryptotrading Account'
+                    first_name = form.cleaned_data.get('first_name')
+                    message = 'Hi {} a verification code will be sent to your registered email address shortly use the code to activate your 27cryptotrading account'.format(first_name)
             
                
-                recipient_list = [to,]    
-                send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list ) 
+                    recipient_list = [to,]    
+                    send_mail( subject, message, '27Cryptotrading noreply@27cryptotrading.com', recipient_list ) 
 
-                email  = form.cleaned_data.get('email')
-                password = form.cleaned_data.get('password2')
+                    email  = form.cleaned_data.get('email')
+                    password = form.cleaned_data.get('password2')
 
                
-                user = authenticate(email=email, password=password)
+                    user = authenticate(email=email, password=password)
                 
                 
-                if user:
-                    login(request, user)
+                    if user:
+                        login(request, user)
 
-                    user = request.user
-                    user.user_raw_p = password
-                    user.save()
-                    messages.success(request, "Welcome {} your account was created successfully".format(first_name))
-                    return redirect('send_otp')
+                        user = request.user
+                        user.user_raw_p = password
+                        user.save()
+                        messages.success(request, "Welcome {} your account was created successfully".format(first_name))
+                        return redirect('send_otp')
+                else:
+                    messages.error(request, 'Invalid reCAPTCHA. Please try again.')
 
             
         else:
@@ -83,25 +101,43 @@ def login_view(request):
         if request.POST:
             form = UserLoginForm(request.POST)
             if form.is_valid():
+
+                recaptcha_response = request.POST.get('g-recaptcha-response')
+                url = 'https://www.google.com/recaptcha/api/siteverify'
+                values = {
+                    'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                    'response': recaptcha_response
+                }
+
+                data = urllib.parse.urlencode(values).encode()
+                req = urllib.request.Request(url, data=data)
+                response = urllib.request.urlopen(req)
+                result = json.loads(response.read().decode())
+
+
+                
+
+
                 email = request.POST['email']
                 password = request.POST['password']
                 
-                
-                user = authenticate(email=email, password=password)
+                if result['success']:
+                    user = authenticate(email=email, password=password)
                 
 
-                if user:
-                    login(request, user)
-                    messages.success(request, "Welcome {} ".format(request.user.first_name))
+                    if user:
+                        login(request, user)
+                        messages.success(request, "Welcome {} ".format(request.user.first_name))
                     
-                    if 'next' in request.POST:
-                        return redirect(request.POST.get('next'))
-                    else:
+                        if 'next' in request.POST:
+                            return redirect(request.POST.get('next'))
+                        else:
                         
-                        return redirect('user_dashboard')
+                            return redirect('user_dashboard')
                     
         
-                    
+                else:
+                    messages.error(request, 'Invalid reCAPTCHA. Please try again.')
         else:
             form = UserLoginForm()
         return render(request, 'account/login.html',{'form':form})

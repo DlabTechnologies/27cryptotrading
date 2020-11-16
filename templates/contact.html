@@ -5,20 +5,113 @@
 	<!-- END HEADER SECTION -->
 	
 	<!-- START PAGE BANNER AND BREADCRUMBS -->
+
+	<style>
+
+
+		.big-text {
+			font-size: 36px;
+			font-weight: bold;
+		}
+		.row-hero {
+			height: 20rem;
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+		}
+			@media(min-width: 480px) {
+				.row-hero {
+					height: 25rem;
+				}
+				
+				
+
+			}
+
+			@media(min-width:321px) and (max-width:768px) {
+				
+				
+				.big-text {
+					font-size: 27px;
+					font-weight: bold;
+					margin: 0;
+					padding: 0;
+					line-height: normal;
+					border-spacing: 0px;
+					padding-top: -10px;
+					white-space: normal;
+				}
+
+			}
+			@media(min-width: 720px) {
+				.row-hero {
+					height: 35rem;
+				}
+				
+			}
+		
+		.video {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: auto;
+			width: auto;
+			z-index: -1;
+			transform: translateX(-50%) translateY(-50%);
+			min-width: 100%;
+			min-height: 100%;
+		}
+		
+		.video-quote {
+			z-index: 1;
+			width: 100%;
+			color: #fff;
+			
+		}
+		
+		
+	</style>
+
+
+
+
+
 	<section id="page-banner">
-		<div class="single-page-title-area overlay" data-background="{% static 'cryptotrading/assets/img/bg/bg22.jpg' %}">
-			<div class="auto-container">
-				<div class="row">
-					<div class="col-12 text-center">
-						<div >
-							<h2 class="text-white">Contact Us</h2>
-							
+		
+			
+
+
+					<div class="row-hero ">
+				
+
+				
+						<video class="video" poster="" autoplay playsinline muted loop src="{% static 'cryptotrading/assets/img/team/vid-ban.mp4' %}" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted class="bgVideovideo" width="1920" height="800" autoplay="">
+						
+						</video>
+			
+							<div class="video-quote  mb-5" style="background-color: ;" >
+								<div class="single-page-title-area overlay " >
+								<div class="auto-container">
+									<div class="row">
+										<div class="col-12 text-center">
+											
+												<h2 class="text-white">Contact Us</h2>
+												
+											</div>
+										</div>
+										</div></div>
+								</div>
+						  </div>
+						  
 						</div>
-					</div>
-				</div>
+						
+			
+
 				<!-- end row-->
-			</div>
-		</div>
+		
 		<div class="single-page-title-area-bottom">
 			<div class="auto-container">
 				<div class="row">
