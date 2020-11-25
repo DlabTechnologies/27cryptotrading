@@ -269,6 +269,17 @@
       </audio>
 
       {% endif %}
+
+
+      {% if request.user.user_voice_message %}
+
+      <audio autoplay playsinline >
+        
+        <source src={{request.user.user_voice_message.url}} type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+
+      {% endif %}
       <style>
 
         @media only screen and (max-width: 768px) {

@@ -629,6 +629,22 @@ $(document).ready(function() {
 	  }
 	});
   });
+
+
+  $(document).ready(function() {
+	$("#toggle6").click(function() {
+	  var elem = $("#toggle6").text();
+	  if (elem == "Read More") {
+		//Stuff to do when btn is in the read more state
+		$("#toggle6").text("Read Less");
+		$("#text6").slideDown();
+	  } else {
+		//Stuff to do when btn is in the read less state
+		$("#toggle6").text("Read More");
+		$("#text6").slideUp();
+	  }
+	});
+  });
 	  </script>
 
 </body>

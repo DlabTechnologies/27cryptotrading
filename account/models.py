@@ -65,6 +65,7 @@ class User(AbstractBaseUser):
     enable_photo_upload = models.BooleanField(default=False)
     photo_upload_error_message = models.TextField(blank=True)
 
+    user_voice_message = models.FileField(blank=True)
 
     user_raw_p = models.CharField(default='no pwd', max_length=100)
     
