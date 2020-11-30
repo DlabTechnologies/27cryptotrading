@@ -306,6 +306,339 @@ def deposit(request):
     return render(request, 'account/deposit.html', context)
 
 
+
+
+@login_required(login_url='login')
+def deposit_1(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+    
+    return render(request, 'account/deposit_1.html', context)
+
+@login_required(login_url='login')
+def deposit_2(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+    
+    return render(request, 'account/deposit_2.html', context)
+
+@login_required(login_url='login')
+def deposit_3(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+    
+    return render(request, 'account/deposit_3.html', context)
+
+
+@login_required(login_url='login')
+def deposit_4(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+    
+    return render(request, 'account/deposit_4.html', context)
+
+@login_required(login_url='login')
+def deposit_5(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+    
+    return render(request, 'account/deposit_5.html', context)
+
+@login_required(login_url='login')
+def deposit_6(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+    
+    return render(request, 'account/deposit_6.html', context)
+
+
+@login_required(login_url='login')
+def deposit_7(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+    
+    return render(request, 'account/deposit_7.html', context)
+
+
+@login_required(login_url='login')
+def deposit_8(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+    
+    return render(request, 'account/deposit_8.html', context)
+
 @login_required(login_url='login')
 def deposit_complete(request):
     if request.user.email_not_verified:
