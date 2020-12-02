@@ -209,8 +209,40 @@
 				</div>
 			</div>
 			<!-- end section title -->
-			<div class="row text-center">
-				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+			<style>
+
+				/*animation element*/
+
+.animation-element {
+	opacity: 0;
+	position: relative;
+  }
+  /*animation element sliding left*/
+  
+  .animation-element.slide-left {
+	opacity: 0;
+	-moz-transition: all 1000ms linear;
+	-webkit-transition: all 1000ms linear;
+	-o-transition: all 1000ms linear;
+	transition: all 1000ms linear;
+	-moz-transform: translate3d(-100px, 0px, 0px);
+	-webkit-transform: translate3d(-100px, 0px, 0px);
+	-o-transform: translate(-100px, 0px);
+	-ms-transform: translate(-100px, 0px);
+	transform: translate3d(-100px, 0px, 0px);
+  }
+  
+  .animation-element.slide-left.in-view {
+	opacity: 1;
+	-moz-transform: translate3d(0px, 0px, 0px);
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate3d(0px, 0px, 0px);
+  }
+			</style>
+			<div class="row text-center ">
+				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4 animation-element slide-left">
 					<div class="single-about text-white " >
 						<div class="single-about-img">
 							<div class="single-about-img-inner">
@@ -231,7 +263,7 @@
 					</div>
 				</div>
 				<!-- end single about -->
-				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4 animation-element slide-left">
 					<div class="single-about text-white ">
 						<div class="single-about-img">
 							<div class="single-about-img-inner">
@@ -253,7 +285,7 @@
 					</div>
 				</div>
 				<!-- end single about -->
-				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+				<div class="single-about-item col-lg-4 col-md-4 col-sm-12 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4 animation-element slide-left">
 					<div class="single-about text-white " >
 						<div class="single-about-img">
 							<div class="single-about-img-inner">
@@ -290,7 +322,7 @@
     <section id="promo"  style="border-top: 5px solid white;" class="section-padding section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/bgr33.jpg' %}" >
         <div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-md-6 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+				<div class="col-lg-6 col-md-6 col-12 mb-lg-0 mb-md-4 mb-sm-4 mb-4 animation-element slide-left">
 					<div class="row">
 						<div class="col-12 text-left">
 							<div class="section-title-2">
@@ -334,7 +366,7 @@ button{
 					</style>
 
 
-<div class="container "><h3 class=" text-uppercase text-white">We Are Expert 27Cryptotrading </h3>
+<div class="container animation-element slide-left"><h3 class=" text-uppercase text-white">We Are Expert 27Cryptotrading </h3>
 	<p class="text-white">27Cryptotrading consist of financial market professionals assembled specifically in other to provide the best posible trading conditions to its investors worldwide.</p> 
 
 <div>
@@ -352,7 +384,7 @@ button{
 
 
 <br><br>
-<div class="container"><h3 class=" text-uppercase text-white">What is Bitcoin Trading and Investment?</h3>
+<div class="container animation-element slide-left"><h3 class=" text-uppercase text-white">What is Bitcoin Trading and Investment?</h3>
 	<p class="text-white">In simple terms, bitcoin trading is the buying and selling of bitcoin. Bitcoin trading adds a new dimension to currency trading with its dynamic force and the volatility</p>
 
 <div>
@@ -368,7 +400,7 @@ button{
 </div>
 
 <br><br>
-<div class="container"><h3 class=" text-uppercase text-white">Our data center</h3>
+<div class="container animation-element slide-left"><h3 class=" text-uppercase text-white">Our data center</h3>
 	<p class="text-white">	Our data center guarantees trouble-free operations of your equipment control and monitoring for optimal external temperature, humidity, dust protection.</p>
 	<div>
   
@@ -386,7 +418,7 @@ button{
 
 
 <br><br>
-<div class="container "><h3 class=" text-uppercase text-white" >What Are the risk involved</h3>
+<div class="container animation-element slide-left"><h3 class=" text-uppercase text-white" >What Are the risk involved</h3>
 	<p class="text-white">Trades are done carefully and specifically for the best turnouts, in the trading of this financial instruments for gaining
 		profits, our experts manage/handle the trading accounts and make passive and consistent massive weekly profits for you. 
 	</p>
@@ -408,7 +440,7 @@ button{
 <br><br>
 
 <br><br>
-<div class="container "><h3 class=" text-uppercase text-white" >Our Promise</h3>
+<div class="container animation-element slide-left "><h3 class=" text-uppercase text-white" >Our Promise</h3>
 	<p class="text-white">This is our promise to maintain our outstanding commitment to quality and excellenc,particularly in the realm of investor's satisfaction.</p>
 <div>
   
@@ -425,7 +457,7 @@ button{
 <br><br>
 
 <br><br>
-<div class="container "><h3 class=" text-uppercase text-white" >we assure you by our commitment</h3>
+<div class="container animation-element slide-left"><h3 class=" text-uppercase text-white" >we assure you by our commitment</h3>
 	<p class="text-white">> A commitment to fulfill our investors expectations.<br>
 	> A commitment to set standards in our business and transactions and be an exemplar for the industry and our own teams.<br>
 	</p>
@@ -449,7 +481,7 @@ button{
 
 
 
-<div class="container "><h3 class=" text-uppercase text-white" >OUR SECURITY</h3>
+<div class="container animation-element slide-left "><h3 class=" text-uppercase text-white" >OUR SECURITY</h3>
 	<p class="text-white">> Everything we make is protected with powerful built-in security technologies that help detect and block threats like spam, malware, and viruses from ever reaching you.<br>
 	
 	</p>
@@ -474,8 +506,8 @@ button{
                     <!--End Accordion Box-->	
 				</div>
 				<!-- end col -->
-				<div class="col-lg-6 col-md-6 col-12">
-					<div class="row">
+				<div class="col-lg-6 col-md-6 col-12 ">
+					<div class="row animation-element slide-left">
 						<div class="col-12 text-left">
 							<div class="section-title-2">
 								<h3 class="text-white">About<span> Us</span></h3>
@@ -483,7 +515,7 @@ button{
 						</div>
 					</div>
 					<!-- end section title -->
-					<div class="image-style-1 mb-4">
+					<div class="image-style-1 mb-4 animation-element slide-left">
 						<div class="image-style-wrapper">
 							<div class="image-one"></div>
 							<div class="image-two">
@@ -491,7 +523,7 @@ button{
 							</div>
 						</div>
 					</div>
-					<div class="promo-content">
+					<div class="promo-content animation-element slide-left">
 						<h4 class="text-white text-uppercase">Our Mission</h4>
 						<p class="text-white">Our mission is to develope traders(investors) equipped to perform in the new era of global market/digital currency, Our company is involved in financial activities related to forex, currencies trading and mining, for years, we help investors with an aim of using minimal effort and knowledge in maximizing passive and consistent profits on a clean sheet which has become the smoothest channel for all our investors around the world.  </p>
 						
@@ -514,26 +546,26 @@ button{
 
 
 			
-				<section id="chhoseus" class="section-padding bg-white" style="border-top: 7px solid #f7921a; border-bottom: 7px solid #f7921a;" class="section-padding section-back-image-2" >
+				<section id="chhoseus" style="border-top: 5px solid white; border-bottom: 5px solid white;" class="section-padding section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/bg-why.jpg' %}" >
 		
 		
 					<div class="container">
-						<div class="row">
+						<div class="row animation-element slide-left">
 							<div class="col-12 text-center">
 								<div class="section-title ">
-									<h5>27Cryptotrading Legality</h5>
-									<h3>Why Choose <span>27Crypto Trading?</span></h3>
+									<h5 class="text-white">27Cryptotrading Legality</h5>
+									<h3><span class="text-white">Why Choose </span><span>27Crypto Trading?</span></h3>
 								</div>
 							</div>
 						</div>
 						<!-- end section title -->
 						<div class="row">
-							<div class="col-lg-12 col-md-12 col-12 mb-lg-0 mb-md-0 mb-5 ">
+							<div class="col-lg-12 col-md-12 col-12 mb-lg-0 mb-md-0 mb-5 animation-element slide-left">
 								<div class="row " >	 
-									<div class="col-lg-3 col-md-3 col-12 mb-5 ml-xl-5 ml-lg-5 ml-md-5 " style="border: 4px solid #f7921a;" class="section-padding section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/new-ban2.jpg' %}"  >
+									<div class="col-lg-3 col-md-3 col-12 mb-5 ml-xl-5 ml-lg-5 ml-md-5 "  >
 										<div class="single-wcus"   >
 											<div class="single-wcus-icon">
-												<i class="icofont icofont-bill"></i>
+												<i class="icofont icofont-bill" ></i>
 											</div>
 											<div class="single-wcus-text">
 												<h5 class="text-white text-bold mt-4">Stable Profit</h5>
@@ -542,7 +574,7 @@ button{
 										</div>
 									</div>
 									<!-- end single chooseus -->	 
-									<div class="col-lg-3 col-md-3 col-12 mb-5 ml-xl-5 ml-lg-5 ml-md-5" style="border: 4px solid #f7921a;" class="section-padding section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/new-ban2.jpg' %}" >
+									<div class="col-lg-3 col-md-3 col-12 mb-5 ml-xl-5 ml-lg-5 ml-md-5 animation-element slide-left"   >
 										<div class="single-wcus">
 											<div class="single-wcus-icon">
 												<i class="icofont icofont-coins"></i>
@@ -556,7 +588,7 @@ button{
 									<!-- end single chooseus -->	 
 									
 									<!-- end single chooseus -->	 
-									<div class="col-lg-3 col-md-3 col-12 mb-5 ml-xl-5 ml-lg-5 ml-md-5" style="border: 4px solid #f7921a;" class="section-padding section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/new-ban2.jpg' %}"  >
+									<div class="col-lg-3 col-md-3 col-12 mb-5 ml-xl-5 ml-lg-5 ml-md-5 animation-element slide-left"   >
 										<div class="single-wcus">
 											<div class="single-wcus-icon">
 												<i class="icofont icofont-ui-travel"></i>
@@ -579,7 +611,8 @@ button{
 							<!-- end col -->
 			
 							<!-- end single chooseus -->	 
-							<div class="col-lg-4 col-md-4 col-12" >
+							
+							<div class="col-lg-4 col-md-4 col-12 animation-element slide-left" >
 								<div class="single-wcus" >
 									
 									<div class="single-wcus-text" >
@@ -871,7 +904,7 @@ button{
 <!-- START CHOOSE US SECTION -->
 <section id="chhoseus" class="section-padding bg-white" style="border-top: 7px solid #f7921a; border-bottom: 7px solid #f7921a;">
 	<div class="container">
-		<div class="row">
+		<div class="row animation-element slide-left">
 			<div class="col-12 text-center">
 				<div class="section-title ">
 					<h5>We sell products</h5>
@@ -883,7 +916,7 @@ button{
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-12 mb-lg-0 mb-md-0 mb-5 ">
 				<div class="row " >	 
-					<div class="col-lg-3 col-md-3 col-12 mt-5 "   >
+					<div class="col-lg-3 col-md-3 col-12 mt-5 animation-element slide-left"   >
 						<div class="single-wcus"   >
 							<div class="" >
 								<img class="img-fluid" style="width: 200px;" src="{% static 'cryptotrading/assets/img/team/img1.jpg' %}" alt="">
@@ -906,7 +939,7 @@ button{
 
 
 					<!-- end single chooseus -->	 
-					<div class="col-lg-3 col-md-3 col-12  mt-5"   >
+					<div class="col-lg-3 col-md-3 col-12  mt-5 animation-element slide-left"   >
 						<div class="single-wcus"   >
 							<div class="" >
 								<img class="img-fluid" style="width: 200px;" src="{% static 'cryptotrading/assets/img/team/img5.jpg' %}" alt="">
@@ -930,7 +963,7 @@ button{
 
 
 					<!-- end single chooseus -->	 
-					<div class="col-lg-3 col-md-3 col-12  mt-5"   >
+					<div class="col-lg-3 col-md-3 col-12  mt-5 animation-element slide-left"   >
 						<div class="single-wcus"   >
 							<div class="" >
 								<img class="img-fluid" style="width: 200px;" src="{% static 'cryptotrading/assets/img/team/img2.jpg' %}" alt="">
@@ -955,7 +988,7 @@ button{
 
 					
 <!-- end single chooseus -->	 
-<div class="col-lg-3 col-md-3 col-12  mt-5"   >
+<div class="col-lg-3 col-md-3 col-12  mt-5 animation-element slide-left"   >
 	<div class="single-wcus"   >
 		<div class="" >
 			<img class="img-fluid" style="width: 200px;" src="{% static 'cryptotrading/assets/img/team/img6.jpg' %}" alt="">
@@ -979,7 +1012,7 @@ button{
 
 
 					<!-- end single chooseus -->	 
-					<div class="col-lg-3 col-md-3 col-12  mt-5"   >
+					<div class="col-lg-3 col-md-3 col-12  mt-5 animation-element slide-left"   >
 						<div class="single-wcus"   >
 							<div class="" >
 								<img class="img-fluid" style="width: 200px;" src="{% static 'cryptotrading/assets/img/team/img3.jpg' %}" alt="">
@@ -1004,7 +1037,7 @@ button{
 
 					
 <!-- end single chooseus -->	 
-<div class="col-lg-3 col-md-3 col-12  mt-5"   >
+<div class="col-lg-3 col-md-3 col-12  mt-5 animation-element slide-left"   >
 	<div class="single-wcus"   >
 		<div class="" >
 			<img class="img-fluid" style="width: 200px;" src="{% static 'cryptotrading/assets/img/team/img7.jpg' %}" alt="">
@@ -1026,7 +1059,7 @@ button{
 <!-- end single chooseus -->
 
 
-					<div class="col-lg-3 col-md-3 col-12 mt-5 "   >
+					<div class="col-lg-3 col-md-3 col-12 mt-5 animation-element slide-left"   >
 						<div class="single-wcus"   >
 							<div class="" >
 								<img class="img-fluid" style="width: 200px;" src="{% static 'cryptotrading/assets/img/team/img4.jpg' %}" alt="">
@@ -1051,7 +1084,7 @@ button{
 
 					
 <!-- end single chooseus -->	 
-<div class="col-lg-3 col-md-3 col-12  mt-5"   >
+<div class="col-lg-3 col-md-3 col-12  mt-5 animation-element slide-left"   >
 	<div class="single-wcus"   >
 		<div class="" >
 			<img class="img-fluid" style="width: 200px;" src="{% static 'cryptotrading/assets/img/team/img8.jpg' %}" alt="">
@@ -1717,8 +1750,8 @@ button{
 							<div class="home-single-slide-inner ">
 								<div class="container-fluid ">
 									<div class="row-fluid ">
-										<div class="col-lg-12 col-md-12 col-12 mr-auto  text-left">
-											<div class="home-single-slide-dec">
+										<div class="col-lg-12 col-md-12 col-12 mr-auto mt-5 text-left">
+											<div class="home-single-slide-dec mt-5">
 												
 											<style>
 
@@ -1732,11 +1765,11 @@ button{
 											</style>
 
 
-											<div class="container-fluid " style="height: 208px">
-												<div id="carouselContent" class="carousel slide" data-ride="carousel">
-													<div class="carousel-inner" role="listbox">
+											<div class="container-fluid mt-5 " style="height: 150px">
+												<div id="carouselContent" class="carousel slide mt-5" data-ride="carousel">
+													<div class="carousel-inner mt-5" role="listbox">
 														<div class="carousel-item active text-center  ">
-											<p class="text-capitalize big-text mt-5 " style="color: #f7921a;">We are in the world</p>
+											<p class="text-capitalize big-text " style="color: #f7921a;">We are in the world</p>
 												
 											<p class="text-capitalize text-bold"><span class="text-capitalize"></span> we have users all over the world.
 											</p>
