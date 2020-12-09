@@ -12,6 +12,7 @@
     <meta name="description" content="27cryptotrading trading and investment">
     <meta name="author" content="27cryptotrading">
     <link rel="icon" href="{% static 'account/images/favicon22.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>27Crypto Trading - Log in </title>
   
@@ -64,11 +65,47 @@
         
         <span class="ion ion-email form-control-feedback"></span>
       </div>
-      <div class="form-group has-feedback">
-        {% render_field form.password  type="password" class="form-control" name="password" autofocus="autofocus" placeholder="Enter Password" required="required"  %}
+
+
+
+      
+        <div class="input-group">
+          {% render_field form.password id="myInput"  type="password" class="form-control pwd" name="password" autofocus="autofocus" placeholder="Enter Password" required="required"  %}
        
-        <span class="ion ion-locked form-control-feedback"></span>
-      </div>
+          <span class="input-group-btn">
+            <button class="btn btn-default " onclick="myFunction()" type="button"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+          </span>          
+        </div>
+
+    
+
+
+<script>
+
+
+  function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+      $('.input-group-btn i').addClass( "fa-eye" );
+      $('.input-group-btn i').removeClass( "fa-eye-slash" );
+    } else {
+      x.type = "password";
+      $('.input-group-btn i').removeClass( "fa-eye" );
+      $('.input-group-btn i').addClass( "fa-eye-slash" );
+    }
+  }
+
+
+
+
+  
+</script>
+
+     
+
+
+
 
 {% if request.GET.next %}
 <input type="hidden" name="next" value="{{request.GET.next}}">

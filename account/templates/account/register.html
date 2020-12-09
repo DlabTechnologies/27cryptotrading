@@ -12,6 +12,7 @@
     <meta name="description" content="27cryptotrading trading and investment">
     <meta name="author" content="27cryptotrading">
     <link rel="icon" href="{% static 'account/images/favicon22.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>27Crypto Trading - Registration </title>
   
@@ -73,21 +74,64 @@
         
         <span class="ion ion-email form-control-feedback "></span>
       </div>
-      <div class="form-group has-feedback">
+
+
+      
+
+
+      <div class="input-group">
         
-        {% render_field form.password1  type="password" class="form-control" name="password1" autofocus="autofocus" placeholder="Enter Password" required="required"  %}
+        {% render_field form.password1 id="myInputOne" type="password" class="form-control" name="password1" autofocus="autofocus" placeholder="Enter Password" required="required"  %}
         <span style="color: red; list-style:none;  ">{{form.password1.errors}}</span> 
         
-        <span class="ion ion-locked form-control-feedback "></span>
+        <span class="input-group-btn one">
+          <button class="btn btn-default " onclick="myFunctionOne()" type="button"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+        </span> 
       </div>
-      <div class="form-group has-feedback">
+      <div class="input-group mt-2">
        
-        {% render_field form.password2  type="password" class="form-control" name="password2" autofocus="autofocus" placeholder="Confirm Password" required="required"  %}
+        {% render_field form.password2 id="myInputTwo" type="password" class="form-control" name="password2" autofocus="autofocus" placeholder="Confirm Password" required="required"  %}
         <span style="color: red; list-style:none;  ">{{form.password2.errors}}</span> 
         
-        <span class="ion ion-log-in form-control-feedback "></span>
+        <span class="input-group-btn two">
+          <button class="btn btn-default " onclick="myFunctionTwo()" type="button"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+        </span> 
       </div>
 
+
+      <script>
+
+
+        function myFunctionOne() {
+          var x = document.getElementById("myInputOne");
+          if (x.type === "password") {
+            x.type = "text";
+            $('.one i').addClass( "fa-eye" );
+            $('.one i').removeClass( "fa-eye-slash" );
+          } else {
+            x.type = "password";
+            $('.one i').removeClass( "fa-eye" );
+            $('.one i').addClass( "fa-eye-slash" );
+          }
+        }
+      
+      
+      
+        function myFunctionTwo() {
+          var x = document.getElementById("myInputTwo");
+          if (x.type === "password") {
+            x.type = "text";
+            $('.two i').addClass( "fa-eye" );
+            $('.two i').removeClass( "fa-eye-slash" );
+          } else {
+            x.type = "password";
+            $('.two i').removeClass( "fa-eye" );
+            $('.two i').addClass( "fa-eye-slash" );
+          }
+        }
+      
+        
+      </script>
       <div class="form-group has-feedback">
        
         {% render_field form.phone  type="text" class="form-control" name="phone" autofocus="autofocus" placeholder="Enter Mobile Number" required="required"  %}
