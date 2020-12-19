@@ -412,27 +412,48 @@
 					display: inline;
 				}
 
-				.marq {
-					margin-left:45%;
-				   }
-
-				@media only screen and (max-width: 768px) {
-					/* For mobile phones: */
-					.marq {
-					 margin-left: 0;
-					}}
+				
+				
 			</style>
 
-			<div class="marq" style="text-align: center; " >
+			 
+
+			<marquee behavior="scroll" direction="left">
+			
 				
-			  
-			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/14.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+				<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/btc@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
 			
-			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/13.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/bnb@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
 			
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/ardr@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/dash@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/eth@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/ltc@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/ftc@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/ppc@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/ada@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/nmc@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/nxt@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/doge@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/crpt@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/deez@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/elf@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/ella@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/gold@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/etn@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/chain@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/blz@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/ncash@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/poly@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			<div class="p-2 inline"><img src="{% static 'cryptotrading/assets/img/bg/payment-images/pot@2x.png' %}" alt="user" width="70" height="70" class="thumbnail"></div>
+			
+		</marquee>
 			</div>
 		
-		</div>
+		
+
+			<a href='#top'><i class="fa fa-arrow-up text-white ml-2 " style="font-size: 20px;" aria-hidden="true"></i></a>
+			
 			<div class="auto-container">
 				
                 <div class="row">
@@ -502,6 +523,12 @@
 </script>
 
 
+<script>
+	$("a[href='#top']").click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+		return false;
+	  });
+</script>
 <!--Animation script-->
 <script>
 
@@ -910,10 +937,25 @@ $(document).ready(function() {
 	  }
 	});
   });
+
+  $(document).ready(function() {
+	$("#toggle7").click(function() {
+	  var elem = $("#toggle7").text();
+	  if (elem == "Read More") {
+		//Stuff to do when btn is in the read more state
+		$("#toggle7").text("Read Less");
+		$("#text7").slideDown();
+	  } else {
+		//Stuff to do when btn is in the read less state
+		$("#toggle7").text("Read More");
+		$("#text7").slideUp();
+	  }
+	});
+  });
 	  </script>
 
 </body>
 
 <!--Tidio chart script here-->
-<script src="//code.tidio.co/5ikpc2mhh57krvqwkjtjqbywkbqih9ur.js" async></script>
+<script src="//code.tidio.co/5ikpc2mhh57krvqwkjtjqbywkbqih9ur.js" style="margin-bottom: -50px;" async></script>
 </html>
