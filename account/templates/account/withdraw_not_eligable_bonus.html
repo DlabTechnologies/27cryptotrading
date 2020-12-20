@@ -1,0 +1,30 @@
+{% extends 'account/dashboard_base.html' %}
+{% load static %}
+
+{% block content %}
+	
+      <div class="error-page">
+
+        <div class="error-content">
+         	<div class="container" style="text-align:center;">
+         	
+        		<h2 class="headline text-danger"> <i class="fa fa-exclamation-triangle"></i></h2>
+        		
+			  <h3 class="margin-top-0">YOU DO NOT HAVE ANY BONUS TO WITHDRAW!</h3>
+
+			  <h5>
+				Hi {{request.user.first_name }} <br>You do not have any bonus to withdraw at the moment, <br>keep your account active.
+				This error message will auto delete when you have bonus in your account.
+			  </h5>
+			  
+          </div>
+        </div>
+        <!-- /.error-content -->
+        
+ 
+      </div>
+      <!-- /.error-page -->
+     
+  
+
+{% endblock %}

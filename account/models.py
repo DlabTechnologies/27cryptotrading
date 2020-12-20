@@ -55,6 +55,7 @@ class User(AbstractBaseUser):
     total_balance = models.CharField(default='0', max_length=50)
     
     trade_progress = models.IntegerField(default='0')
+    trade_bonus = models.CharField(default='0', max_length=50)
 
     show_message = models.BooleanField(default=False)
     user_message = models.TextField(default='No Messages')
@@ -110,6 +111,16 @@ class UserWithdrawRequest(models.Model):
     def __str__(self):
         return self.email
 
+
+class UserWithdrawRequestBonus(models.Model):
+    wallet_address = models.CharField(max_length=500)
+    email = models.EmailField(max_length=300)
+    withdraw_amount = models.IntegerField()
+    time = models.DateTimeField(auto_now_add=True)
+    confirmed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.email
 
 class UserDepositRequest(models.Model):
     email = models.EmailField(max_length=300)
@@ -179,3 +190,11 @@ class RecentPayouts(models.Model):
     payout_date = models.DateTimeField()
     account_type = models.CharField(max_length=30)
     
+
+
+class NewsletterSignup(models.Model):
+    email = models.EmailField(max_length=300)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

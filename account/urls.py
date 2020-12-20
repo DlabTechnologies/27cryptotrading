@@ -9,8 +9,10 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('user_dashboard/', views.user_dashboard, name='user_dashboard'),
     path('withdraw_not_eligable/', views.withdraw_not_eligable, name='withdraw_not_eligable'),
+    path('withdraw_not_eligable_bonus/', views.withdraw_not_eligable_bonus, name='withdraw_not_eligable_bonus'),
     path('withdraw_complete_error/', views.withdraw_complete_error, name='withdraw_complete_error'),
     path('withdraw/', views.withdraw, name='withdraw'),
+    path('withdraw_bonus/', views.withdraw_bonus, name='withdraw_bonus'),
     path('deposit/', views.deposit, name='deposit'),
     path('deposit_1/', views.deposit_1, name='deposit_1'),
     path('deposit_2/', views.deposit_2, name='deposit_2'),

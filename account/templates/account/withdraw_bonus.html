@@ -1,0 +1,87 @@
+{% extends 'account/dashboard_base.html' %}
+{% load static %}
+{{% load widget_tweaks %}
+
+{% block content %}
+     
+     <!-- Basic Forms -->
+      <div class="box box-solid bg-dark">
+        <div class="box-header with-border">
+          <h3 class="box-title">Withdraw Bonus</h3>
+
+          
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+        <h4 style="text-align:center;"><b>Notice: </b>To withdraw your bonus fill the form below and click on withdraw button to proceed</h4>
+          <br>
+
+          
+          <form method="POST" action="">
+            {% csrf_token %}
+           
+              
+          <div class="row">
+            <div class="col-md-4">
+            	<div class="form-group row">
+				  <label for="example-text-input" class="col-md-8 col-form-label">Input your bitcoin wallet address below</label>
+				  <div class="col-sm-10">
+            {% render_field form.wallet_address  type="text" id="example-text-input" class="form-control" name="wallet_address" autofocus="autofocus" placeholder="Enter your wallet address" required="required"  %}
+              
+				
+				  </div>
+				</div>	
+				
+
+
+        <div class="form-group row">
+				  
+				  <div class="col-sm-10">
+            {% render_field form.email  type="hidden" id="example-email-input" value=request.user.email class="form-control" name="email" autofocus="autofocus"  %}
+            
+					
+				  </div>
+				</div>
+
+
+				<div class="form-group row">
+				  <label for="example-number-input" class="col-md-8 col-form-label">Amount to withdraw in USD</label>
+				  <div class="col-sm-10">
+            {% render_field form.withdraw_amount  type="text" id="example-number-input"  class="form-control" value=request.user.trade_bonus name="withdraw_amount" autofocus="autofocus" readonly="readonly" onkeypress="validate(event)" %}
+            
+					
+				  <script type="text/javascript">
+          function validate(ev) {
+    if (!ev) {
+        ev = window.event;
+    }
+
+    if (!ev.ctrlKey && ev.key.length === 1 && (isNaN(+ev.key) || ev.key === " ")) {
+        return ev.preventDefault();
+    }
+}
+</script>
+				</div>
+</div>
+
+        	<div class="form-group row mt-2">
+				  
+				  <div class="col-md-4">
+					<button type="submit" class="btn btn-dark">Withdraw</button>
+				  </div>
+				</div>
+				
+				
+				
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+          </form>
+          
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+     
+     {% endblock %}

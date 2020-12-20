@@ -364,6 +364,30 @@
           {% endif %}
         </li>
 
+
+        <!--Bonus link-->
+        <li class="">
+          {% if request.user.trade_bonus < '1' %}
+         
+          <a href="{% url 'withdraw_not_eligable_bonus' %}">
+            <i class="icon-wallet"></i>
+            <span>Withdraw Bonus</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          {% else %}
+          <a href="{% url 'withdraw_bonus' %}">
+            <i class="icon-wallet"></i>
+            <span>Withdraw Bonus</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          {% endif %}
+        </li>
+
+        <!--End bonus link-->
         
         <li class="">
           <a href="{% url 'deposit' %}">

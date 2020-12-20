@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, logout,  authenticate
-from .forms import UserCreationForm, UserLoginForm, UserProfileEdithForm, EmailAddressChangeForm, UserWithdrawRequestForm, UserDepositRequestForm, UserPhotoUploadForm
+from .forms import UserCreationForm, UserLoginForm, UserProfileEdithForm, EmailAddressChangeForm, UserWithdrawRequestForm, UserWithdrawRequestBonusForm, UserDepositRequestForm, UserPhotoUploadForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -221,6 +221,19 @@ def withdraw_not_eligable(request):
 
 
 @login_required(login_url='login')
+def withdraw_not_eligable_bonus(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+    
+    if request.user.is_admin:
+        return redirect('home_page')
+
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+    return render(request, 'account/withdraw_not_eligable_bonus.html')
+
+@login_required(login_url='login')
 def withdraw_complete_error(request):
     if request.user.email_not_verified:
         return redirect('send_otp')
@@ -262,6 +275,49 @@ def withdraw(request):
         }
 
     return render(request, 'account/withdraw.html', context)
+
+
+
+
+@login_required(login_url='login')
+def withdraw_bonus(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+
+    if request.user.is_admin:
+        return redirect('home_page')
+    
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+    if request.POST:
+        
+        form = UserWithdrawRequestBonusForm(request.POST)
+        if form.is_valid():
+            
+            user = request.user
+            amount  = '0'
+
+            user.trade_bonus = amount
+            user.save()
+            
+            
+            form.save()
+            
+           
+
+            return redirect('withdraw_complete_error')
+    else:
+        form = UserWithdrawRequestBonusForm()
+
+    context = {
+            'form': form,
+           
+        }
+
+    return render(request, 'account/withdraw_bonus.html', context)
+
 
 
 @login_required(login_url='login')

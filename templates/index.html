@@ -433,7 +433,7 @@ button{
 <br><br>
 <div class="container animated standby fadeInUp"><h3 class=" text-uppercase" style="color:#f7921a;">What Are the risk involved</h3>
 	<p class="text-white">Trades are done carefully and specifically for the best turnouts, in the trading of this financial instruments for gaining
-		profits, our experts manage/handle the trading accounts and make passive and consistent massive weekly profits for you. 
+		profits, our experts manage/handle the trading accounts and make passive and consistent massive profits for you. 
 	</p>
 <div>
   
@@ -454,7 +454,7 @@ button{
 
 <br><br>
 <div class="container animated standby fadeInUp "><h3 class=" text-uppercase" style="color:#f7921a;">Our Promise</h3>
-	<p class="text-white">This is our promise to maintain our outstanding commitment to quality and excellenc, particularly in the realm of investor's satisfaction.</p>
+	<p class="text-white">This is our promise to maintain our outstanding commitment to quality and excellenc, particularly in the realm of our investor's satisfaction.</p>
 <div>
   
  <span id="text4" class="text-white">
@@ -556,7 +556,7 @@ button{
 					</div>
 					<div class="promo-content ">
 						<h4 class="text-uppercase" style="color:#f7921a;">Our Mission</h4>
-						<p class="text-white">Our mission is to develope traders(investors) equipped to perform in the new era of global market/digital currency, Our company is involved in financial activities related to forex, currencies trading and mining, for years, we help investors with an aim of using minimal effort and knowledge in maximizing passive and consistent profits on a clean sheet which has become the smoothest channel for all our investors around the world.  </p>
+						<p class="text-white">Our mission is to develope traders(investors) equipped to perform in the new era of global market/digital currency, Our company is involved in financial activities related to forex, currencies trading and bitcoin mining, for years, we help investors with an aim of using minimal effort and knowledge in maximizing passive and consistent profits on a clean sheet which has become the smoothest channel for all our investors around the world.  </p>
 						
 						
 						
@@ -1307,30 +1307,30 @@ button{
 								{% csrf_token %}
 								<div class="row">
 									<div class="form-group col-lg-6 mb-3">
-										{% render_field form.name  class="form-control" id="afirst-name" placeholder="Your Name*" required="required" type="text"  %}
+										{% render_field form_contact.name  class="form-control" id="afirst-name" placeholder="Your Name*" required="required" type="text"  %}
             						<span style="color: red; list-style:none;  ">{{form.name.errors}}</span>
 										
 									</div>
 									<div class="form-group col-lg-6 mb-3">
-										{% render_field form.email  class="form-control" name="email" id="aemail" placeholder="Email id*" required="required" type="email" %}
+										{% render_field form_contact.email  class="form-control" name="email" id="aemail" placeholder="Email id*" required="required" type="email" %}
             						<span style="color: red; list-style:none;  ">{{form.email.errors}}</span>
 										
 									
 									</div>
 									<div class="form-group col-lg-6 mb-3">
-										{% render_field form.phone name="phone" class="form-control" id="aphone" placeholder="Phone Number*" required="required" type="text" %}
+										{% render_field form_contact.phone name="phone" class="form-control" id="aphone" placeholder="Phone Number*" required="required" type="text" %}
             						<span style="color: red; list-style:none;  ">{{form.phone.errors}}</span>
 										
 										
 									</div>
 									<div class="form-group col-lg-6 mb-3">
-										{% render_field form.subject name="subject" class="form-control" id="asubject" placeholder="Subject" required="required" type="text" %}
+										{% render_field form_contact.subject name="subject" class="form-control" id="asubject" placeholder="Subject" required="required" type="text" %}
             						<span style="color: red; list-style:none;  ">{{form.subject.errors}}</span>
 										
 									
 									</div>									
 									<div class="form-group col-lg-12 mb-3">
-										{% render_field form.message  rows="6" name="message" class="form-control" id="adescription" placeholder="Your Message Here..." required="required" type="textarea" %}
+										{% render_field form_contact.message  rows="6" name="message" class="form-control" id="adescription" placeholder="Your Message Here..." required="required" type="textarea" %}
             						<span style="color: red; list-style:none;  ">{{form.message.errors}}</span>
 										
 										

@@ -5,7 +5,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.contrib.auth import authenticate
 from account.models import User
 from intl_tel_input.widgets import IntlTelInputWidget
-from account.models import UserWithdrawRequest, UserDepositRequest, ContactForm, User_Photo_Upload
+from account.models import UserWithdrawRequest, UserWithdrawRequestBonus, UserDepositRequest, ContactForm, User_Photo_Upload, NewsletterSignup
 from safe_filefield.forms import SafeFileField
 
 class UserCreationForm(RegForm):
@@ -136,6 +136,14 @@ class UserWithdrawRequestForm(forms.ModelForm):
         fields = ('wallet_address','email','withdraw_amount')
 
 
+
+class UserWithdrawRequestBonusForm(forms.ModelForm):
+
+    class Meta:
+        model = UserWithdrawRequestBonus
+        fields = ('wallet_address','email','withdraw_amount')
+
+
 class UserDepositRequestForm(forms.ModelForm):
     image = SafeFileField(widget=forms.FileInput(), allowed_extensions=('png','jpg','jpeg','bmp'), check_content_type=True)
    
@@ -234,3 +242,8 @@ class UserPhotoUploadForm(forms.ModelForm):
         
     
 
+
+class UserNewsletterSignup(forms.ModelForm):
+    class Meta:
+        model = NewsletterSignup
+        fields = ('email', )
