@@ -57,6 +57,9 @@ class User(AbstractBaseUser):
     trade_progress = models.IntegerField(default='0')
     trade_bonus = models.CharField(default='0', max_length=50)
 
+    trade_complete = models.BooleanField(default=False)
+    trade_complete_message = models.CharField(max_length=500, default='Trade Completed')
+
     show_message = models.BooleanField(default=False)
     user_message = models.TextField(default='No Messages')
     user_button_text = models.CharField(default='No text specifies',max_length=50)

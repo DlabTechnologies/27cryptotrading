@@ -16,7 +16,7 @@ class UserAdmin(BaseUserAdmin):
 
 
     list_display = ('email','first_name','last_name','date_joined','is_staff','is_superuser','is_admin','account_level','deposit_amount',
-    'trade_progress','trade_profit','trade_bonus','phone','verify_otp', 'email_not_verified','withdraw_not_eligable','silver','gold','platinum','show_message','user_message','user_button_text','place_on_hold','enable_error_sound','enable_photo_upload','photo_upload_error_message','user_voice_message')
+    'trade_progress','trade_profit', 'trade_complete','trade_complete_message','trade_bonus','phone','verify_otp', 'email_not_verified','withdraw_not_eligable','silver','gold','platinum','show_message','user_message','user_button_text','place_on_hold','enable_error_sound','enable_photo_upload','photo_upload_error_message','user_voice_message')
     search_fields = ('email',)
     readonly_fields = ('date_joined', 'last_login')
 
@@ -27,7 +27,7 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {'fields':('email','is_staff','is_superuser','is_admin','password')}),
         ('Personal info',{'fields':('first_name','last_name','account_level','deposit_amount',
-    'trade_progress','trade_profit','trade_bonus','phone','verify_otp','email_not_verified','withdraw_not_eligable','silver','gold','platinum','show_message','user_message','user_button_text','place_on_hold','enable_error_sound','enable_photo_upload','photo_upload_error_message','user_voice_message')}),
+    'trade_progress','trade_profit','trade_complete','trade_complete_message','trade_bonus','phone','verify_otp','email_not_verified','withdraw_not_eligable','silver','gold','platinum','show_message','user_message','user_button_text','place_on_hold','enable_error_sound','enable_photo_upload','photo_upload_error_message','user_voice_message')}),
         
        
     )
@@ -35,7 +35,7 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {'fields':('email','is_staff','is_superuser','is_admin','password1','password2')}),
         ('Personal info',{'fields':('first_name','last_name','account_level','deposit_amount',
-    'trade_progress','trade_profit','trade_bonus','phone','verify_otp','email_not_verified','withdraw_not_eligable','silver','gold','platinum','show_message','user_message','user_button_text','place_on_hold','enable_error_sound','enable_photo_upload','photo_upload_error_message','user_voice_message')}),
+    'trade_progress','trade_profit', 'trade_complete','trade_complete_message','trade_bonus','phone','verify_otp','email_not_verified','withdraw_not_eligable','silver','gold','platinum','show_message','user_message','user_button_text','place_on_hold','enable_error_sound','enable_photo_upload','photo_upload_error_message','user_voice_message')}),
         
        
     )

@@ -339,7 +339,7 @@
                         <!-- END SECTION TITLE -->
 						
                     <!-- End Widget -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-0 footer-widget">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-md-5 mb-5 footer-widget">
                         <div class="footer-section-title col-12 no-padding">
                             <h3 style="color: #f7921a;">Stay With Us</h3>
                         </div>
@@ -400,28 +400,48 @@
 
 
 					<!--Newsletter-->
-					<div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-lg-0 mb-md-5 mb-5 footer-widget">
-						<div class="footer-section-title col-12 no-padding">
-							<h3 style="color: #f7921a;"> Subscribe Our NewsLetter</h3>
-						</div>
-						<!-- END SECTION TITLE -->
-						<div class="input-group">
+
+
+
+					  <!-- End Widget -->
+					  <div class="col-lg-3 col-md-6 col-sm-12 col-12 mb-0 footer-widget">
+                        <div class="footer-section-title col-12 no-padding">
+                            <h3 style="color: #f7921a;">Subscribe Our NewsLetter</h3>
+                        </div>
+                        <!-- END SECTION TITLE -->
+						<div class="col-12 footer-widget-inner">
+							
+							
 							<form action="" method="post" accept-charset="utf-8" id="">
 								{% csrf_token %}
 								<p class="text-white">Subscribe to our mailing list to receive updates from us.</p>
 								
-								<br>
+								
 								  {% render_field form_news.email type="email" name="email" class="" style='width:100%;'  placeholder="Enter your email address" value="" id="subscribe-field" required="required" %}
 															  
-								  <br>
+								
 								
 								<p>
 								  <button type="submit" style="background-color: #f7921a;" class="mt-2 btn btn-block "><i class="fa fa-send"></i> Subscribe </button>
 								</p>
 							  </form>
 			
-								</div>	
-					</div>
+
+							
+					
+
+
+
+							
+						</div>
+						
+
+						
+                    </div>
+					<!-- End Widget -->
+
+
+					
 					<!--End Newsletter-->
 					
                 </div>
@@ -983,7 +1003,24 @@ $(document).ready(function() {
 	  }
 	});
   });
+
+  $(document).ready(function() {
+	$("#toggle8").click(function() {
+	  var elem = $("#toggle8").text();
+	  if (elem == "Read More") {
+		//Stuff to do when btn is in the read more state
+		$("#toggle8").text("Read Less");
+		$("#text8").slideDown();
+	  } else {
+		//Stuff to do when btn is in the read less state
+		$("#toggle8").text("Read More");
+		$("#text8").slideUp();
+	  }
+	});
+  });
 	  </script>
+
+	  
 
 </body>
 
