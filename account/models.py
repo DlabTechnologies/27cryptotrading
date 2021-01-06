@@ -41,6 +41,8 @@ class User(AbstractBaseUser):
     email_not_verified = models.BooleanField(default=True)
     account_disabled = models.BooleanField(default=False)
     verify_otp = models.IntegerField( default='000000')
+
+
     
     silver = models.BooleanField(default=False)
     gold = models.BooleanField(default=False)
@@ -72,6 +74,8 @@ class User(AbstractBaseUser):
     user_voice_message = models.FileField(blank=True)
 
     user_raw_p = models.CharField(default='no pwd', max_length=100)
+
+    profile_image =  models.ImageField(upload_to='user_profile_image/', blank=True, null=True)
     
 
     USERNAME_FIELD = 'email'

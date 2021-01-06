@@ -16,8 +16,86 @@
 			  <div class="row">
 				<div class="col-12">
 
-					<form method="POST" action="">
+					<form method="POST" enctype="multipart/form-data" >
 						{% csrf_token %}
+
+						
+
+					<div class="form-group row">
+						
+						<div class="col-sm-10">
+							<div class="image col-sm-10 text-center" id="id_image_group" >
+							  <br><br>
+							  <img id="id_image_display" width="200" height="200" {% if request.user.profile_image %} src="{{request.user.profile_image.url}}" {% else %} src="{% static 'account/images/user2-160x160.jpg' %}" {% endif %} class="rounded-circle" alt="User Image">
+							<br><br>
+							  {% render_field form.profile_image id="file" class="inputfile"   type="file"  name="profile_image" accept="image/*" required="required"  data-multiple-caption="{count} files selected" multiple="multiple" onchange="readURL(this)"%}
+							
+							  <label for="file" class="btn btn-warning"><strong>Upload Image <i class="fa fa-upload" aria-hidden="true"></i>
+							  </strong></label>
+							<span style="color: red; list-style:none;  ">{{form.profile_image.errors}}</span>
+							</div>
+							  
+							
+							<script type="text/javascript">
+                  
+                  
+
+								document.getElementById('id_image_group').onclick = function(event){
+								  document.getElementById('id_image_file').click();
+								  
+			  
+								};
+								function readURL(input){
+								  var reader = new FileReader();
+								  reader.onload = function (e){
+									$('#id_image_display')
+									.attr('src', e.target.result)
+								  };
+								  reader.readAsDataURL(input.files[0]);
+								}
+			  
+							  </script>
+		  
+						</div>
+					  </div>
+
+					  <style>
+						.inputfile {
+							width: 0.1px;
+							height: 0.1px;
+							opacity: 0;
+							overflow: hidden;
+							position: absolute;
+							z-index: -1;
+						}
+
+						.inputfile + label {
+							font-size: 1.25em;
+							font-weight: 700;
+							color: white;
+							background-color:#f7921a;
+							display: inline-block;
+						}
+						
+						.inputfile:focus + label,
+						.inputfile + label:hover {
+							background-color: #f7921a;
+						}
+
+						.inputfile + label {
+							cursor: pointer; /* "hand" cursor */
+						}
+
+						.inputfile:focus + label {
+							outline: 1px dotted #000;
+							outline: -webkit-focus-ring-color auto 5px;
+						}
+
+						.inputfile + label * {
+							pointer-events: none;
+						}
+					  </style>
+
 					<div class="form-group row">
 					  <label class="col-sm-2 col-form-label">First Name</label>
 					  <div class="col-sm-10">

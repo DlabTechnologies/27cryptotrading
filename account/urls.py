@@ -33,6 +33,7 @@ urlpatterns = [
     path('validate_otp', views.validate_phone_otp, name='validate_otp'),
     path('send_otp', views.send_otp, name='send_otp'),
     path('account_upgrade', views.send_upgrade_email, name='account_upgrade'),
+    path('user_account_upgrade', views.account_upgrade, name='user_account_upgrade'),
     path('change_email_address', views.change_email_address, name='change_email_address'),
     path('upload_photo', views.upload_photo, name='upload_photo'),
     path('photo_upload_page', views.photo_upload_page, name='photo_upload_page'),

@@ -161,10 +161,11 @@ class UserDepositRequestForm(forms.ModelForm):
 class UserProfileEdithForm(forms.ModelForm):
         
     phone = forms.CharField(widget=IntlTelInputWidget())
+    profile_image = SafeFileField(widget=forms.FileInput(), allowed_extensions=('png','jpg','jpeg','bmp'), check_content_type=True)
     
     class Meta:
         model = User
-        fields = ('first_name','last_name','phone')
+        fields = ('first_name','last_name','phone','profile_image')
 
 
     
@@ -189,7 +190,12 @@ class UserProfileEdithForm(forms.ModelForm):
 
             raise forms.ValidationError('Last Name "%s" is already in use.' % last_name)
 
-
+    def clean_profile_image(self):
+        profile_image = self.cleaned_data.get('profile_image')
+        if profile_image:
+            return profile_image
+        else:
+            raise forms.ValidationError('Please Upload Your Profile Photo.')
 
 
     

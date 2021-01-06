@@ -1,3 +1,5 @@
+
+{{% load widget_tweaks %}
 {% load static %}
 
 
@@ -12,7 +14,7 @@
     
     <link rel="icon" href="{% static 'account/images/favicon22.ico' %}">
 
-    <title>27Crypto Trading - Dashboard</title>
+    <title>27Crypto Trading - Deposit</title>
     
 	<!-- Bootstrap 4.0-->
 	<link rel="stylesheet" href="{% static 'account/assets/vendor_components/bootstrap/dist/css/bootstrap.css' %}">
@@ -65,55 +67,11 @@
     {% endif %}
     </div>
 
-    <style>
 
-
-      .mob{
-        margin-top: 15%;
-      }
-
-      @media only screen and (max-width: 768px) {
-        /* For mobile phones: */
-        .visible {
-          position:absolute;
-          z-index: 100;
-          height: 45px;
-        }
-        
-        .mob{
-          margin-top: 39%;
-        }
-        
-        }
-        
-    </style>
-    
-  <!--message trade complete-->
-  {% if request.user.trade_complete %}
-    <div id="myModal" class="modal fade  mob "   data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false">
-      <div class="modal-dialog  ">
-        <div class="modal-content  ">
-          
-            
-            
-        
-          <div class="modal-body text-center   ">
-            
-            <p class="h4" style="color:black;">{{request.user.trade_complete_message}}</p>
-            <br>
-            
-              
-              <button type="buttton" class="btn text-white" style="background-color: #f7921a;" data-dismiss="modal">close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %}
-<!--end message-->
 
     <!--crypto currency live price start here-->
 <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #111; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #111;padding:1px;padding: 0px; margin: 0px; width: 100%;">
-	<div  style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div></div>
+	<div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div></div>
 	
 		<!--crypto currency live price ends here-->
 
@@ -136,169 +94,15 @@
 
     
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top nav-glow">
+    <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       
-      {% if not request.user.place_on_hold %}
+      
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" >
-        {% endif %}
         <span class="sr-only">Toggle navigation</span>
         
       </a>
-      {% if request.user.show_message %}
-      <style>
-
-        .button-blink {
-          background-color:#FF0000 ;
-          -webkit-border-radius: 10px;
-          border-radius: 10px;
-          border: none;
-          color: #FFFFFF;
-          cursor: pointer;
-          display: inline-block;
-          font-family: Arial;
-          font-size: 20px;
-          padding: 5px 10px;
-          text-align: center;
-          text-decoration: none;
-          -webkit-animation: glowing 1500ms infinite;
-          -moz-animation: glowing 1500ms infinite;
-          -o-animation: glowing 1500ms infinite;
-          animation: glowing 1500ms infinite;
-        }
-        @-webkit-keyframes glowing {
-          0% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
-          50% { background-color: #FF0000; -webkit-box-shadow: 0 0 40px #FF0000; }
-          100% { background-color: #B20000; -webkit-box-shadow: 0 0 3px #B20000; }
-        }
-        
-        @-moz-keyframes glowing {
-          0% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
-          50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px #FF0000; }
-          100% { background-color: #B20000; -moz-box-shadow: 0 0 3px #B20000; }
-        }
-        
-        @-o-keyframes glowing {
-          0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-          50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-          100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-        }
-        
-        @keyframes glowing {
-          0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-          50% { background-color: #FF0000; box-shadow: 0 0 40px #FF0000; }
-          100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
-        }
-
-        .nav-glow {
-          
-          
-          border: 5px;
-          
-          cursor: pointer;
-          
-          
-         
-          -webkit-animation: glowing 1500ms infinite;
-          -moz-animation: glowing 1500ms infinite;
-          -o-animation: glowing 1500ms infinite;
-          animation: glowing 1500ms infinite;
-        }
-        @-webkit-keyframes glowing {
-          0% { background-color:#ffc107 ; -webkit-box-shadow: 0 0 3px #B20000; }
-          50% { background-color: #ffc107; -webkit-box-shadow: 0 0 40px #FF0000; }
-          100% { background-color: #ffc107; -webkit-box-shadow: 0 0 3px #B20000; }
-        }
-        
-        @-moz-keyframes glowing {
-          0% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #B20000; }
-          50% { background-color:#ffc107; -moz-box-shadow: 0 0 40px #FF0000; }
-          100% { background-color: #ffc107; -moz-box-shadow: 0 0 3px #B20000; }
-        }
-        
-        @-o-keyframes glowing {
-          0% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
-          50% { background-color:#ffc107; box-shadow: 0 0 40px #FF0000; }
-          100% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
-        }
-        
-        @keyframes glowing {
-          0% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
-          50% { background-color: #ffc107; box-shadow: 0 0 40px #FF0000; }
-          100% { background-color: #ffc107; box-shadow: 0 0 3px #B20000; }
-        }
-
-
-
-        .price-glow {
-          
-          
-          
-          
-          cursor: pointer;
-          
-          
-         
-          -webkit-animation: glowing 1500ms infinite;
-          -moz-animation: glowing 1500ms infinite;
-          -o-animation: glowing 1500ms infinite;
-          animation: glowing 1500ms infinite;
-        }
-        @-webkit-keyframes glowing {
-          0% { background-color:; -webkit-box-shadow: 0 0 1px #B20000; }
-          50% { background-color:; -webkit-box-shadow: 0 0 10px #FF0000; }
-          100% { background-color: ; -webkit-box-shadow: 0 0 1px #B20000; }
-        }
-        
-        @-moz-keyframes glowing {
-          0% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
-          50% { background-color:; -moz-box-shadow: 0 0 10px #FF0000; }
-          100% { background-color: ; -moz-box-shadow: 0 0 1px #B20000; }
-        }
-        
-        @-o-keyframes glowing {
-          0% { background-color: ; box-shadow: 0 0 1px #B20000; }
-          50% { background-color:; box-shadow: 0 0 10px #FF0000; }
-          100% { background-color: ; box-shadow: 0 0 1px #B20000; }
-        }
-        
-        @keyframes glowing {
-          0% { background-color: ; box-shadow: 0 0 1px #B20000; }
-          50% { background-color: ; box-shadow: 0 0 10px #FF0000; }
-          100% { background-color: ; box-shadow: 0 0 1px #B20000; }
-        }
-      </style>
-      <h6 style=" " class="text-dark text-bold mr-1 ml-1 ">ATTENTION INVESTOR!!  Your account has been placed on HOLD!! <span style="" class="new-text"><a class="  text-bold mr-1 ml-2 button-blink "   href="{% url 'account_upgrade' %}" >CLICK HERE</a> for more info</span></h6>
-      <a href="#" class="" >
-        
-      </a><a href="#" class="" >
-        
-      </a>
-
-      
-
-      {% endif %}
-
-      {% if request.user.enable_error_sound %}
-
-      <audio autoplay playsinline loop>
-        
-        <source src="{% static 'account/audio/error.mp3' %}" type="audio/mpeg">
-      Your browser does not support the audio element.
-      </audio>
-
-      {% endif %}
-
-
-      {% if request.user.user_voice_message %}
-
-      <audio autoplay playsinline >
-        
-        <source src={{request.user.user_voice_message.url}} type="audio/mpeg">
-      Your browser does not support the audio element.
-      </audio>
-
-      {% endif %}
+     
       <style>
 
         @media only screen and (max-width: 768px) {
@@ -326,7 +130,6 @@
   </header>
   
   <!-- Left side column. contains the logo and sidebar -->
-  {% if not request.user.place_on_hold %}
   <aside class="main-sidebar">
     <!-- sidebar -->
     <section class="sidebar">
@@ -383,30 +186,6 @@
           {% endif %}
         </li>
 
-
-        <!--Bonus link-->
-        <li class="">
-          {% if request.user.trade_bonus < '1' %}
-         
-          <a href="{% url 'withdraw_not_eligable_bonus' %}">
-            <i class="icon-wallet"></i>
-            <span>Withdraw Bonus</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          {% else %}
-          <a href="{% url 'withdraw_bonus' %}">
-            <i class="icon-wallet"></i>
-            <span>Withdraw Bonus</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          {% endif %}
-        </li>
-
-        <!--End bonus link-->
         
         <li class="">
           <a href="{% url 'deposit' %}">
@@ -484,17 +263,154 @@
       </ul>
     </section>
   </aside>
-{% endif %}
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    {% block content %}
+   
+     
+     <!-- Basic Forms -->
+      <div class="box box-solid bg-dark">
+        <div class="box-header with-border">
+          <h3 class="box-title">Upgrade Your 27Cryptotrading Wallet </h3>
+
+          
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+        <h4 style="text-align:center;"><b>Notice: </b>To upgrade your wallet, follow the instructions below.</h4>
+        <ul>
+        <li>Transfer the exact amount of coin to any of the wallet address listed below</li>
+        <li> Enter the amout that you have transfered in the transfered amount box below</li>
+        <li>Upload proof of payment(screenshot of payment)</li>
+          <br>
+
+          
+          
+          
+          
+          <div class="row">
+            <div class="col-md-5">
+              {% if btc %}
+            	<div class="form-group row">
+				  <label for="example-text-input" class="col-md-8 col-form-label">transfer bitcoin to this wallet address</label>
+				  <div class="col-sm-10">
+
+					<div class="input-group">
+                
+            
+          <input type="text" class="form-control" id="sec" id="example-text-input" value={{btc}}  aria-label="wallet address" aria-describedby="basic-addon2" value="" readonly>
+              <div class="input-group-prepend">
+                  <button type="button" class="btn btn-danger" onclick="myFunction()">Copy</button>
+                </div>
+               </div>
+                <script>
+                  function myFunction() {
+                    var copyText = document.getElementById("sec");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    alert("Copied Bitcoin wallet address: " + copyText.value);
+                  }
+                  </script>
+                
+
+				  </div>
+				</div>	
+{% endif %}
+
+        <!--Etherium wallet account-->
+
+        {% if eth %}
+	<div class="form-group row">
+				  <label for="example-text-input" class="col-md-8 col-form-label">transfer ethereum to this wallet address</label>
+				  <div class="col-sm-10">
+
+					<div class="input-group">
+                
+                
+          <input type="text" class="form-control" id="sectwo" id="example-text-input" value={{eth}} aria-label="wallet address" aria-describedby="basic-addon2" value="" readonly>
+              <div class="input-group-prepend">
+                  <button type="button" class="btn btn-danger" onclick="myFunctionTwo()">Copy</button>
+                </div>
+               </div>
+                <script>
+                  function myFunctionTwo() {
+                    var copyText = document.getElementById("sectwo");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    alert("Copied Etherum wallet address: " + copyText.value);
+                  }
+                  </script>
+                
+                  
+				  </div>
+				</div>				
+{% endif %}
+
+<form action="" method="POST" enctype="multipart/form-data" >
+  {% csrf_token %}
+        <div class="form-group row">
+				  
+				  <div class="col-sm-10">
+            {% render_field form.email  type="hidden" value=request.user.email id="example-email-input" class="form-control" name="email" autofocus="autofocus" %}
+             
+					
+				  </div>
+				</div>
 
 
+				<div class="form-group row">
+				  <label for="example-number-input" class="col-md-8 col-form-label">Enter Amount  deposited to any of the wallet address above in USD</label>
+				  <div class="col-sm-10">
+            {% render_field form.deposit_amount  type="text"  id="example-number-input" class="form-control" name="deposit_amount" autofocus="autofocus" placeholder="Enter Amount" onkeypress="validate(event)" required='required' %}
+             {{form.deposit_amount.errors}}
+				  <script type="text/javascript">
+          function validate(ev) {
+    if (!ev) {
+        ev = window.event;
+    }
 
+    if (!ev.ctrlKey && ev.key.length === 1 && (isNaN(+ev.key) || ev.key === " ")) {
+        return ev.preventDefault();
+    }
+}
+</script>
+          </div>
+				</div>
+				
+        
+				<div class="form-group row">
+				  <label for="example-number-input" class="col-md-8 col-form-label">Upload proof of payment(screenshot of payment)</label>
+				  <div class="col-sm-10">
+            {% render_field form.image  type="file" class="form-control " name="image" accept="image/*" required="required" placeholder="Upload a photo"  onchange="readURL(this)" %}
+									<span style="color: red; list-style:none;  ">{{form.image.errors}}</span>
+								
+				  </div>
+          </div>
 
+        	<div class="form-group row">
+				  
+				  <div class="col-md-4">
+					<button type="submit" class="btn btn-dark">Deposit</button>
+				  </div>
+				</div>
+				
+				</form>
+				
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+     
+     
 
- {% endblock %}
+      
 
   </div>
   <!-- /.content-wrapper -->
@@ -551,17 +467,6 @@
 	<script src="{% static 'account/js/demo.js' %}"></script>
 
   
-
-  <script>
-    $(document).ready(function(){
-      $("#myModal").modal('show');
-    });
-  </script>
-
-  <!--popup script-->
-
-
-
   <script type="text/javascript">
     $(function(){
       setTimeout(function(){
@@ -571,57 +476,7 @@
   </script>
 
 
-  <script type="text/javascript">
-         
-    $('.digit-group').find('input').each(function() {
-      $(this).attr('maxlength', 1);
-      $(this).on('keyup', function(e) {
-        var parent = $($(this).parent());
-        
-        if(e.keyCode === 8 || e.keyCode === 37) {
-          var prev = parent.find('input#' + $(this).data('previous'));
-          
-          if(prev.length) {
-            $(prev).select();
-          }
-        } else if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
-          var next = parent.find('input#' + $(this).data('next'));
-          
-          if(next.length) {
-            $(next).select();
-          } else {
-            if(parent.data('autosubmit')) {
-              parent.submit();
-            }
-          }
-        }
-      });
-    });
-
-</script>
-
-<script>
-  var inputs = document.querySelectorAll( '.inputfile' );
-Array.prototype.forEach.call( inputs, function( input )
-{
-	var label	 = input.nextElementSibling,
-		labelVal = label.innerHTML;
-
-	input.addEventListener( 'change', function( e )
-	{
-		var fileName = '';
-		if( this.files && this.files.length > 1 )
-			fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-		else
-			fileName = e.target.value.split( '\' ).pop();
-
-		if( fileName )
-			label.querySelector( 'span' ).innerHTML = fileName;
-		else
-			label.innerHTML = labelVal;
-	});
-});
-</script>
+  
 </body>
 <!--Shart boot Tidio-->
 <script src="//code.tidio.co/5ikpc2mhh57krvqwkjtjqbywkbqih9ur.js" async></script>

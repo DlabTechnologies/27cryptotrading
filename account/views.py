@@ -164,7 +164,7 @@ def personal_info(request):
     
     if request.POST:
         user = request.user
-        form = UserProfileEdithForm(request.POST, instance=user)
+        form = UserProfileEdithForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             messages.success(request, "Hi {} Your Account has been  successfully updated!".format(request.user.first_name))
@@ -174,7 +174,8 @@ def personal_info(request):
         form = UserProfileEdithForm(initial = {
                                                 "first_name": request.user.first_name,
                                                 "last_name": request.user.last_name,
-                                                "phone": request.user.phone
+                                                "phone": request.user.phone,
+                                                "profile_image": request.user.profile_image
                                                 })
     
     context = {
@@ -909,6 +910,51 @@ def send_upgrade_email(request):
     
    
     return render(request, 'account/send_upgrade_email.html')
+
+
+@login_required(login_url='login')
+def account_upgrade(request):
+
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+    if request.user.is_admin:
+        return redirect('home_page')
+        
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+
+    address = ManagerWalletAddress.objects.all()
+    
+    btc = ''
+    eth = ''
+    for address in address:
+        
+        btc = address.btc_wallet_address
+        eth = address.eth_wallet_address
+    
+    if request.POST:
+        
+        form = UserDepositRequestForm(request.POST, request.FILES)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('deposit_complete')
+    else:
+        form = UserDepositRequestForm()
+
+    
+    context ={
+        'btc': btc,
+        'eth': eth,
+        'form': form,
+    }
+   
+  
+   
+    return render(request, 'account/account_upgrade.html', context)
+
 
 @login_required(login_url='login')
 def change_email_address(request):

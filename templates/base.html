@@ -277,14 +277,67 @@
 			
 		
 			</style>
+
+			
  {% block content %}
 
 
 
  {% endblock %}
 
+ <style>
+
+	  
+	  .top-link {
+		transition: all .25s ease-in-out;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		display: inline-flex;
+		
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+		margin: 0 3em 3em 0;
+		border-radius: 50%;
+		padding: .25em;
+		width: 60px;
+		height: 60px;
+		background-color: #F8F8F8;
+		
+		&.show {
+		  visibility: visible;
+		  opacity: 1;
+		}
+		
+		&.hide {
+		  visibility: hidden;
+		  opacity: 0;
+		}
+	  
+		  svg {
+			  fill: #000;
+			  width: 24px;
+			  height: 12px;
+		  }
+	  
+		  &:hover {
+			  background-color: #E8E8E8;
+	  
+			  svg {
+				  fill: #000000;
+			  }
+		  }
+	  }
+	  
+  
+	  
+ </style>
+ 
     <!-- START FOOTER -->
     <footer>
+		
+
         <!--Footer top -->
         <div class="footer-top overlay section-back-image-2" data-background="{% static 'cryptotrading/assets/img/bg/bg6.jpg' %}">
             <div class="auto-container">
@@ -398,7 +451,7 @@
 						
                     </div>
 					<!-- End Widget -->
-
+					
 
 					<!--Newsletter-->
 
@@ -468,7 +521,10 @@
 				
 			</style>
 
-			 
+			<a class="top-link hide" href="" id="js-top" style="z-index: 1;" >
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 3"><path d="M12 6H0l6-6z"/></svg>
+				
+			  </a>
 
 			<marquee behavior="scroll" direction="left">
 			
@@ -504,7 +560,6 @@
 		
 		
 
-			<a href='#top'><i class="fa fa-arrow-up text-white ml-2 " style="font-size: 20px;" aria-hidden="true"></i></a>
 			
 			<div class="auto-container">
 				
@@ -582,6 +637,12 @@
 	  });
 </script>
 <!--Animation script-->
+
+
+
+
+
+
 <script>
 
 	/*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
@@ -1023,6 +1084,52 @@ $(document).ready(function() {
 
 	  
 
+
+
+
+	  <script>
+
+		
+		
+		// Set a variable for our button element.
+	const scrollToTopButton = document.getElementById('js-top');
+	
+	// Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
+	const scrollFunc = () => {
+	  // Get the current scroll value
+	  let y = window.scrollY;
+	  
+	  // If the scroll value is greater than the window height, let's add a class to the scroll-to-top button to show it!
+	  if (y > 0) {
+		scrollToTopButton.className = "top-link show";
+	  } else {
+		scrollToTopButton.className = "top-link hide";
+	  }
+	};
+	
+	window.addEventListener("scroll", scrollFunc);
+	
+	const scrollToTop = () => {
+	  // Let's set a variable for the number of pixels we are from the top of the document.
+	  const c = document.documentElement.scrollTop || document.body.scrollTop;
+	  
+	  // If that number is greater than 0, we'll scroll back to 0, or the top of the document.
+	  // We'll also animate that scroll with requestAnimationFrame:
+	  // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+	  if (c > 0) {
+		window.requestAnimationFrame(scrollToTop);
+		// ScrollTo takes an x and a y coordinate.
+		// Increase the '10' value to get a smoother/slower scroll!
+		window.scrollTo(0, c - c / 10);
+	  }
+	};
+	
+	// When the button is clicked, run our ScrolltoTop function above!
+	scrollToTopButton.onclick = function(e) {
+	  e.preventDefault();
+	  scrollToTop();
+	}
+	</script>
 </body>
 
 <!--Tidio chart script here-->
