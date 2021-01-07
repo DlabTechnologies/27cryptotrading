@@ -338,10 +338,10 @@
 			  <span><b>27Crypto </b>Trading</span>
 			</a>
 		</div>
-        <div class="image">
-          <img src="{% static 'account/images/user2-160x160.jpg' %}" class="rounded-circle" alt="User Image">
+        <div class="text-center ml-4" style="width: 100px; width:100px;">
+          <img  width="90px" height="90px" {% if request.user.profile_image %} src="{{request.user.profile_image.url}}" {% else %} src="{% static 'account/images/user2-160x160.jpg' %}" {% endif %} class="rounded-circle image-fluid" alt="User Image">
         </div>
-        <div class="info">
+        <div class="info" style="margin-left: -45px;">
           <p>{{request.user.email}}</p>
 			</div>
       </div>

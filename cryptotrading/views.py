@@ -77,8 +77,25 @@ def about_page(request):
         
         info = ManagerContactInfo.objects.all()
 
+        form_news = UserNewsletterSignup()
+        if request.method == 'POST':
+                form_news = UserNewsletterSignup(request.POST or None)
+                if form_news.is_valid():
+                        email_signup_qs = NewsletterSignup.objects.filter(email=form_news.instance.email)
+                        if email_signup_qs.exists():
+                                messages.info(request, "You are already subscribed to our newsletter updates")
+                        else:
+                                form_news.save()
+                                messages.success(request, "You have successfully subscribe to our newsletter updates")
+
+                                return redirect('home_page')
+        else:
+                form_news = UserNewsletterSignup()
+
+
         context={
-                'info': info
+                'info': info,
+                'form_news': form_news
         }
         return render(request, 'about.html', context)
 
@@ -93,9 +110,27 @@ def cal_page(request):
 
         level = Account_level.objects.all()
 
+        
+        form_news = UserNewsletterSignup()
+        if request.method == 'POST':
+                form_news = UserNewsletterSignup(request.POST or None)
+                if form_news.is_valid():
+                        email_signup_qs = NewsletterSignup.objects.filter(email=form_news.instance.email)
+                        if email_signup_qs.exists():
+                                messages.info(request, "You are already subscribed to our newsletter updates")
+                        else:
+                                form_news.save()
+                                messages.success(request, "You have successfully subscribe to our newsletter updates")
+
+                                return redirect('home_page')
+        else:
+                form_news = UserNewsletterSignup()
+
+
         context = {
                 'info': info,
-                'level':level
+                'level':level,
+                'form_news': form_news
         }
         return render(request, 'cal.html', context)
 
@@ -130,9 +165,25 @@ def contact_page(request):
 
         
 
+        form_news = UserNewsletterSignup()
+        if request.method == 'POST':
+                form_news = UserNewsletterSignup(request.POST or None)
+                if form_news.is_valid():
+                        email_signup_qs = NewsletterSignup.objects.filter(email=form_news.instance.email)
+                        if email_signup_qs.exists():
+                                messages.info(request, "You are already subscribed to our newsletter updates")
+                        else:
+                                form_news.save()
+                                messages.success(request, "You have successfully subscribe to our newsletter updates")
+
+                                return redirect('home_page')
+        else:
+                form_news = UserNewsletterSignup()
+
         context = {
                 'info': info,
-                'form': form
+                'form': form,
+                'form_news': form_news
         }
         return render(request, 'contact.html', context)
 
