@@ -98,7 +98,7 @@
       <!-- Sidebar toggle button-->
       
       
-      <a href="#" style="padding: 10px; margin:0; font-size:27px;"  class="sidebar-toggle" data-toggle="push-menu" role="button" >
+      <a href="#" style="padding: 10px; margin:0; font-size:27px;"   class="sidebar-toggle" data-toggle="push-menu" role="button" >
         <span class="sr-only">Toggle navigation</span>
         
       </a>
@@ -281,146 +281,9 @@
     <!-- Content Header (Page header) -->
    
      
-     <!-- Basic Forms -->
-      <div class="box box-solid bg-dark">
-        <div class="box-header with-border">
-          <h3 class="box-title">Fund Your 27Cryptotrading Wallet </h3>
-
-          
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-        <h4 style="text-align:center;"><b>Notice: </b>To fund your wallet, follow the instructions below.</h4>
-        <ul>
-        <li>Transfer the exact amount of coin to any of the wallet address listed below</li>
-        <li> Enter the amout that you have transfered in the transfered amount box below</li>
-        <li>Upload proof of payment(screenshot of payment)</li>
-          <br>
-
-          
-          
-          
-          
-          <div class="row">
-            <div class="col-md-5">
-              {% if btc %}
-            	<div class="form-group row">
-				  <label for="example-text-input" class="col-md-8 col-form-label">transfer bitcoin to this wallet address</label>
-				  <div class="col-sm-10">
-
-					<div class="input-group">
-                
-            
-          <input type="text" class="form-control" id="sec" id="example-text-input" value={{btc}}  aria-label="wallet address" aria-describedby="basic-addon2" value="" readonly>
-              <div class="input-group-prepend">
-                  <button type="button" class="btn btn-danger" onclick="myFunction()">Copy</button>
-                </div>
-               </div>
-                <script>
-                  function myFunction() {
-                    var copyText = document.getElementById("sec");
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999)
-                    document.execCommand("copy");
-                    alert("Copied Bitcoin wallet address: " + copyText.value);
-                  }
-                  </script>
-                
-
-				  </div>
-				</div>	
-{% endif %}
-
-        <!--Etherium wallet account-->
-
-        {% if eth %}
-	<div class="form-group row">
-				  <label for="example-text-input" class="col-md-8 col-form-label">transfer ethereum to this wallet address</label>
-				  <div class="col-sm-10">
-
-					<div class="input-group">
-                
-                
-          <input type="text" class="form-control" id="sectwo" id="example-text-input" value={{eth}} aria-label="wallet address" aria-describedby="basic-addon2" value="" readonly>
-              <div class="input-group-prepend">
-                  <button type="button" class="btn btn-danger" onclick="myFunctionTwo()">Copy</button>
-                </div>
-               </div>
-                <script>
-                  function myFunctionTwo() {
-                    var copyText = document.getElementById("sectwo");
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999)
-                    document.execCommand("copy");
-                    alert("Copied Etherum wallet address: " + copyText.value);
-                  }
-                  </script>
-                
-                  
-				  </div>
-				</div>				
-{% endif %}
-
-<form action="" method="POST" enctype="multipart/form-data" >
-  {% csrf_token %}
-        <div class="form-group row">
-				  
-				  <div class="col-sm-10">
-            {% render_field form.email  type="hidden" value=request.user.email id="example-email-input" class="form-control" name="email" autofocus="autofocus" %}
-             
-					
-				  </div>
-				</div>
-
-
-				<div class="form-group row">
-				  <label for="example-number-input" class="col-md-8 col-form-label">Enter Amount  deposited to any of the wallet address above in USD</label>
-				  <div class="col-sm-10">
-            {% render_field form.deposit_amount  type="text"  id="example-number-input" class="form-control" name="deposit_amount" autofocus="autofocus" placeholder="Enter Amount" onkeypress="validate(event)" required='required' %}
-             {{form.deposit_amount.errors}}
-				  <script type="text/javascript">
-          function validate(ev) {
-    if (!ev) {
-        ev = window.event;
-    }
-
-    if (!ev.ctrlKey && ev.key.length === 1 && (isNaN(+ev.key) || ev.key === " ")) {
-        return ev.preventDefault();
-    }
-}
-</script>
-          </div>
-				</div>
-				
-        
-				<div class="form-group row">
-				  <label for="example-number-input" class="col-md-8 col-form-label">Upload proof of payment(screenshot of payment)</label>
-				  <div class="col-sm-10">
-            {% render_field form.image  type="file" class="form-control " name="image" accept="image/*" required="required" placeholder="Upload a photo"  onchange="readURL(this)" %}
-									<span style="color: red; list-style:none;  ">{{form.image.errors}}</span>
-								
-				  </div>
-          </div>
-
-        	<div class="form-group row">
-				  
-				  <div class="col-md-4">
-					<button type="submit" class="btn btn-dark">Deposit</button>
-				  </div>
-				</div>
-				
-				</form>
-				
-            </div>
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.box-body -->
-      </div>
-      <!-- /.box -->
+    
      
-     
+    <iframe src="https://buy.chainbits.com"  style=" margin-top:-30px; border: none; height:650px; width:100%;"  title="Buy Bitcoin From our Partner"></iframe>
 
       
 
@@ -479,19 +342,13 @@
 	<script src="{% static 'account/js/demo.js' %}"></script>
 
   
-  <script type="text/javascript">
-    $(function(){
-      setTimeout(function(){
-        $('.alert').slideUp(1200);
-      }, 2500);
-    });
-  </script>
+  
 
 
   
 </body>
 <!--Shart boot Tidio-->
-<script src="//code.tidio.co/5ikpc2mhh57krvqwkjtjqbywkbqih9ur.js" async></script>
+
 
 
 </html>

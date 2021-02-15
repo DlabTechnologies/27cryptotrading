@@ -12,6 +12,7 @@ urlpatterns = [
     path('withdraw_not_eligable_bonus/', views.withdraw_not_eligable_bonus, name='withdraw_not_eligable_bonus'),
     path('withdraw_complete_error/', views.withdraw_complete_error, name='withdraw_complete_error'),
     path('withdraw/', views.withdraw, name='withdraw'),
+    path('buy_crypto/', views.buy_crypto, name='buy_crypto'),
     path('withdraw_bonus/', views.withdraw_bonus, name='withdraw_bonus'),
     path('deposit/', views.deposit, name='deposit'),
     path('deposit_1/', views.deposit_1, name='deposit_1'),

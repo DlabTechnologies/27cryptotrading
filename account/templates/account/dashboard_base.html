@@ -140,7 +140,7 @@
       <!-- Sidebar toggle button-->
       
       {% if not request.user.place_on_hold %}
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" >
+      <a href="#" style="padding: 10px; margin:0; font-size:27px;"   class="sidebar-toggle" data-toggle="push-menu" role="button" >
         {% endif %}
         <span class="sr-only">Toggle navigation</span>
         
@@ -419,6 +419,18 @@
           
         </li>
 
+
+        <li class="">
+          <a href="{% url 'buy_crypto' %}">
+            <i class="icon-wallet"></i>
+            <span>Buy Bitcoin here</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          
+        </li>
+
         <li class="">
           <a href="{% url 'personal_info' %}">
             <i class="fa fa-user-circle-o "></i>
@@ -551,6 +563,8 @@
 	<script src="{% static 'account/js/demo.js' %}"></script>
 
   
+
+
 
   <script>
     $(document).ready(function(){

@@ -278,6 +278,22 @@ def withdraw(request):
     return render(request, 'account/withdraw.html', context)
 
 
+@login_required(login_url='login')
+def buy_crypto(request):
+    if request.user.email_not_verified:
+        return redirect('send_otp')
+
+
+    if request.user.is_admin:
+        return redirect('home_page')
+    
+    if request.user.enable_photo_upload:
+        return redirect('upload_photo')
+
+    
+
+
+    return render(request, 'account/buy_crypto.html')
 
 
 @login_required(login_url='login')
@@ -808,7 +824,7 @@ def send_otp(request):
     <meta name="viewport" content="width = 375, initial-scale = -1">
   </head>
 
-  <body style="background-color: #ffffff; font-size: 16px;">
+  <body style="background-color: #ffffff; font-size: 13px;">
     <center>
       <table align="center" border="0" cellpadding="0" cellspacing="0" style="height:100%; width:600px;">
           <!-- BEGIN EMAIL -->
