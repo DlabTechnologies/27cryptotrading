@@ -17,7 +17,31 @@
 
 
       
+
+
 		<div class="row">
+
+      
+      <div class="col-xl-12 col-md-10 col-11 mb-5 ml-5 ">
+        {% if request.user.deposit_amount == '0' %}
+ <!--Alert Box-->
+ <div class="alert alert-info alert-dismissible alert-static ml-5 mb-5 col-md-8 col-xl-8 col-12" >
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <h6><strong><b><i class="fa fa-bell"></i> Congrats!</b></strong> You need to Deposit to make your first trade <a class="btn btn-info btn-sm" href="{% url 'deposit' %}"><b>Deposit Now</b></a></h6>
+</div>
+{% endif %}
+
+
+<div class="alert alert-info alert-dismissible alert-static ml-5  mb-5 col-md-8 col-xl-8 col-12"  >
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <h6><strong><b><i class="fa fa-bell"></i> Account Inactive!</b></strong> You need to upload your ID for account Activation <a class="btn btn-info btn-sm" href="{% url 'photo_upload_page' %}"><b>Upload ID</b></a></h6>
+</div>
+
+<!--End alert Box-->
+      </div>
+      <!-- /.col -->
+      
+
       <div class="col-xl-3 col-md-6 col ">
         <div class="info-box pull-up price-glow">
           <span class="info-box-icon bg-info"><i class="ion ion-stats-bars"></i></span>

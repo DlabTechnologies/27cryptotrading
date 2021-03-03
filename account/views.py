@@ -121,22 +121,22 @@ def login_view(request):
                 email = request.POST['email']
                 password = request.POST['password']
                 
-                if result['success']:
-                    user = authenticate(email=email, password=password)
+                #if result['success']:
+                user = authenticate(email=email, password=password)
                 
 
-                    if user:
-                        login(request, user)
-                        messages.success(request, "Welcome {} ".format(request.user.first_name))
+                if user:
+                    login(request, user)
+                    messages.success(request, "Welcome {} ".format(request.user.first_name))
                     
-                        if 'next' in request.POST:
-                            return redirect(request.POST.get('next'))
-                        else:
+                    if 'next' in request.POST:
+                        return redirect(request.POST.get('next'))
+                    else:
                         
-                            return redirect('user_dashboard')
+                        return redirect('user_dashboard')
                     
         
-                else:
+                #else:
                     messages.error(request, 'Invalid reCAPTCHA. Please try again.')
         else:
             form = UserLoginForm()

@@ -500,6 +500,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+   
     {% block content %}
 
 
@@ -583,6 +584,15 @@
       }, 2500);
     });
   </script>
+
+  <script type="text/javascript">
+    $(function(){
+      setTimeout(function(){
+        $('.alert-static').slideUp(99999999999999999999999999999999999999999999999999999999999999999);
+      }, 999999999999999999999999999999999999999999999999999999999999999999999999999999999);
+    });
+  </script>
+
 
 
   <script type="text/javascript">
